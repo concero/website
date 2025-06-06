@@ -1,0 +1,14 @@
+:root {
+	--header-height: 40px;
+	--breakpoint-mobile-max: 576px;
+	--breakpoint-tablet-min: 577px;
+	--breakpoint-tablet-max: 768px;
+	--breakpoint-desktop-min: 769px;
+	--breakpoint-desktop-max: 1280px;
+	--breakpoint-ultrawide-min: 1281px;
+}
+
+@custom-media --mobile (max-width: 576px);
+@custom-media --tablet (min-width: 577px) and (max-width: 768px);
+@custom-media --desktop (min-width: 769px) and (max-width: 1280px);
+@custom-media --ultrawide (min-width: 1281px);
