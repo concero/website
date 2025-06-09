@@ -2,14 +2,18 @@ import type { FC } from 'react'
 import { NavigationWidget } from '@/components/common/NavigationWidget/NavifgationWidget'
 import './Developers.pcss'
 
-export const Developers: FC = (): JSX.Element => {
-	return (
-		<div className="footer_content_developer">
-			<span className="footer_content_developer_title">For Developers</span>
-			<div className="footer_content_developer_links">
-				<NavigationWidget title="Documentation" link="https://docs.concero.io" />
-				<NavigationWidget title="Whitepaper" link="https://concero.io/v2_whitepaper.pdf" />
-			</div>
-		</div>
-	)
-}
+const developer_links = [
+  { title: 'Documentation', link: 'https://docs.concero.io' },
+  { title: 'Whitepaper', link: 'https://concero.io/v2_whitepaper.pdf' },
+] as const
+
+export const Developers:FC = (): JSX.Element => (
+  <div className="developer_section">
+    <span className="developer_title">For Developers</span>
+    <div className="developer_links">
+      {developer_links.map(({ title, link }) => (
+        <NavigationWidget key={title} title={title} link={link} />
+      ))}
+    </div>
+  </div>
+)

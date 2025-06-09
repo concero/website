@@ -1,4 +1,4 @@
-.footer_copyright {
+.copyright_section {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
@@ -6,7 +6,7 @@
 	align-items: flex-start;
 }
 
-.footer_copyright_text {
+.copyright_text {
 	font-family: var(--font-body-medium-family);
 	font-size: 1rem;
 	font-weight: 400;
@@ -14,13 +14,13 @@
 	color: var(--color-gray-light-600);
 }
 
-.footer_copyright_links {
+.copyright_links {
 	display: flex;
 	flex-direction: row;
 	gap: var(--space-l);
 }
 
-.footer_copyright_link {
+.copyright_link {
 	font-family: var(--font-body-medium-family);
 	font-size: 1rem;
 	font-weight: 400;
@@ -30,8 +30,7 @@
 }
 
 @media (--mobile) {
-	.footer_copyright {
-		display: flex;
+	.copyright_section {
 		gap: var(--space-l);
 		flex-direction: column;
 	}

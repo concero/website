@@ -1,20 +1,24 @@
 import type { FC } from 'react'
 import './Copyright.pcss'
 
-export const Copyright: FC = () => {
-	const currentYear = new Date().getFullYear()
+const copyright_links = [
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Cookie Policy' },
+] as const
 
-	return (
-		<div className="footer_copyright">
-			<div className="footer_copyright_text">© Concero {currentYear}</div>
-			<div className="footer_copyright_links">
-				<a href="/privacy-policy" className="footer_copyright_link">
-					Privacy Policy
-				</a>
-				<a href="/terms" className="footer_copyright_link">
-					Cookie Policy
-				</a>
-			</div>
-		</div>
-	)
+export const Copyright:FC = (): JSX.Element => {
+  const currentYear = new Date().getFullYear()
+
+  return (
+    <div className="copyright_section">
+      <div className="copyright_text">© Concero {currentYear}</div>
+      <div className="copyright_links">
+        {copyright_links.map(link => (
+          <a key={link.href} href={link.href} className="copyright_link">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  )
 }

@@ -1,31 +1,42 @@
 import type { FC } from 'react'
 import './Ecosystem.pcss'
 
-export const Ecosystem: FC = (): JSX.Element => {
-	return (
-		<div className="footer_content_ecosystem_wrapper">
-			<div className="footer_content_ecosystem_section">
-				<div className="footer_content_ecosystem_title">Ecosystem</div>
-				<div className="footer_content_ecosystem_links">
-					<a href="https://app.concero.io/rewards" className="footer_content_ecosystem_link">
-						Rewards Portal
-					</a>
-					<a href="https://app.concero.io/liquidity" className="footer_content_ecosystem_link">
-						Provide Liquidity
-					</a>
-				</div>
-			</div>
-			<div className="footer_content_ecosystem_section">
-				<div className="footer_content_ecosystem_title">Resources</div>
-				<div className="footer_content_ecosystem_links">
-					<a href="https://concero.medium.com" className="footer_content_ecosystem_link">
-						Blog
-					</a>
-					<a href="https://docs.concero.io/brand" className="footer_content_ecosystem_link">
-						Brand Assets
-					</a>
-				</div>
-			</div>
-		</div>
-	)
-}
+const ecosystem_sections = [
+  {
+    title: 'Ecosystem',
+    links: [
+      { href: 'https://app.concero.io/rewards', label: 'Rewards Portal' },
+      { href: 'https://app.concero.io/liquidity', label: 'Provide Liquidity' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { href: 'https://concero.medium.com', label: 'Blog' },
+      { href: 'https://docs.concero.io/brand', label: 'Brand Assets' },
+    ],
+  },
+] as const
+
+export const Ecosystem: FC = (): JSX.Element => (
+  <div className="ecosystem_wrapper">
+    {ecosystem_sections.map(section => (
+      <div className="ecosystem_section" key={section.title}>
+        <div className="ecosystem_title">{section.title}</div>
+        <div className="ecosystem_links">
+          {section.links.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="ecosystem_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+)
