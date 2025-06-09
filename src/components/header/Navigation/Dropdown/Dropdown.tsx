@@ -13,7 +13,6 @@ type DropdownProps = {
 }
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
-	console.log('Dropdown items:', items)
 	return (
 		<div className="header_nav_dropdown" role="menu">
 			<div className="header_nav_dropdown_container">

@@ -34,7 +34,6 @@ export const NavigationItem: FC<Props> = ({ title, link, showTrail, dropdownItem
 	}, [])
 
 	const Icon = open ? CloseTrail : OpenTrail
-	const activeClass = hasItems ? 'header_nav_item--clickable' : ''
 
 	return link ? (
 		<a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer">
@@ -50,7 +49,7 @@ export const NavigationItem: FC<Props> = ({ title, link, showTrail, dropdownItem
 	) : (
 		<div
 			ref={ref}
-			className={`header_nav_item ${activeClass} ${open ? 'header_nav_item--active' : ''}`}
+			className="header_nav_item"
 			onClick={() => hasItems && setOpen(!open)}
 		>
 			<div className="header_nav_item_content">
