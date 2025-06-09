@@ -1,23 +1,27 @@
-import type { FC } from "react";
-import { Button } from "@concero/ui-kit"
-import "./Header.pcss";
+import { useMemo, type FC } from 'react'
+import { Logo } from './Logo/Logo'
+import { Actions } from './Actions/Actions'
+import { Navigation } from './Navigation/Navigaton'
+import './Header.pcss'
 
 export const Header: FC = (): JSX.Element => {
+	const headerLogo = useMemo(() => {
+		return <Logo />
+	}, [])
 
-    return (
-        <header className="header">
-            <div className="header_logo_container">
-                <img src="/Header/Concero.svg" alt="Concero"/>
-            </div>
-            <div className="header_actions_container">
-                <div className="header_actions">
-                    <Button size="s" variant="secondary_color">Open Testnet</Button>
-                    <Button size="s" variant="primary">Contact us</Button>
+	const headerNav = useMemo(() => {
+		return <Navigation />
+	}, [])
 
+	const headerActions = useMemo(() => {
+		return <Actions />
+	}, [])
 
-                </div>
-            </div>
-        </header>
-    )
-
+	return (
+		<header className="header">
+			{headerLogo}
+			{headerNav}
+			{headerActions}
+		</header>
+	)
 }

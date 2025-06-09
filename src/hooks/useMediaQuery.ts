@@ -4,7 +4,7 @@ export const breakpoints = {
 	mobile: '(max-width: 576px)',
 	tablet: '(max-width: 768px) and (min-width: 577px)',
 	desktop: '(min-width: 769px) amd (max-width: 1280px)',
-    ultawide: '(min-width: 1281px)',
+	ultawide: '(min-width: 1281px)',
 }
 
 type BreakpointKey = keyof typeof breakpoints
@@ -32,7 +32,7 @@ const useMediaQuery = (query: string | BreakpointKey): boolean => {
 		}
 	}, [queryString])
 
-	return matches 
+	return matches
 }
 
 export const useIsMobile = () => useMediaQuery('mobile')
