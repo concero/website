@@ -5,19 +5,19 @@ import { Developers } from './Developers/Developers'
 import './Footer.pcss'
 
 export const Footer = () => (
-  <footer className="footer_section">
-    <div className="footer_divider" />
-    <div className="footer_logo_container">
-      <img src="/Footer/ConceroDark.svg" className="footer_logo" alt="Concero Logo" />
+  <footer className="concero_footer">
+    <div className="concero_footer_separator" />
+    <div className="concero_footer_brand">
+      <img src="/Footer/ConceroDark.svg" className="concero_footer_logo" alt="Concero Logo" />
     </div>
-    <div className="footer_content">
+    <div className="concero_footer_main">
       <Developers />
-      <div className="footer_ecosystem_content">
+      <div className="concero_footer_secondary">
         <Ecosystem />
         <Social />
       </div>
     </div>
-    <div className="footer_divider" />
+    <div className="concero_footer_separator" />
     <Copyright />
   </footer>
 )
