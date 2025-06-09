@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import "./BurgerItem.pcss"
+import './BurgerItem.pcss'
 
 type BurgerItemProps = {
 	title: string
