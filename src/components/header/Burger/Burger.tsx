@@ -8,7 +8,6 @@ import { BurgerSectionItem } from './BurgerItem/BurgerItem'
 import { BurgerActions } from './BurgerActions/BurgerActions'
 import './Burger.pcss'
 
-
 export const Burger: FC = (): JSX.Element => {
     return (
         <div className="header_burger_container">
