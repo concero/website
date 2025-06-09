@@ -1,0 +1,96 @@
+.header_burger_container {
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	width: 100vw;
+	height: calc(100vh - var(--header-height));
+	z-index: 1000;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.header_burger {
+	display: flex;
+	flex-direction: column;
+	padding: var(--space-m) var(--space-xxl) var(--space-xl) var(--space-xxl);
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.header_burger_content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	gap: var(--space-m);
+}
+
+.header_burger_actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-xs);
+}
+
+.header_burger_section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
+	gap: var(--space-s);
+}
+
+.header_burger_section_title {
+	font-family: var(--font-body-medium-family);
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+	color: var(--color-gray-light-600);
+}
+
+.header_burger_section_items {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
+	gap: var(--space-xs);
+}
+
+.header_burger_section_item {
+	display: flex;
+	padding: var(--space-xxs) var(--space-l) var(--space-xxs) var(--space-xxs);
+	align-items: center;
+	cursor: pointer;
+	border-radius: var(--border-radius-large);
+	gap: var(--space-s);
+}
+
+.header_bruger_item_icon_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: var(--border-radius-medium);
+	background-color: var(--color-gray-light-50);
+}
+
+.header_burger_section_item_title {
+	font-family: var(--font-body-xlarge-family);
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+	color: var(--color-gray-light-600);
+}
+
+.header_burger_section_divider {
+	width: 100%;
+	height: 1px;
+	background-color: var(--color-gray-light-100);
+}
+
+@media (--mobile) {
+	.header_burger {
+		padding: var(--space-m) var(--space-m) var(--space-xl) var(--space-m);
+	}
+}

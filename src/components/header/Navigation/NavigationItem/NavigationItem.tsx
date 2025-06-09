@@ -49,7 +49,7 @@ export const NavigationItem: FC<Props> = ({ title, link, showTrail, dropdownItem
 	) : (
 		<div
 			ref={ref}
-			className="header_nav_item"
+            className={`header_nav_item ${open ? 'header_nav_item_active' : ''}`}
 			onClick={() => hasItems && setOpen(!open)}
 		>
 			<div className="header_nav_item_content">
