@@ -1,62 +1,57 @@
-import type { FC } from 'react'
 import { useState, useEffect } from 'react'
-import { Button } from '@concero/ui-kit'
+import { Button, IconButton } from '@concero/ui-kit'
 import { useIsMobile, useIsTablet } from '@/hooks/useMediaQuery'
-import { IconButton } from '@concero/ui-kit'
-import { MenuIcon } from '@/assets/icons/menu'
+import { MenuIcon} from '@/assets/icons/menu'
 import { CloseIcon } from '@/assets/icons/close'
 import { Burger } from '../Burger/Burger'
 import './Actions.pcss'
 
-export const Actions: FC = (): JSX.Element => {
-	const [isOpen, setIsOpen] = useState<boolean>(false)
-	const isTablet = useIsTablet()
-	const isMobile = useIsMobile()
+export const Actions = () => {
+  const [is_open, set_is_open] = useState<boolean>(false)
+  const is_tablet = useIsTablet()
+  const is_mobile = useIsMobile()
+  const show_burger = is_mobile || is_tablet
 
-	const showBurger = isMobile || isTablet
+  useEffect(() => {
+    if (!show_burger) set_is_open(false)
+  }, [show_burger])
 
-	useEffect(() => {
-		if (!showBurger) {
-			setIsOpen(false)
-		}
-	}, [showBurger])
-
-	const toggleBurger = () => {
-		setIsOpen(prev => !prev)
-	}
-
-	const handleContactUs = () => {
-		window.location.href = 'mailto:team@concero.io'
-	}
-
-	const handleOpenTestnet = () => {
-		window.open('https://testnet.concero.io', '_blank')
-	}
-
-	return (
-		<>
-			<div className="header_actions_container">
-				<div className="header_actions">
-					{!isOpen && (
-						<>
-							<Button size="s" variant="secondary_color" onClick={handleOpenTestnet}>
-								Open Testnet
-							</Button>
-							{!isMobile && (
-								<Button size="s" variant="primary" onClick={handleContactUs}>
-									Contact us
-								</Button>
-							)}
-						</>
-					)}
-					{showBurger && (
-						<IconButton size="s" variant="secondary" onClick={toggleBurger}>
-							{isOpen ? <CloseIcon /> : <MenuIcon />}
-						</IconButton>
-					)}
-				</div>
-			</div>
-			{isOpen ? <Burger /> : null}
-		</>
-	)
+  return (
+    <>
+      <div className="actions_container">
+        <div className="actions_buttons">
+          {!is_open && (
+            <>
+              <Button
+                size="s"
+                variant="secondary_color"
+                onClick={() => window.open('https://testnet.concero.io', '_blank')}
+              >
+                Open Testnet
+              </Button>
+              {!is_mobile && (
+                <Button
+                  size="s"
+                  variant="primary"
+                  onClick={() => window.location.href = 'mailto:team@concero.io'}
+                >
+                  Contact us
+                </Button>
+              )}
+            </>
+          )}
+          {show_burger && (
+            <IconButton
+              size="s"
+              variant="secondary"
+              onClick={() => set_is_open(prev => !prev)}
+            >
+              {is_open ? <CloseIcon /> : <MenuIcon />}
+            </IconButton>
+          )}
+        </div>
+      </div>
+      {is_open && <Burger />}
+    </>
+  )
 }
