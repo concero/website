@@ -6,16 +6,38 @@
 	height: 40px;
 	padding: var(--space-xs);
 	border-radius: var(--border-radius-small);
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.social_icon:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .twitter {
 	background-color: var(--color-gray-light-600);
 }
 
+.twitter:hover {
+	background-color: var(--color-gray-light-700);
+}
+
 .discord {
 	background-color: rgba(88, 101, 242, 1);
 }
 
+.discord:hover {
+	background-color: rgba(77, 90, 227, 1);
+}
+
 .medium {
 	background-color: var(--color-gray-light-600);
+}
+
+.medium:hover {
+	background-color: var(--color-gray-light-700);
 }
