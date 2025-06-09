@@ -1,10 +1,11 @@
 import type { FC } from 'react'
 import { NavigationWidget } from '@/components/common/NavigationWidget/NavifgationWidget'
+import { links } from '@/configuration/links'
 import './Developers.pcss'
 
 const developer_links = [
-  { title: 'Documentation', link: 'https://docs.concero.io' },
-  { title: 'Whitepaper', link: 'https://concero.io/v2_whitepaper.pdf' },
+  { title: 'Documentation', link: links.documentation },
+  { title: 'Whitepaper', link: links.whitepaper },
 ] as const
 
 export const Developers:FC = (): JSX.Element => (

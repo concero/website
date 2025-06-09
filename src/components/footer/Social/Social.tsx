@@ -2,23 +2,24 @@ import { SocialIcon } from '../../common/SocialIcon/SocialIcon'
 import { TwitterIcon } from '@/assets/icons/twitter'
 import { DiscordIcon } from '@/assets/icons/discord'
 import { MediumIcon } from '@/assets/icons/medium'
+import { links } from '@/configuration/links'
 import './Social.pcss'
 
 const socials = [
 	{
 		icon: <TwitterIcon />,
 		name: 'twitter',
-		link: 'https://twitter.com/conceroio',
+		link: links.twitter,
 	},
 	{
 		icon: <DiscordIcon />,
 		name: 'discord',
-		link: 'https://discord.gg/concero',
+		link: links.discord,
 	},
 	{
 		icon: <MediumIcon />,
 		name: 'medium',
-		link: 'https://medium.com/concero',
+		link: links.madium
 	},
 ] as const
 

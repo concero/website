@@ -1,18 +1,19 @@
 import type { FC } from 'react'
+import { links } from '@/configuration/links'
 import './Ecosystem.pcss'
 
 const ecosystem_sections = [
   {
     title: 'Ecosystem',
     links: [
-      { href: 'https://app.concero.io/rewards', label: 'Rewards Portal' },
-      { href: 'https://app.concero.io/liquidity', label: 'Provide Liquidity' },
+      { href: links.rewards, label: 'Rewards Portal' },
+      { href: links.liquidity, label: 'Provide Liquidity' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { href: 'https://concero.medium.com', label: 'Blog' },
+      { href: links.blog, label: 'Blog' },
       { href: 'https://docs.concero.io/brand', label: 'Brand Assets' },
     ],
   },
