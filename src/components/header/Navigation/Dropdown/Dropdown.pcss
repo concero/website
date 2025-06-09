@@ -13,6 +13,8 @@
 	background-color: var(--color-gray-light-25);
 	box-shadow: 0px 2px 12px 0px var(--color-gray-light-100);
 	margin-top: 8px;
+	animation: dropdown-animation 0.2s ease;
+	transform-origin: top center;
 }
 
 .header_nav_dropdown_container {
@@ -20,4 +22,15 @@
 	flex-direction: column;
 	gap: var(--space-xxs);
 	width: 100%;
+}
+
+@keyframes dropdown-animation {
+	0% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-8px) scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0) scale(1);
+	}
 }

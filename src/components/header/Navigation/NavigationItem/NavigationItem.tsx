@@ -6,62 +6,62 @@ import { Dropdown } from '../Dropdown/Dropdown'
 import './NavigationItem.pcss'
 
 type Item = {
-    title: string
-    link: string
-    icon: ReactNode
+	title: string
+	link: string
+	icon: ReactNode
 }
 
 type Props = {
-    title: string
-    showTrail: boolean
-    link?: string
-    dropdownItems?: Item[]
+	title: string
+	showTrail: boolean
+	link?: string
+	dropdownItems?: Item[]
 }
 
 export const NavigationItem: FC<Props> = ({ title, link, showTrail, dropdownItems = [] }) => {
-    const [open, setOpen] = useState<boolean>(false)
-    const ref = useRef<HTMLDivElement>(null)
-    const hasItems = dropdownItems.length > 0
+	const [open, setOpen] = useState<boolean>(false)
+	const ref = useRef<HTMLDivElement>(null)
+	const hasItems = dropdownItems.length > 0
 
-    useEffect(() => {
-        const handleClick = (e: Event) => {
-            if (ref.current && !ref.current.contains(e.target as Node)) {
-                setOpen(false)
-            }
-        }
-        document.addEventListener('click', handleClick)
-        return () => document.removeEventListener('click', handleClick)
-    }, [])
+	useEffect(() => {
+		const handleClick = (e: Event) => {
+			if (ref.current && !ref.current.contains(e.target as Node)) {
+				setOpen(false)
+			}
+		}
+		document.addEventListener('click', handleClick)
+		return () => document.removeEventListener('click', handleClick)
+	}, [])
 
-    const Icon = open ? CloseTrail : OpenTrail
-    const activeClass = hasItems ? 'header_nav_item--clickable' : ''
+	const Icon = open ? CloseTrail : OpenTrail
+	const activeClass = hasItems ? 'header_nav_item--clickable' : ''
 
-    return link ? (
-        <a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer">
-            <div className="header_nav_item_content">
-                <span className="header_nav_item_title">{title}</span>
-                {showTrail && (
-                    <div className="header_nav_item_trail">
-                        <Icon />
-                    </div>
-                )}
-            </div>
-        </a>
-    ) : (
-        <div
-            ref={ref}
-            className={`header_nav_item ${activeClass} ${open ? 'header_nav_item--active' : ''}`}
-            onClick={() => hasItems && setOpen(!open)}
-        >
-            <div className="header_nav_item_content">
-                <span className="header_nav_item_title">{title}</span>
-                {showTrail && (
-                    <div className="header_nav_item_trail">
-                        <Icon />
-                    </div>
-                )}
-            </div>
-            {open && hasItems && dropdownItems && <Dropdown items={dropdownItems} />}
-        </div>
-    )
+	return link ? (
+		<a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer">
+			<div className="header_nav_item_content">
+				<span className="header_nav_item_title">{title}</span>
+				{showTrail && (
+					<div className="header_nav_item_trail">
+						<Icon />
+					</div>
+				)}
+			</div>
+		</a>
+	) : (
+		<div
+			ref={ref}
+			className={`header_nav_item ${activeClass} ${open ? 'header_nav_item--active' : ''}`}
+			onClick={() => hasItems && setOpen(!open)}
+		>
+			<div className="header_nav_item_content">
+				<span className="header_nav_item_title">{title}</span>
+				{showTrail && (
+					<div className="header_nav_item_trail">
+						<Icon />
+					</div>
+				)}
+			</div>
+			{open && hasItems && dropdownItems && <Dropdown items={dropdownItems} />}
+		</div>
+	)
 }
