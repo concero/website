@@ -1,5 +1,5 @@
-import type { FC, ReactNode} from 'react'
-import "./SocialIcon.pcss"
+import type { FC, ReactNode } from 'react'
+import './SocialIcon.pcss'
 
 export type Social = 'twitter' | 'discord' | 'medium'
 
@@ -11,12 +11,7 @@ type SocialWidgetProps = {
 
 export const SocialIcon: FC<SocialWidgetProps> = ({ link, icon, social }) => {
 	return (
-		<a
-			href={link}
-			target="_blank"
-			rel="noreferrer"
-			className={`social_icon ${social}`}
-		>
+		<a href={link} target="_blank" rel="noreferrer" className={`social_icon ${social}`}>
 			{icon}
 		</a>
 	)

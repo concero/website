@@ -1,19 +1,34 @@
-import type { FC } from "react";
-import { SocialIcon } from "../../common/SocialIcon/SocialIcon";
-import { TwitterIcon } from "@/assets/icons/twitter";
-import { DiscordIcon } from "@/assets/icons/discord";
-import { MediumIcon } from "@/assets/icons/medium";
-import "./Social.pcss";
+import { SocialIcon } from '../../common/SocialIcon/SocialIcon'
+import { TwitterIcon } from '@/assets/icons/twitter'
+import { DiscordIcon } from '@/assets/icons/discord'
+import { MediumIcon } from '@/assets/icons/medium'
+import './Social.pcss'
 
-export const Social: FC = (): JSX.Element => {
-    return (
-        <div className="footer_content_ecosystem_section">
-            <div className="footer_content_ecosystem_title">Follow</div>
-            <div className="footer_content_ecosystem_socials">
-                <SocialIcon icon={<TwitterIcon/>} social="twitter" link="https://twitter.com/conceroio"/>
-                <SocialIcon icon={<DiscordIcon/>} social="discord" link="https://discord.gg/concero"/>
-                <SocialIcon icon={<MediumIcon/>} social="medium" link="https://medium.com/concero"/>
-            </div>
-        </div>
-    );
-};
+const socials = [
+	{
+		icon: <TwitterIcon />,
+		name: 'twitter',
+		link: 'https://twitter.com/conceroio',
+	},
+	{
+		icon: <DiscordIcon />,
+		name: 'discord',
+		link: 'https://discord.gg/concero',
+	},
+	{
+		icon: <MediumIcon />,
+		name: 'medium',
+		link: 'https://medium.com/concero',
+	},
+] as const
+
+export const Social = () => (
+	<div className="footer_content_ecosystem_section">
+		<h3 className="footer_content_ecosystem_title">Follow</h3>
+		<div className="footer_content_ecosystem_socials">
+			{socials.map(({ icon, name, link }) => (
+				<SocialIcon key={name} icon={icon} social={name} link={link} />
+			))}
+		</div>
+	</div>
+)
