@@ -15,7 +15,7 @@ export const Header: FC = (): JSX.Element => {
 	}, [])
 
 	const headerNav = useMemo(() => {
-		return (isTablet || isMobile) ? null : <Navigation />
+		return isTablet || isMobile ? null : <Navigation />
 	}, [isTablet, isMobile])
 
 	const headerActions = useMemo(() => {

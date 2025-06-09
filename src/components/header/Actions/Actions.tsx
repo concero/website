@@ -18,20 +18,20 @@ export const Actions: FC = (): JSX.Element => {
 
 	return (
 		<>
-		<div className="header_actions_container">
-			<div className="header_actions">
-				<Button size="s" variant="secondary_color">
-					Open Testnet
-				</Button>
-				<Button size="s" variant="primary">
-					Contact us
-				</Button>
-				<IconButton size='s' variant='secondary' onClick={toggleBurger}>
-					<MenuIcon />
-				</IconButton>
+			<div className="header_actions_container">
+				<div className="header_actions">
+					<Button size="s" variant="secondary_color">
+						Open Testnet
+					</Button>
+					<Button size="s" variant="primary">
+						Contact us
+					</Button>
+					<IconButton size="s" variant="secondary" onClick={toggleBurger}>
+						<MenuIcon />
+					</IconButton>
+				</div>
 			</div>
-		</div>
-		{isOpen && <Burger />}
+			{isOpen && <Burger />}
 		</>
 	)
 }

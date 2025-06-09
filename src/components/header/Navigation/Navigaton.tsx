@@ -12,7 +12,7 @@ export const Navigation: FC = (): JSX.Element => {
 		{
 			title: 'For Developers',
 			dropdownItems: [
-				{ title: 'Whitepaper', link: "https://concero.io/v2_whitepaper.pdf", icon: <WhitepaperIcon /> },
+				{ title: 'Whitepaper', link: 'https://concero.io/v2_whitepaper.pdf', icon: <WhitepaperIcon /> },
 				{ title: 'Documentation', link: 'https://docs.concero.io/', icon: <DocumentationIcon /> },
 			],
 		},
