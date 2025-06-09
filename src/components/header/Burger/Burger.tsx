@@ -36,7 +36,7 @@ export const Burger = () => (
     <div className="burger">
       <div className="burger_content">
         {burger_sections.map((section, idx) => (
-          <div key={section.title || idx}>
+          <div key={section.title || idx} className="burger_section_wrapper">
             <div className="burger_section">
               {section.title && (
                 <span className="burger_section_title">{section.title}</span>
