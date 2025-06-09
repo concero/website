@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo } from 'react'
 
 export const breakpoints = {
-	mobile: '(max-width: 576px)',
-	tablet: '(max-width: 768px) and (min-width: 577px)',
-	desktop: '(min-width: 769px) amd (max-width: 1280px)',
-	ultawide: '(min-width: 1281px)',
+  mobile: '(max-width: 640px)',
+  tablet: '(min-width: 641px) and (max-width: 1024px)',
+  desktop: '(min-width: 1025px) and (max-width: 1920px)',
+  ultrawide: '(min-width: 1921px)',
 }
+
 
 type BreakpointKey = keyof typeof breakpoints
 
