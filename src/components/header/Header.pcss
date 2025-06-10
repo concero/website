@@ -1,13 +1,13 @@
 .header {
-	display: flex;
-	min-height: var(--header-height);
-	padding: var(--space-xs) var(--space-xxl);
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    min-height: var(--header-height);
+    padding: var(--space-xs) var(--space-xxl);
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (--mobile) {
-	.header {
-		padding: var(--space-xs) var(--space-m);
-	}
+@media (max-width: 640px) {
+    .header {
+        padding: var(--space-xs) var(--space-m);
+    }
 }
