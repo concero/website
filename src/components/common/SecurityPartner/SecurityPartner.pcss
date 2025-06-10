@@ -1,0 +1,124 @@
+.security_partner_link {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+	width: 100%;
+	transition: transform 0.2s ease-in-out;
+}
+
+.security_partner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--space-l);
+	gap: var(--space-xl);
+	border-radius: var(--border-radius-large);
+	background-color: var(--color-gray-light-50);
+	flex: 1 0 0;
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.security_partner_link:hover .security_partner {
+	background-color: var(--color-gray-light-100);
+	transform: translateY(-2px);
+}
+
+.security_partner_tags {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: var(--space-xs);
+	flex-wrap: wrap;
+}
+
+.security_partner_logo_container {
+	display: flex;
+	min-height: 96px;
+	padding: var(--space-s) calc(var(--space-l) - 4px);
+	align-items: center;
+	justify-content: center;
+}
+
+.security_partner_logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 96px;
+	height: 64px;
+	padding: 0px calc(var(--space-l) - 3px) 0px calc(var(--space-l) - 4px);
+	object-fit: contain;
+}
+
+.security_partner_description {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	padding: 0 var(--space-xxs);
+	gap: var(--space-xxs);
+}
+
+.security_partner_title {
+	font-family: var(--font-body-medium-family);
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 2.25rem;
+	color: var(--color-gray-light-700);
+	letter-spacing: -0.64px;
+	text-align: center;
+}
+
+.security_partner_subtitle {
+	font-family: var(--font-body-medium-family);
+	font-size: 1.125rem;
+	font-weight: 300;
+	line-height: 1.375rem;
+	color: var(--color-gray-light-600);
+	text-align: center;
+}
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+	.security_partner_title {
+		font-size: 1.5rem;
+		line-height: 1.25rem;
+		letter-spacing: -0.48px;
+	}
+
+	.security_partner_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.security_partner_title {
+		font-size: 1.5rem;
+		line-height: 1.25rem;
+		letter-spacing: -0.48px;
+	}
+
+	.security_partner_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.security_partner_title {
+		font-size: 1.5rem;
+		line-height: 1.25rem;
+		letter-spacing: -0.48px;
+	}
+
+	.security_partner_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+}

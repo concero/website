@@ -33,26 +33,26 @@ export const ShowcaseWidget: FC<ShowcaseWidgetProps> = ({
 						<span className="showcase_widget_subtitle">{subtitle}</span>
 					</div>
 					<div className="showcase_widget_actions">
-<Button
-    size={size}
-    variant="secondary_color"
-    className="showcase_widget_button"
-    onClick={() =>
-        integrationLink && window.open(integrationLink, '_blank', 'noopener,noreferrer')
-    }
->
-    Integrate
-</Button>
-<Button
-    size={size}
-    variant="secondary"
-    className="showcase_widget_button"
-    onClick={() =>
-        documentationLink && window.open(documentationLink, '_blank', 'noopener,noreferrer')
-    }
->
-    Documentation
-</Button>
+						<Button
+							size={size}
+							variant="secondary_color"
+							className="showcase_widget_button"
+							onClick={() =>
+								integrationLink && window.open(integrationLink, '_blank', 'noopener,noreferrer')
+							}
+						>
+							Integrate
+						</Button>
+						<Button
+							size={size}
+							variant="secondary"
+							className="showcase_widget_button"
+							onClick={() =>
+								documentationLink && window.open(documentationLink, '_blank', 'noopener,noreferrer')
+							}
+						>
+							Documentation
+						</Button>
 					</div>
 				</div>
 			</div>
