@@ -19,7 +19,7 @@ const socials = [
 	{
 		icon: <MediumIcon />,
 		name: 'medium',
-		link: links.madium
+		link: links.madium,
 	},
 ] as const
 

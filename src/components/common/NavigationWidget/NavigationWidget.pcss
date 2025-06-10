@@ -1,83 +1,83 @@
 .navigation_widget_link {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    color: inherit;
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	color: inherit;
 }
 
 .navigation_widget {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-    padding: var(--space-l);
-    border-radius: var(--border-radius-large);
-    background-color: var(--color-gray-light-50);
-    position: relative;
-    gap: var(--space-xl);
-    cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	padding: var(--space-l);
+	border-radius: var(--border-radius-large);
+	background-color: var(--color-gray-light-50);
+	position: relative;
+	gap: var(--space-xl);
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
 }
 
 .navigation_widget:hover {
-    background-color: var(--color-gray-light-100);
-    transform: translateY(-2px);
+	background-color: var(--color-gray-light-100);
+	transform: translateY(-2px);
 
-    .navigation_widget_button {
-        background-color: var(--color-gray-light-200);
-    }
+	.navigation_widget_button {
+		background-color: var(--color-gray-light-200);
+	}
 
-    .navigation_widget_button:hover {
-        background-color: var(--color-gray-light-300);
-    }
+	.navigation_widget_button:hover {
+		background-color: var(--color-gray-light-300);
+	}
 }
 
 .navigation_widget_title {
-    font-family: var(--font-body-medium-family);
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--color-gray-light-700);
-    line-height: 36px;
-    letter-spacing: -0.64px;
-    margin-right: auto;
+	font-family: var(--font-body-medium-family);
+	font-size: 2rem;
+	font-weight: 400;
+	color: var(--color-gray-light-700);
+	line-height: 36px;
+	letter-spacing: -0.64px;
+	margin-right: auto;
 }
 
 .navigation_widget_button_container {
-    display: flex;
-    align-items: flex-end;
-    margin-left: auto;
-    align-self: flex-end;
+	display: flex;
+	align-items: flex-end;
+	margin-left: auto;
+	align-self: flex-end;
 }
 
 .navigation_widget_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--color-gray-light-100);
-    border-radius: var(--border-radius-small);
-    transition: background-color 0.2s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background-color: var(--color-gray-light-100);
+	border-radius: var(--border-radius-small);
+	transition: background-color 0.2s ease;
 }
 
 @media (min-width: 1025px) and (max-width: 1920px) {
-    .navigation_widget_title {
-        font-size: 1.5rem;
-    }
+	.navigation_widget_title {
+		font-size: 1.5rem;
+	}
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-    .navigation_widget_title {
-        font-size: 1.5rem;
-    }
+	.navigation_widget_title {
+		font-size: 1.5rem;
+	}
 }
 
 @media (max-width: 640px) {
-    .navigation_widget_title {
-        font-size: 1.5rem;
-    }
+	.navigation_widget_title {
+		font-size: 1.5rem;
+	}
 }
