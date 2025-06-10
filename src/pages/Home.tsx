@@ -1,11 +1,11 @@
 import type { FC } from 'react'
-import { useMemo } from 'react'
-import { Hero } from '@/components/hero/Hero'
+import { WhyUs } from '@/components/whyus/WhyUs'
 
 export const Home: FC = (): JSX.Element => {
-	const hero = useMemo(() => {
-		return <Hero />
-	}, [])
 
-	return <main>{hero}</main>
+	return (
+		<main>
+			<WhyUs />
+		</main>
+	)
 }
