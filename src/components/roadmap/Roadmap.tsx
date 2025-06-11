@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import "./Roadmap.pcss";
 import { VMs } from "./VMs/VMs";
 import { Permissionless } from "./Permissionless/Permissionless";
 import { DePin } from "./DePin/DePin";
+import "./Roadmap.pcss";
 
 export const Roadmap: FC = () => {
     return (

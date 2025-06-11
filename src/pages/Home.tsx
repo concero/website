@@ -4,6 +4,7 @@ import { Security } from '@/components/security/Security'
 import { Data } from '@/components/data/Data'
 import { Chains } from '@/components/chains/Chains'
 import { Roadmap } from '@/components/roadmap/Roadmap'
+import { Build } from '@/components/build/Build'
 
 export const Home: FC = (): JSX.Element => {
 	return (
@@ -13,6 +14,7 @@ export const Home: FC = (): JSX.Element => {
 			<Security />
 			<Data />
 			<Roadmap />
+			<Build />
 		</main>
 	)
 }
