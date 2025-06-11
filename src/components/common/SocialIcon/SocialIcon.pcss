@@ -15,29 +15,36 @@
 
 .social_icon:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.twitter {
+.twitter:not(.social_icon_grey) {
 	background-color: var(--color-gray-light-600);
 }
 
-.twitter:hover {
+.twitter:not(.social_icon_grey):hover {
 	background-color: var(--color-gray-light-700);
 }
 
-.discord {
+.discord:not(.social_icon_grey) {
 	background-color: rgba(88, 101, 242, 1);
 }
 
-.discord:hover {
+.discord:not(.social_icon_grey):hover {
 	background-color: rgba(77, 90, 227, 1);
 }
 
-.medium {
+.medium:not(.social_icon_grey) {
 	background-color: var(--color-gray-light-600);
 }
 
-.medium:hover {
+.medium:not(.social_icon_grey):hover {
 	background-color: var(--color-gray-light-700);
+}
+
+.social_icon_grey {
+	background-color: var(--color-gray-light-100) !important;
+}
+
+.social_icon_grey:hover {
+	background-color: var(--color-gray-light-200) !important;
 }
