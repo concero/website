@@ -1,5 +1,8 @@
 import type { FC } from "react";
 import "./Roadmap.pcss";
+import { VMs } from "./VMs/VMs";
+import { Permissionless } from "./Permissionless/Permissionless";
+import { DePin } from "./DePin/DePin";
 
 export const Roadmap: FC = () => {
     return (
@@ -10,7 +13,9 @@ export const Roadmap: FC = () => {
                     <span className="roadmap_description">Next steps towards commoditising cross-chain communication</span>
                 </div>
                 <div className="roadmap_items_container">
-
+                    <VMs />
+                    <Permissionless />
+                    <DePin />
                 </div>
             </div>
         </section>
