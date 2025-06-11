@@ -5,10 +5,12 @@ import { Data } from '@/components/data/Data'
 import { Chains } from '@/components/chains/Chains'
 import { Roadmap } from '@/components/roadmap/Roadmap'
 import { Build } from '@/components/build/Build'
+import { Hero } from '@/components/hero/Hero'
 
 export const Home: FC = (): JSX.Element => {
 	return (
 		<main>
+			<Hero />
 			<WhyUs />
 			<Chains />
 			<Security />

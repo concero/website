@@ -11,8 +11,8 @@ type ChainData = {
 }
 
 export const Chains: FC = (): ReactElement => {
-    const isUltrwide = useIsUltrawide()
-    const size = isUltrwide ? 'xl' : 'l'
+	const isUltrwide = useIsUltrawide()
+	const size = isUltrwide ? 'xl' : 'l'
 
 	const leftChains: ChainData[] = [
 		{ name: 'Ethereum Sepolia', logo: '/Chains/ethereum.svg' },
@@ -34,10 +34,10 @@ export const Chains: FC = (): ReactElement => {
 
 	const renderChains = (chains: ChainData[]): ReactElement[] =>
 		chains.map((chain, index) => (
-            <>
+			<>
 				<Chain name={chain.name} logo={chain.logo} />
 				{index !== chains.length && <div className="chain_divider" />}
-            </>
+			</>
 		))
 
 	return (
@@ -50,7 +50,9 @@ export const Chains: FC = (): ReactElement => {
 				<div className="chains_content_right">{renderChains(rightChains)}</div>
 			</div>
 			<div className="chains_action">
-				<Button size={size} variant='secondary' rightIcon={<ExpandIcon/>}>Open Full List</Button>
+				<Button size={size} variant="secondary" rightIcon={<ExpandIcon />}>
+					Open Full List
+				</Button>
 			</div>
 		</section>
 	)
