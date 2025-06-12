@@ -29,6 +29,7 @@
 	padding: var(--space-l);
 	gap: var(--space-l);
 	z-index: 10;
+	max-width: 1920px;
 	width: 100%;
 	height: auto;
 	margin: auto;
@@ -80,4 +81,66 @@
 	max-width: 430px;
 	width: 100%;
 	margin: auto;
+}
+
+.chains_modal_content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-l);
+	width: 100%;
+	overflow-y: auto;
+}
+
+.chains_modal_category {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-m);
+	width: 100%;
+}
+
+.chains_modal_category_title {
+	font-family: var(--font-body-medium-family);
+	font-size: 0.875rem;
+	line-height: 1.125rem;
+	font-weight: var(--font-weight-bold);
+	color: var(--color-gray-light-700);
+}
+
+.chains_modal_category_chains {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: var(--space-l);
+	width: 100%;
+}
+
+.chains_modal_chain_wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.chains_modal_divider {
+	width: 100%;
+	height: 1px;
+	background-color: var(--color-gray-light-100);
+	margin: 12px 0;
+}
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+	.chains_modal_category_chains {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.chains_modal_category_chains {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	.chains_modal_category_chains {
+		grid-template-columns: 1fr;
+	}
 }
