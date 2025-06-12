@@ -130,6 +130,14 @@
 	width: 100%;
 }
 
+.brand_modal_colors_section {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: var(--space-l);
+	row-gap: var(--space-m);
+	width: 100%;
+}
+
 @media (min-width: 1025px) and (max-width: 1920px) {
 	.contact_modal_container {
 		max-width: 100%;
@@ -141,6 +149,10 @@
 		column-gap: var(--space-l);
 		row-gap: var(--space-m);
 		width: 100%;
+	}
+
+	.brand_modal_colors_section {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -159,6 +171,9 @@
 		column-gap: var(--space-l);
 		row-gap: var(--space-m);
 		width: 100%;
+	}
+	.brand_modal_colors_section {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -182,5 +197,9 @@
 	.brand_modal_typography_section {
 		width: 100%;
 		flex-direction: column;
+	}
+
+	.brand_modal_colors_section {
+		grid-template-columns: 1fr;
 	}
 }

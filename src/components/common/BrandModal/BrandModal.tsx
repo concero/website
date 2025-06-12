@@ -7,6 +7,7 @@ import { BrandLogo } from '../BrandLogo/BrandLogo'
 import { BrandNotAllowed } from '../BrandNotAllowed/BrandNotAllowed'
 import { BrandTypograhpy } from '../BrandTypography/BrandTypograhpy'
 import './BrandModal.pcss'
+import { BrandColors } from '../BrandColors/BrandColors'
 
 type BrandModalProps = {
 	isOpen: boolean
@@ -71,6 +72,13 @@ export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 				</div>
 				<div className='brand_modal_section'>
 					<span className="brand_modal_section_title">Colours</span>
+					<div className='brand_modal_colors_section'>
+						<BrandColors title='Brand' colors={['#5925E6', '#7E54F1', '#F3F1FE']} />
+						<BrandColors title='Grey' colors={['#4B575C', '#66767D', '#F3F5F6']} />
+						<BrandColors title='Green' colors={['#11633B', '#17854F', '#DAFBEA']} />
+						<BrandColors title='Yellow' colors={['#755000', '#E79E00', '#FFF2D6']} />
+						<BrandColors title='Red' colors={['#B10909', '#E80C0C', '#FEEFEF']} />
+					</div>
 				</div>
 			</div>
 		</div>
