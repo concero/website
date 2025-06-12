@@ -4,10 +4,12 @@ import { useIsMobile, useIsTablet } from '@/hooks/useMediaQuery'
 import { MenuIcon } from '@/assets/icons/menu'
 import { CloseIcon } from '@/assets/icons/close'
 import { Burger } from '../Burger/Burger'
+import { ContactModal } from '@/components/common/ContactModal/ContactModal'
 import './Actions.pcss'
 
 export const Actions = () => {
 	const [is_open, set_is_open] = useState<boolean>(false)
+	const [is_contact_modal_open, set_is_contact_modal_open] = useState<boolean>(false)
 	const is_tablet = useIsTablet()
 	const is_mobile = useIsMobile()
 	const show_burger = is_mobile || is_tablet
@@ -15,6 +17,14 @@ export const Actions = () => {
 	useEffect(() => {
 		if (!show_burger) set_is_open(false)
 	}, [show_burger])
+
+	const handleContactClick = () => {
+		set_is_contact_modal_open(true)
+	}
+
+	const handleCloseContactModal = () => {
+		set_is_contact_modal_open(false)
+	}
 
 	return (
 		<>
@@ -30,11 +40,7 @@ export const Actions = () => {
 								Open Testnet
 							</Button>
 							{!is_mobile && (
-								<Button
-									size="s"
-									variant="primary"
-									onClick={() => (window.location.href = 'mailto:team@concero.io')}
-								>
+								<Button size="s" variant="primary" onClick={handleContactClick}>
 									Contact us
 								</Button>
 							)}
@@ -48,6 +54,7 @@ export const Actions = () => {
 				</div>
 			</div>
 			{is_open && <Burger />}
+			<ContactModal isOpen={is_contact_modal_open} onClose={handleCloseContactModal} />
 		</>
 	)
 }
