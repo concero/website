@@ -2,14 +2,14 @@ import type { FC, ReactNode } from 'react'
 import { DropdownItem } from './DropdownItem/DropdownItem'
 import './Dropdown.pcss'
 
-type DropdownItemType = {
-	link: string
-	icon: ReactNode
-	title: string
+interface DropdownItemType {
+	readonly link: string
+	readonly icon: ReactNode
+	readonly title: string
 }
 
-type DropdownProps = {
-	items: DropdownItemType[]
+interface DropdownProps {
+	items: readonly DropdownItemType[]
 }
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {

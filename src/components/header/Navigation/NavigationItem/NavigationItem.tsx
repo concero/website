@@ -1,66 +1,84 @@
 import type { FC, ReactNode } from 'react'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import { OpenTrail } from '@/assets/icons/openTrail'
 import { CloseTrail } from '@/assets/icons/closeTrail'
 import { Dropdown } from '../Dropdown/Dropdown'
 import './NavigationItem.pcss'
 
-type Item = {
-	title: string
-	link: string
-	icon: ReactNode
+type DropdownItem = {
+	readonly title: string
+	readonly link: string
+	readonly icon: ReactNode
 }
 
-type Props = {
-	title: string
-	showTrail: boolean
-	link?: string
-	dropdownItems?: Item[]
+type NavigationItemProps = {
+	readonly title: string
+	readonly showTrail: boolean
+	readonly link?: string
+	readonly dropdownItems?: readonly DropdownItem[]
 }
 
-export const NavigationItem: FC<Props> = ({ title, link, showTrail, dropdownItems = [] }) => {
-	const [open, setOpen] = useState<boolean>(false)
-	const ref = useRef<HTMLDivElement>(null)
+export const NavigationItem: FC<NavigationItemProps> = ({ title, link, showTrail, dropdownItems = [] }) => {
+	const [open, setOpen] = useState(false)
+	const timeoutRef = useRef<number | null>(null)
 	const hasItems = dropdownItems.length > 0
 
-	useEffect(() => {
-		const handleClick = (e: Event) => {
-			if (ref.current && !ref.current.contains(e.target as Node)) {
-				setOpen(false)
-			}
+	const clearTimeout = useCallback(() => {
+		if (timeoutRef.current !== null) {
+			window.clearTimeout(timeoutRef.current)
+			timeoutRef.current = null
 		}
-		document.addEventListener('click', handleClick)
-		return () => document.removeEventListener('click', handleClick)
 	}, [])
 
-	const Icon = open ? CloseTrail : OpenTrail
+	const handleMouseEnter = useCallback(() => {
+		clearTimeout()
+		setOpen(true)
+	}, [clearTimeout])
+
+	const handleMouseLeave = useCallback(() => {
+		timeoutRef.current = window.setTimeout(() => {
+			setOpen(false)
+		}, 100)
+	}, [])
+
+	const handleDropdownEnter = useCallback(() => {
+		clearTimeout()
+	}, [clearTimeout])
+
+	const handleDropdownLeave = useCallback(() => {
+		handleMouseLeave()
+	}, [handleMouseLeave])
+
+	useEffect(() => () => clearTimeout(), [clearTimeout])
 
 	return link ? (
-		<a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer">
+		<a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
 			<div className="header_nav_item_content">
 				<span className="header_nav_item_title">{title}</span>
-				{showTrail && (
-					<div className="header_nav_item_trail">
-						<Icon />
-					</div>
-				)}
+				{showTrail && <OpenTrail aria-hidden="true" />}
 			</div>
 		</a>
 	) : (
 		<div
-			ref={ref}
 			className={`header_nav_item ${open ? 'header_nav_item_active' : ''}`}
-			onClick={() => hasItems && setOpen(!open)}
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+			aria-haspopup={hasItems ? 'menu' : undefined}
+			aria-expanded={hasItems ? open : undefined}
 		>
 			<div className="header_nav_item_content">
 				<span className="header_nav_item_title">{title}</span>
 				{showTrail && (
-					<div className="header_nav_item_trail">
-						<Icon />
+					<div className="header_nav_item_trail" aria-hidden="true">
+						{open ? <CloseTrail /> : <OpenTrail />}
 					</div>
 				)}
 			</div>
-			{open && hasItems && dropdownItems && <Dropdown items={dropdownItems} />}
+			{open && hasItems && (
+				<div onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
+					<Dropdown items={dropdownItems} />
+				</div>
+			)}
 		</div>
 	)
 }
