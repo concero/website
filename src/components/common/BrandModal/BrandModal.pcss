@@ -83,7 +83,7 @@
 	}
 }
 
-.brand_modal_logos {
+.brand_modal_section {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -114,20 +114,20 @@
 	width: 100%;
 }
 
-.brand_modal_notice {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: var(--space-m);
-	width: 100%;
-}
-
 .brand_modal_notice_section {
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
 	gap: var(--space-l);
 	width: 45%;
+}
+
+.brand_modal_typography_section {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: var(--space-l);
+	width: 100%;
 }
 
 @media (min-width: 1025px) and (max-width: 1920px) {
@@ -177,5 +177,10 @@
 		column-gap: var(--space-l);
 		row-gap: var(--space-m);
 		width: 100%;
+	}
+
+	.brand_modal_typography_section {
+		width: 100%;
+		flex-direction: column;
 	}
 }

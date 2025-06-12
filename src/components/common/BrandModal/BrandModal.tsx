@@ -4,8 +4,9 @@ import { CloseIcon } from '@/assets/icons/close'
 import { Button } from '@concero/ui-kit'
 import { DownloadIcon } from '@/assets/icons/download'
 import { BrandLogo } from '../BrandLogo/BrandLogo'
-import './BrandModal.pcss'
 import { BrandNotAllowed } from '../BrandNotAllowed/BrandNotAllowed'
+import { BrandTypograhpy } from '../BrandTypography/BrandTypograhpy'
+import './BrandModal.pcss'
 
 type BrandModalProps = {
 	isOpen: boolean
@@ -41,7 +42,7 @@ export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 						Download Brand Kit
 					</Button>
 				</div>
-				<div className="brand_modal_logos">
+				<div className="brand_modal_section">
 					<span className="brand_modal_section_title">Logo type</span>
 					<div className="brand_modal_logos_section">
 						<BrandLogo imgSVG="/BrandKit/Concero1.svg" imgPNG="/BrandKit/Concero1.png" />
@@ -52,17 +53,25 @@ export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 						<BrandLogo imgSVG="/BrandKit/Concero6.svg" imgPNG="/BrandKit/Concero6.png" dark />
 					</div>
 				</div>
-                <div className='brand_modal_notice'>
+                <div className='brand_modal_section'>
                     <span className="brand_modal_section_title">Don't do this</span>
                     <div className='brand_modal_notice_section'>
                         <BrandNotAllowed imgSVG="/BrandKit/ConceroWrong1.svg" text="Don't change logo colours"/>
                         <BrandNotAllowed imgSVG="/BrandKit/ConceroWrong2.svg" text="Don't rotate logo"/>
-                        {/* <BrandNotAllowed imgSVG="/BrandKit/ConceroWrong3.svg" text="Skew logo"/> */}
                         <BrandNotAllowed imgSVG="/BrandKit/ConceroWrong4.svg" text="Place dark version to light background or reverse way"/>
                         <BrandNotAllowed imgSVG="/BrandKit/ConceroWrong5.svg" text="Dont use any effects"/>
-                        {/* <BrandNotAllowed imgSVG="/BrandKit/ConceroWrong6.svg" text="Do not alter the logo in any other way"/> */}
                     </div>
                 </div>
+				<div className='brand_modal_section'>
+					<span className="brand_modal_section_title">Typography</span>
+					<div className='brand_modal_typography_section'>
+						<BrandTypograhpy version='bold'/>
+						<BrandTypograhpy version='regular'/>
+					</div>
+				</div>
+				<div className='brand_modal_section'>
+					<span className="brand_modal_section_title">Colours</span>
+				</div>
 			</div>
 		</div>
 	)

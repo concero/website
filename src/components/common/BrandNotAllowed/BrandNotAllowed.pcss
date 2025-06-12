@@ -1,7 +1,7 @@
 .brand_not_allowed {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	gap: var(--space-xs);
 	flex: 1 0 0;
 }
@@ -13,17 +13,11 @@
 	justify-content: center;
 	border-radius: var(--border-radius-small);
 	background-color: var(--color-gray-light-50);
+	width: 100%;
 }
 
 .brand_not_allowed_container_dark {
 	background-color: var(--color-gray-dark-300);
-}
-
-.brand_not_allowed {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: var(--space-xs);
 }
 
 .brand_not_allowed_container {
@@ -50,9 +44,9 @@
 .brand_not_allowed_text {
 	display: flex;
 	gap: var(--space-s);
-}
-
-.brand_not_allowed_text {
+	text-align: left;
+	align-self: flex-start;
+	width: 100%;
 	font-family: var(--font-body-medium-family);
 	font-size: 1rem;
 	line-height: 1.25rem;
