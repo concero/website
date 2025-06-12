@@ -1,9 +1,11 @@
 import type { FC, ReactElement } from 'react'
+import { useState } from 'react'
 import { Chain } from '../common/Chain/Chain'
 import { Button } from '@concero/ui-kit'
-import './Chains.pcss'
+import { ChainsModal } from '../common/ChainsModal/ChainsModal'
 import { useIsUltrawide } from '@/hooks/useMediaQuery'
 import { ExpandIcon } from '@/assets/icons/expand'
+import './Chains.pcss'
 
 type ChainData = {
 	name: string
@@ -13,6 +15,7 @@ type ChainData = {
 export const Chains: FC = (): ReactElement => {
 	const isUltrwide = useIsUltrawide()
 	const size = isUltrwide ? 'xl' : 'l'
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
 	const leftChains: ChainData[] = [
 		{ name: 'Ethereum Sepolia', logo: '/Chains/ethereum.svg' },
@@ -35,25 +38,36 @@ export const Chains: FC = (): ReactElement => {
 	const renderChains = (chains: ChainData[]): ReactElement[] =>
 		chains.map((chain, index) => (
 			<>
-				<Chain name={chain.name} logo={chain.logo} />
+				<Chain key={chain.name} name={chain.name} logo={chain.logo} />
 				{index !== chains.length && <div className="chain_divider" />}
 			</>
 		))
 
+	const openModal = () => {
+		setIsModalOpen(true)
+	}
+
+	const closeModal = () => {
+		setIsModalOpen(false)
+	}
+
 	return (
-		<section className="chains">
-			<span className="chains_title">
-				Chains <span className="chains_number">100+</span>
-			</span>
-			<div className="chains_content">
-				<div className="chains_content_left">{renderChains(leftChains)}</div>
-				<div className="chains_content_right">{renderChains(rightChains)}</div>
-			</div>
-			<div className="chains_action">
-				<Button size={size} variant="secondary" rightIcon={<ExpandIcon />}>
-					Open Full List
-				</Button>
-			</div>
-		</section>
+		<>
+			<section className="chains">
+				<span className="chains_title">
+					Chains <span className="chains_number">100+</span>
+				</span>
+				<div className="chains_content">
+					<div className="chains_content_left">{renderChains(leftChains)}</div>
+					<div className="chains_content_right">{renderChains(rightChains)}</div>
+				</div>
+				<div className="chains_action">
+					<Button size={size} variant="secondary" rightIcon={<ExpandIcon />} onClick={openModal}>
+						Open Full List
+					</Button>
+				</div>
+			</section>
+			<ChainsModal isOpen={isModalOpen} onClose={closeModal} />
+		</>
 	)
 }

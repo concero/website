@@ -22,7 +22,7 @@
 		"sb:build": "storybook build"
 	},
 	"dependencies": {
-		"@concero/ui-kit": "^0.2.20",
+		"@concero/ui-kit": "^0.2.21",
 		"@formspree/react": "^3.0.0",
 		"posthog-js": "^1.232.0",
 		"react": "^18.0.0",
