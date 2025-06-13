@@ -12,8 +12,9 @@ export const Navigation: FC = (): JSX.Element => {
 		{
 			title: 'For Developers',
 			dropdownItems: [
-				{ title: 'Whitepaper', link: 'https://concero.io/v2_whitepaper.pdf', icon: <WhitepaperIcon /> },
 				{ title: 'Documentation', link: 'https://docs.concero.io/', icon: <DocumentationIcon /> },
+				{ title: 'Bridging Whitepaper', link: 'https://concero.io/v2_whitepaper.pdf', icon: <WhitepaperIcon /> },
+				{ title: 'Messaging Whitepaper', link: 'https://docs.concero.io/', icon: <DocumentationIcon /> },
 			],
 			specialAction: false,
 		},
@@ -22,7 +23,6 @@ export const Navigation: FC = (): JSX.Element => {
 			dropdownItems: [
 				{ title: 'Provide Liquidity', link: 'https://app.lanca.io/pools', icon: <LiquidityIcon /> },
 				{ title: 'Rewards Portal', link: 'https://app.concero.io/rewards', icon: <RewardsIcon /> },
-				{ title: 'Swap & Bridge', link: 'https://app.lanca.io', icon: <SwapIcon /> },
 			],
 			specialAction: true,
 		},

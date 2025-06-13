@@ -7,6 +7,7 @@ export type Chain = {
 export const chains: Chain[] = [
 	{ name: 'Abstract Sepolia Testnet', logoUrl: '/Chains/ethereum.svg', keywords: ['abstract', 'sepolia'] },
 	{ name: 'Acala Mandala Testnet', logoUrl: '/Chains/ethereum.svg', keywords: ['acala', 'mandala'] },
+	
 	{ name: 'Aleph Zero Testnet', logoUrl: '/Chains/ethereum.svg', keywords: ['aleph', 'zero'] },
 	{ name: 'Ancient8 Testnet', logoUrl: '/Chains/ethereum.svg', keywords: ['ancient8'] },
 	{ name: 'Apechain Curtis', logoUrl: '/Chains/ethereum.svg', keywords: ['apechain', 'curtis'] },

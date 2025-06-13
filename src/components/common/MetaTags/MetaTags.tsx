@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async'
 
 const DEFAULT_DESCRIPTION =
-	'Welcome to Concero Testnet – a risk-free, developer-focused blockchain sandbox for testing our fully decentralized cross-chain messaging solution featuring secure token swaps and seamless inter-chain communications.'
+	'Making cross-chain effortless. A quicker, safer &amp; easier to use cross-chain infrastructure. Scalable, secure, capital efficient and decentralised bridging & messaging'
 
-const DEFAULT_TITLE = 'Concero'
+const DEFAULT_TITLE = 'Concero | Cross-chain Messaging & Bridging'
 
 const DEFAULT_KEYWORDS =
 	'concero testnet, blockchain testing, decentralized applications, blockchain integration, testnet environment, ethereum, arbitrum, optimism, sepolia, megaeth, monad, berachain, chainlink, ccip, concero'

@@ -6,8 +6,8 @@ import { MediumDarkIcon } from '@/assets/icons/mediumDark'
 import { links } from '@/configuration/links'
 import { SocialIcon } from '../common/SocialIcon/SocialIcon'
 import { useIsMobile, useIsTablet, useIsUltrawide } from '@/hooks/useMediaQuery'
-import './Hero.pcss'
 import { AnimatedWords } from '../common/WordAnimation/WordAnimation'
+import './Hero.pcss'
 
 const SOCIALS = [
 	{
