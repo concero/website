@@ -14,6 +14,15 @@ type BrandModalProps = {
 	onClose: () => void
 }
 
+const downloadKit = () => {
+    const link = document.createElement('a');
+    link.href = '/BrandKit/ConceroBrandKit.zip';
+    link.download = 'ConceroBrandKit.zip';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 	useEffect(() => {
 		if (!isOpen) return
@@ -79,7 +88,7 @@ export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 				</div>
 
 				<div className="brand_modal_assets">
-					<Button variant="secondary" rightIcon={<DownloadIcon />}>
+					<Button variant="secondary" rightIcon={<DownloadIcon />} onClick={downloadKit}>
 						Download Brand Kit
 					</Button>
 				</div>
