@@ -3,7 +3,6 @@ import { useIsMobile } from '@/hooks/useMediaQuery'
 import './DePin.pcss'
 
 export const DePin: FC = (): JSX.Element => {
-	//
 	const isMobile = useIsMobile()
 	return (
 		<div className="depin">
