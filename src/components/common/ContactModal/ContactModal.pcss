@@ -80,6 +80,13 @@
 		font-size: 0.875rem;
 		line-height: 1.125rem;
 		color: var(--color-gray-light-700);
+
+		span {
+			font-family: var(--font-body-medium-family);
+			font-size: 0.875rem;
+			line-height: 1.125rem;
+			color: var(--color-gray-light-400);
+		}
 	}
 }
 
@@ -95,6 +102,38 @@
 	}
 }
 
+.contact_modal_button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border: none;
+	outline: none;
+	border-radius: var(--space-s);
+	max-width: 100%;
+	margin-top: var(--space-m);
+	height: 48px;
+	padding: var(--space-s) var(--space-l);
+	font: var(--font-button-large);
+	color: var(--color-accent-light-25);
+	background-color: var(--color-accent-light-600);
+	&:focus-visible,
+	&.is_focused {
+		background-color: var(--color-accent-light-600);
+		outline: 2px solid var(--color-accent-light-500);
+		outline-offset: 2px;
+	}
+	&:hover,
+	&.is_hovered {
+		cursor: pointer;
+		background-color: var(--color-accent-light-700);
+	}
+	&:active,
+	&.is_pressed {
+		outline: none;
+		background-color: var(--color-accent-light-800);
+	}
+}
+
 @media (min-width: 1025px) and (max-width: 1920px) {
 	.contact_modal_container {
 		width: 436px;
@@ -107,11 +146,35 @@
 		width: 490px;
 		max-width: 490px;
 	}
+
+	.contact_modal_button {
+		height: 56px;
+		padding: var(--space-m) var(--space-xl);
+		font: var(--font-button-xlarge);
+		justify-content: center;
+		text-align: center;
+	}
 }
 
 @media (max-width: 640px) {
 	.contact_modal_container {
-		width: 100%;
 		max-width: 440px;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.contact_modal_button_container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+
+	.contact_modal_button {
+		height: 56px;
+		padding: var(--space-m) var(--space-xl);
+		font: var(--font-button-xlarge);
+		justify-content: center;
+		width: 100%;
+		text-align: center;
 	}
 }
