@@ -20,7 +20,7 @@ const socials = [
 		icon: <MediumIcon />,
 		name: 'medium',
 		link: links.medium,
-	},
+	}
 ] as const
 
 export const Social = () => (
