@@ -13,7 +13,7 @@ type ContactModalProps = {
 }
 
 export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
-	const { values, errors, status,  handleChange, onSubmit, resetForm } = useContactForm()
+	const { values, errors, status, handleChange, onSubmit, resetForm } = useContactForm()
 
 	const handleClose = () => {
 		resetForm()
@@ -33,15 +33,15 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 	if (!isOpen) {
 		return null
 	}
-    if (status.succeeded) {
-        return (
-            <div className="contact_modal_overlay">
-                <div className="contact_modal_container">
-                    <Success onBack={handleClose} />
-                </div>
-            </div>
-        )
-    }
+	if (status.succeeded) {
+		return (
+			<div className="contact_modal_overlay">
+				<div className="contact_modal_container">
+					<Success onBack={handleClose} />
+				</div>
+			</div>
+		)
+	}
 
 	return (
 		<div className="contact_modal_overlay">
@@ -135,7 +135,9 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 						)}
 					</div>
 					<div className="contact_modal_input_elem">
-						<span className="contact_modal_label">Message <span>{'(Optional)'}</span></span>
+						<span className="contact_modal_label">
+							Message <span>{'(Optional)'}</span>
+						</span>
 						<Input.TextArea
 							value={values.message}
 							onChange={handleChange}
@@ -155,7 +157,7 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 							</div>
 						)}
 					</div>
-					<div className='contact_modal_button_container'>
+					<div className="contact_modal_button_container">
 						<button type="submit" className="contact_modal_button">
 							Send Message
 						</button>
