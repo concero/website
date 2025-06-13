@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { NavigationItem } from './NavigationItem/NavigationItem'
 import { LiquidityIcon } from '@/assets/icons/liquidity'
 import { RewardsIcon } from '@/assets/icons/rewards'
-import { SwapIcon } from '@/assets/icons/swap'
+import { links } from '@/configuration/links'
 import { WhitepaperIcon } from '@/assets/icons/whitepaper'
 import { DocumentationIcon } from '@/assets/icons/documentation'
 import './Navigation.pcss'
@@ -12,17 +12,17 @@ export const Navigation: FC = (): JSX.Element => {
         {
             title: 'For Developers',
             dropdownItems: [
-                { title: 'Documentation', link: 'https://docs.concero.io/', icon: <DocumentationIcon /> },
+                { title: 'Documentation', link: links.documentation, icon: <DocumentationIcon /> },
                 { 
                     title: 'Messaging Whitepaper', 
-                    link: 'https://docs.concero.io/', 
+                    link: links.whitepaper, 
                     icon: <DocumentationIcon />,
                     showTag: true,
                     tagText: '.PDF' 
                 },
                 { 
                     title: 'Bridging Whitepaper', 
-                    link: 'https://concero.io/v2_whitepaper.pdf', 
+                    link: links.lanca_whitepaper, 
                     icon: <WhitepaperIcon />,
                     showTag: true,
                     tagText: '.PDF'

@@ -5,11 +5,13 @@ import { Header } from './components/header/Header'
 import { Footer } from './components/footer/Footer'
 import { HelmetProvider } from 'react-helmet-async'
 import { ModalProvider } from './reducer/modalProvider'
+import { ModalManager } from './components/common/ModalManager/ModalManager'
 
 function App() {
 	return (
 		<HelmetProvider>
 			<ModalProvider>
+				<ModalManager />
 				<Header />
 				<Home />
 				<Footer />
