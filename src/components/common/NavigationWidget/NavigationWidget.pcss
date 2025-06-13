@@ -11,6 +11,7 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	width: 100%;
+	height: 100%;
 	padding: var(--space-l);
 	border-radius: var(--border-radius-large);
 	background-color: var(--color-gray-light-50);
@@ -38,10 +39,10 @@
 
 .navigation_widget_title {
 	font-family: var(--font-body-medium-family);
-	font-size: 2rem;
+	font-size: 1.125rem;
 	font-weight: 400;
 	color: var(--color-gray-light-700);
-	line-height: 36px;
+	line-height: 1.375rem;
 	letter-spacing: -0.64px;
 	margin-right: auto;
 }
@@ -64,20 +65,9 @@
 	transition: background-color 0.2s ease;
 }
 
-@media (min-width: 1025px) and (max-width: 1920px) {
-	.navigation_widget_title {
-		font-size: 1.5rem;
-	}
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
-	.navigation_widget_title {
-		font-size: 1.5rem;
-	}
-}
-
 @media (max-width: 640px) {
 	.navigation_widget_title {
 		font-size: 1.5rem;
+		line-height: 1.75rem;
 	}
 }
