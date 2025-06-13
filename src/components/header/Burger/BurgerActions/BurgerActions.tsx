@@ -5,7 +5,7 @@ export const BurgerActions = () => (
 	<div className="burger_actions">
 		<Button
 			variant="primary"
-			size="xl"
+			size="l"
 			isFull
 			onClick={() => {
 				window.location.href = 'mailto:contact@concero.io'
@@ -15,7 +15,7 @@ export const BurgerActions = () => (
 		</Button>
 		<Button
 			variant="secondary_color"
-			size="xl"
+			size="l"
 			isFull
 			onClick={() => {
 				window.open('https://app.concero.io', '_blank')
