@@ -8,7 +8,7 @@ type ShowcaseWidgetProps = {
 	subtitle: string
 	icon: ReactNode
 	video: string
-	integrationLink: string
+    integrationAction?: () => void
 	documentationLink: string
 }
 
@@ -17,7 +17,7 @@ export const ShowcaseWidget: FC<ShowcaseWidgetProps> = ({
 	subtitle,
 	icon,
 	video,
-	integrationLink,
+	integrationAction,
 	documentationLink,
 }): JSX.Element => {
 	const isUltrwide = useIsUltrawide()
@@ -37,9 +37,7 @@ export const ShowcaseWidget: FC<ShowcaseWidgetProps> = ({
 							size={size}
 							variant="secondary_color"
 							className="showcase_widget_button"
-							onClick={() =>
-								integrationLink && window.open(integrationLink, '_blank', 'noopener,noreferrer')
-							}
+							onClick={integrationAction}
 						>
 							Integrate
 						</Button>

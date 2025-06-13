@@ -6,7 +6,7 @@ import './Developers.pcss'
 const developer_links = [
 	{ title: 'Documentation', link: links.documentation },
 	{ title: 'Messaging Whitepaper', link: links.whitepaper },
-	{ title: 'Bridging Framework', link: links.whitepaper },
+	{ title: 'Bridging Framework', link: links.lanca_whitepaper },
 ] as const
 
 export const Developers: FC = (): JSX.Element => (
