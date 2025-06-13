@@ -6,6 +6,7 @@ import { Input } from '@concero/ui-kit'
 import { SearchIcon } from '@/assets/icons/search'
 import { Chain } from '../Chain/Chain'
 import { chains as allChains } from '@/configuration/chains'
+import { NoChains } from '../NoChains/NoChains'
 import './ChainsModal.pcss'
 
 type ChainsModalProps = {
@@ -97,7 +98,7 @@ export const ChainsModal: FC<ChainsModalProps> = ({ isOpen, onClose }) => {
 				</div>
 				<div className="chains_modal_content">
 					{letterKeys.length === 0 ? (
-						<div className="chains_modal_empty">No chains found.</div>
+						<NoChains/>
 					) : (
 						letterKeys.map(letter => (
 							<div key={letter} className="chains_modal_category">
