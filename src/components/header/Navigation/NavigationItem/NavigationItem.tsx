@@ -32,7 +32,11 @@ export const NavigationItem: FC<NavigationItemProps> = ({
         <a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
             <div className="header_nav_item_content">
                 <span className="header_nav_item_title">{title}</span>
-                {showTrail && <OpenTrail aria-hidden="true" />}
+                {showTrail && (
+                    <div className="header_nav_item_trail" aria-hidden="true">
+                        <OpenTrail />
+                    </div>
+                )}
             </div>
         </a>
     ) : (
