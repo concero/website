@@ -98,7 +98,7 @@ export const ChainsModal: FC<ChainsModalProps> = ({ isOpen, onClose }) => {
 				</div>
 				<div className="chains_modal_content">
 					{letterKeys.length === 0 ? (
-						<NoChains/>
+						<NoChains />
 					) : (
 						letterKeys.map(letter => (
 							<div key={letter} className="chains_modal_category">

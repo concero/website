@@ -7,6 +7,7 @@ import { links } from '@/configuration/links'
 import { SocialIcon } from '../common/SocialIcon/SocialIcon'
 import { useIsMobile, useIsTablet, useIsUltrawide } from '@/hooks/useMediaQuery'
 import './Hero.pcss'
+import { AnimatedWords } from '../common/WordAnimation/WordAnimation'
 
 const SOCIALS = [
 	{
@@ -40,7 +41,10 @@ export const Hero: FC = (): JSX.Element => {
 				<div className="hero_description">
 					<div className="hero_title_container">
 						<span className="hero_title">
-							Interoperability solution that is <span className="concero_color">scalable</span>
+							Interoperability solution that is{' '}
+							<span className="concero_color">
+								<AnimatedWords />
+							</span>
 						</span>
 					</div>
 					<span className="hero_subtitle">Go anywhere with Concero today</span>

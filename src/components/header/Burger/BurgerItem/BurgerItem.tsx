@@ -16,7 +16,7 @@ export const BurgerSectionItem = ({ title, href, icon, showTag, tagText }: Burge
 			<div className="burger_item_icon_container">
 				<div className="burger_icon_wrapper">{icon}</div>
 			</div>
-			<div className='burger_title_container'>
+			<div className="burger_title_container">
 				<span className="burger_item_title">{title}</span>
 				{showTag && tagText && (
 					<Tag variant="neutral" size="s">

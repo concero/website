@@ -19,7 +19,13 @@ type NavigationItemProps = {
 	readonly specialAction?: boolean
 }
 
-export const NavigationItem: FC<NavigationItemProps> = ({ title, link, showTrail, dropdownItems = [], specialAction = false }) => {
+export const NavigationItem: FC<NavigationItemProps> = ({
+	title,
+	link,
+	showTrail,
+	dropdownItems = [],
+	specialAction = false,
+}) => {
 	const [open, setOpen] = useState(false)
 	const timeoutRef = useRef<number | null>(null)
 	const hasItems = dropdownItems.length > 0
@@ -77,7 +83,7 @@ export const NavigationItem: FC<NavigationItemProps> = ({ title, link, showTrail
 			</div>
 			{open && hasItems && (
 				<div className="dropdown-wrapper" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
-					<Dropdown items={dropdownItems} specialAction={specialAction}/>
+					<Dropdown items={dropdownItems} specialAction={specialAction} />
 				</div>
 			)}
 		</div>
