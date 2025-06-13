@@ -8,11 +8,11 @@ export const DePin: FC = (): JSX.Element => {
 		<div className="depin">
 			<div className="depin_description_container">
 				<div className="depin_title_container">
-					<span className="depin_title">DePIN Network</span>
+					<span className="depin_title">Concero Network</span>
 					<span className="depin_index">03</span>
 				</div>
 				<span className="depin_subtitle">
-					Lightweight DePin Network for decentralised fetching and delivery of txs{' '}
+					Lightweight Network for decentralised fetching and delivery of txs
 				</span>
 			</div>
 			<div className="depin_content_container">
