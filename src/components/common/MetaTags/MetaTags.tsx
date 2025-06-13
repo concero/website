@@ -6,10 +6,10 @@ const DEFAULT_DESCRIPTION =
 const DEFAULT_TITLE = 'Concero | Cross-chain Messaging & Bridging'
 
 const DEFAULT_KEYWORDS =
-	'concero testnet, blockchain testing, decentralized applications, blockchain integration, testnet environment, ethereum, arbitrum, optimism, sepolia, megaeth, monad, berachain, chainlink, ccip, concero'
+	'concero, blockchain testing, decentralized applications, blockchain integration, ethereum, arbitrum, optimism, sepolia, megaeth, monad, berachain, chainlink, ccip, concero'
 
 
-const IMAGE = 'https://concero.io/Cover/Cover.png'
+const IMAGE = 'https://concero.io/OG/OG.png'
 
 type MetaTagsProps = {
 	title?: string
