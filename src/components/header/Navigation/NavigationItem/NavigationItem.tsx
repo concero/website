@@ -74,11 +74,15 @@ export const NavigationItem: FC<NavigationItemProps> = ({ title, link, showTrail
 					</div>
 				)}
 			</div>
-			{open && hasItems && (
-				<div onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
-					<Dropdown items={dropdownItems} />
-				</div>
-			)}
+{open && hasItems && (
+  <div 
+    className="dropdown-wrapper"
+    onMouseEnter={handleDropdownEnter} 
+    onMouseLeave={handleDropdownLeave}
+  >
+    <Dropdown items={dropdownItems} />
+  </div>
+)}
 		</div>
 	)
 }
