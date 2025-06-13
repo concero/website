@@ -10,14 +10,39 @@ import { SwapIcon } from '@/assets/icons/swap'
 import { links } from '@/configuration/links'
 import './Burger.pcss'
 
+type BurgerItem = {
+    title: string;
+    href: string;
+    icon: React.ReactNode;
+    showTag?: boolean;
+    tagText?: string;
+}
 
-const burger_sections = [
+type BurgerSection = {
+    title: string | null;
+    items: BurgerItem[];
+    showSpecialAction: boolean;
+}
+
+const burger_sections: BurgerSection[] = [
     {
         title: 'For Developers',
         items: [
             { title: 'Documentation', href: links.documentation, icon: <DocumentationIcon /> },
-            { title: 'Messaging Whitepaper', href: links.whitepaper, icon: <MessagingIcon color='#66767D'/> },
-			{ title: 'Bridging Whitepaper', href: links.whitepaper, icon: <SwapIcon /> },
+            { 
+                title: 'Messaging Whitepaper', 
+                href: links.whitepaper, 
+                icon: <MessagingIcon color='#66767D'/>,
+                showTag: true,
+                tagText: '.PDF'
+            },
+            { 
+                title: 'Bridging Whitepaper', 
+                href: links.whitepaper, 
+                icon: <SwapIcon />,
+                showTag: true,
+                tagText: '.PDF'
+            },
         ],
         showSpecialAction: false
     },
@@ -34,7 +59,7 @@ const burger_sections = [
         items: [{ title: 'Blog', href: links.blog, icon: <BlogIcon /> }],
         showSpecialAction: false
     },
-] as const
+]
 
 export const Burger = () => (
     <div className="burger_container">
@@ -51,6 +76,8 @@ export const Burger = () => (
                                         title={item.title}
                                         href={item.href}
                                         icon={item.icon}
+                                        showTag={item.showTag}
+                                        tagText={item.tagText}
                                     />
                                 ))}
                             </div>
@@ -63,9 +90,8 @@ export const Burger = () => (
                         {idx < burger_sections.length - 1 && <div className="burger_section_divider" />}
                     </div>
                 ))}
-				<BurgerActions />
+                <BurgerActions />
             </div>
-
         </div>
     </div>
 )
