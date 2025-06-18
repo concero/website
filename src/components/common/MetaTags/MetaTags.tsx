@@ -8,6 +8,11 @@ const DEFAULT_TITLE = 'Concero | Cross-chain Messaging & Bridging'
 const DEFAULT_KEYWORDS =
 	'concero, blockchain testing, decentralized applications, blockchain integration, ethereum, arbitrum, optimism, sepolia, megaeth, monad, berachain, chainlink, ccip, concero'
 
+const CRITICAL_IMAGES = [
+    'https://concero.io/Hero/Hero.svg',
+    'https://concero.io/Hero/HeroTablet.png',
+    'https://concero.io/Hero/HeroMobile.svg'
+]
 
 const IMAGE = 'https://concero.io/OG/OG.png'
 
@@ -29,7 +34,7 @@ export const MetaTags = ({ title = DEFAULT_TITLE, description = DEFAULT_DESCRIPT
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@concero_io" />
 		<meta name="twitter:creator" content="@concero_io" />
-		<meta name="twitter:domain" content="testnet.concero.io" />
+		<meta name="twitter:domain" content="concero.io" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={IMAGE} />
@@ -39,7 +44,7 @@ export const MetaTags = ({ title = DEFAULT_TITLE, description = DEFAULT_DESCRIPT
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={IMAGE} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://testnet.concero.io/" />
+		<meta property="og:url" content="https://concero.io/" />
 
 		{prefetchUrl && (
 			<>
@@ -47,6 +52,10 @@ export const MetaTags = ({ title = DEFAULT_TITLE, description = DEFAULT_DESCRIPT
 				<link rel="preconnect" href={prefetchUrl} crossOrigin="" />
 			</>
 		)}
+
+		{CRITICAL_IMAGES.concat(CRITICAL_IMAGES).map((imgPath) => (
+            <link key={imgPath} rel="preload" as="image" href={imgPath} />
+        ))}
 
 		<link rel="shortcut icon" href="/Favicons/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/Favicons/apple-touch-icon.png" />
