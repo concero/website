@@ -10,7 +10,7 @@
 	z-index: 2000;
 	background: rgba(52, 64, 84, 0.6);
 	backdrop-filter: blur(25px);
-	padding: var(--space-xxl) var(--space-m);
+	padding: var(--space-xxxl) var(--space-m);
 }
 
 .contact_modal_container {
@@ -157,10 +157,25 @@
 }
 
 @media (max-width: 640px) {
+	.contact_modal_overlay {
+		align-items: flex-start;
+		padding: 0px var(--space-m) var(--space-xxxl) var(--space-m);
+		overflow-y: auto;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.contact_modal_overlay::-webkit-scrollbar {
+		display: none;
+	}
+
 	.contact_modal_container {
 		max-width: 440px;
 		justify-content: center;
 		width: 100%;
+		margin-top: var(--space-xxl);
+		margin-bottom: var(--space-l);
+		overflow-y: visible;
 	}
 
 	.contact_modal_button_container {

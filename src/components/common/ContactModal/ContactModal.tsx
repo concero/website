@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { CloseIcon } from '@/assets/icons/close'
 import { useContactForm } from '@/hooks/useContactForm'
 import { Input } from '@concero/ui-kit'
@@ -43,7 +44,7 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 		)
 	}
 
-	return (
+	return createPortal (
 		<div className="contact_modal_overlay">
 			<div className="contact_modal_container">
 				<div className="contact_modal_header">
@@ -164,6 +165,7 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 					</div>
 				</form>
 			</div>
-		</div>
+		</div>,
+		document.body
 	)
 }
