@@ -4,7 +4,7 @@
 	align-items: flex-start;
 	width: 100%;
 	padding: var(--space-xl) var(--space-xxl) var(--space-xxxl) var(--space-xxl);
-	gap: var(--space-xl);
+	gap: var(--space-l);
 }
 
 .roadmap_title {
@@ -59,6 +59,10 @@
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
+	.roadmap {
+		gap: var(--space-xs);
+	}
+
 	.roadmap_title {
 		font-size: 2rem;
 		line-height: 2.25rem;
@@ -76,6 +80,7 @@
 @media (max-width: 640px) {
 	.roadmap {
 		padding: var(--space-xl) var(--space-m) var(--space-xxxl) var(--space-m);
+		gap: var(--space-xs);
 	}
 
 	.roadmap_title {
