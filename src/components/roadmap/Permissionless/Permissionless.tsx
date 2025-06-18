@@ -20,6 +20,7 @@ export const Permissionless: FC = (): JSX.Element => {
 					/>
 				</div>
 			</div>
+			<div className='permissionless_divider'/>
 		</div>
 	)
 }
