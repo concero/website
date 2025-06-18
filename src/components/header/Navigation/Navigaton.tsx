@@ -3,7 +3,6 @@ import { NavigationItem } from './NavigationItem/NavigationItem'
 import { LiquidityIcon } from '@/assets/icons/liquidity'
 import { RewardsIcon } from '@/assets/icons/rewards'
 import { links } from '@/configuration/links'
-import { WhitepaperIcon } from '@/assets/icons/whitepaper'
 import { DocumentationIcon } from '@/assets/icons/documentation'
 import { MessagingIcon } from '@/assets/icons/messaging'
 import { SwapIcon } from '@/assets/icons/swap'
@@ -35,12 +34,12 @@ export const Navigation: FC = (): JSX.Element => {
         {
             title: 'Ecosystem & Apps',
             dropdownItems: [
-                { title: 'Provide Liquidity', link: 'https://app.lanca.io/pools', icon: <LiquidityIcon /> },
-                { title: 'Rewards Portal', link: 'https://app.concero.io/rewards', icon: <RewardsIcon /> },
+                { title: 'Provide Liquidity', link: links.liquidity, icon: <LiquidityIcon /> },
+                { title: 'Rewards Portal', link: links.rewards, icon: <RewardsIcon /> },
             ],
             specialAction: true,
         },
-        { title: 'Docs', link: 'https://docs.concero.io' },
+        { title: 'Blog', link: links.blog },
     ]
 
     return (
