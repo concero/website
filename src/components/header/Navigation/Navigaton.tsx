@@ -5,6 +5,8 @@ import { RewardsIcon } from '@/assets/icons/rewards'
 import { links } from '@/configuration/links'
 import { WhitepaperIcon } from '@/assets/icons/whitepaper'
 import { DocumentationIcon } from '@/assets/icons/documentation'
+import { MessagingIcon } from '@/assets/icons/messaging'
+import { SwapIcon } from '@/assets/icons/swap'
 import './Navigation.pcss'
 
 export const Navigation: FC = (): JSX.Element => {
@@ -16,14 +18,14 @@ export const Navigation: FC = (): JSX.Element => {
                 { 
                     title: 'Messaging Whitepaper', 
                     link: links.whitepaper, 
-                    icon: <DocumentationIcon />,
+                    icon:   <MessagingIcon color="#66767D" />,
                     showTag: true,
                     tagText: '.PDF' 
                 },
                 { 
                     title: 'Bridging Whitepaper', 
                     link: links.lanca_whitepaper, 
-                    icon: <WhitepaperIcon />,
+                    icon: <SwapIcon />,
                     showTag: true,
                     tagText: '.PDF'
                 },
