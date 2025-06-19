@@ -4,10 +4,32 @@
 	padding: var(--space-xs) var(--space-xxl);
 	justify-content: space-between;
 	align-items: center;
+	position: absolute;
+	width: 100%;
+	max-width: 1920px;
+	top: 0;
+	z-index: 1000;
+	background-color: var(--color-gray-light-25, #fcfcfd);
+}
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+	.header-inner {
+		max-width: 100%;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.header-inner {
+		max-width: 100%;
+	}
 }
 
 @media (max-width: 640px) {
 	.header {
 		padding: var(--space-xs) var(--space-m);
+	}
+
+	.header-inner {
+		max-width: 100%;
 	}
 }

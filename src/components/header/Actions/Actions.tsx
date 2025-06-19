@@ -13,6 +13,8 @@ export const Actions = () => {
     const isTablet = useIsTablet()
     const isMobile = useIsMobile()
     const showBurger = isMobile || isTablet
+    
+    const buttonSize = isTablet ? 'm' : isMobile ? 'm' : 's'
 
     useEffect(() => {
         if (!showBurger) setIsOpen(false)
@@ -28,22 +30,28 @@ export const Actions = () => {
                 <div className="actions_buttons">
                     {!isOpen && (
                         <>
-                            <Button
-                                size="s"
-                                variant="secondary_color"
-                                onClick={() => window.open('https://testnet.concero.io', '_blank')}
-                            >
-                                Open Testnet
-                            </Button>
-                            {!isMobile && (
-                                <Button size="s" variant="primary" onClick={handleContactClick}>
+                            {isMobile ? (
+                                <Button size={buttonSize} variant="primary" onClick={handleContactClick}>
                                     Contact us
                                 </Button>
+                            ) : (
+                                <>
+                                    <Button
+                                        size={buttonSize}
+                                        variant="secondary_color"
+                                        onClick={() => window.open('https://testnet.concero.io', '_blank')}
+                                    >
+                                        Open Testnet
+                                    </Button>
+                                    <Button size={buttonSize} variant="primary" onClick={handleContactClick}>
+                                        Contact us
+                                    </Button>
+                                </>
                             )}
                         </>
                     )}
                     {showBurger && (
-                        <IconButton size="s" variant="secondary" onClick={() => setIsOpen(prev => !prev)}>
+                        <IconButton size={buttonSize} variant="secondary" onClick={() => setIsOpen(prev => !prev)}>
                             {isOpen ? <CloseIcon /> : <MenuIcon />}
                         </IconButton>
                     )}
