@@ -56,7 +56,6 @@
 	flex-wrap: nowrap;
 }
 
-/* Updated illustration container */
 .permissionless_illustration_container {
 	display: flex;
 	justify-content: center;
@@ -65,17 +64,22 @@
 	position: relative;
 	border-radius: var(--border-radius-large);
 	background: var(--color-gray-light-50);
-	aspect-ratio: 1021/395; /* Original aspect ratio */
+	aspect-ratio: 1021/395;
 	padding: var(--space-l);
 	box-sizing: border-box;
 }
 
-/* Critical image scaling rules */
 .permissionless_illustration {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 	display: block;
+}
+
+.permissionless_divider {
+	height: 1px;
+	width: 100%;
+	background-color: var(--color-gray-light-100);
 }
 
 @media (min-width: 1025px) and (max-width: 1920px) {

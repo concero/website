@@ -34,7 +34,7 @@ export const Hero: FC = (): JSX.Element => {
     const isUltrawide = useIsUltrawide()
     const { dispatch } = useModalContext()
 
-    const heroImage = isTablet ? '/Hero/HeroTablet.png' : isMobile ? '/Hero/HeroMobile.svg' : '/Hero/Hero.svg'
+    const heroImage = isTablet ? '/Hero/HeroTablet.svg' : isMobile ? '/Hero/HeroMobile.svg' : '/Hero/Hero.svg'
     const buttonSize = isTablet || isUltrawide ? 'xl' : 'l'
 
     const handleContactClick = () => {
@@ -44,25 +44,27 @@ export const Hero: FC = (): JSX.Element => {
     return (
         <section className="hero">
             <div className="hero_content">
-                <div className="hero_description">
-                    <div className="hero_title_container">
-                        <span className="hero_title">
-                            Interoperability solution that is{' '}
-                            <span className="concero_color">
-                                <AnimatedWords />
+                <div className="hero_main_content">
+                    <div className="hero_description">
+                        <div className="hero_title_container">
+                            <span className="hero_title">
+                                Interoperability solution that is{' '}
+                                <span className="concero_color">
+                                    <AnimatedWords />
+                                </span>
                             </span>
-                        </span>
+                        </div>
+                        <span className="hero_subtitle">Go anywhere with Concero today</span>
                     </div>
-                    <span className="hero_subtitle">Go anywhere with Concero today</span>
-                </div>
-                <div className="hero_actions">
-                    <Button size={buttonSize} variant="secondary_color" onClick={handleContactClick}>
-                        Contact us
-                    </Button>
-                    <div className="hero_socials">
-                        {SOCIALS.map(({ icon, name, link }) => (
-                            <SocialIcon key={name} isGrey icon={icon} social={name} link={link} />
-                        ))}
+                    <div className="hero_actions">
+                        <Button size={buttonSize} variant="secondary_color" onClick={handleContactClick}>
+                            Contact us
+                        </Button>
+                        <div className="hero_socials">
+                            {SOCIALS.map(({ icon, name, link }) => (
+                                <SocialIcon key={name} isGrey icon={icon} social={name} link={link} />
+                            ))}
+                        </div>
                     </div>
                 </div>
                 <div className="hero_illustration_container">
@@ -70,6 +72,7 @@ export const Hero: FC = (): JSX.Element => {
                         src={heroImage}
                         alt="Hero Illustration"
                         className="hero_illustration"
+                        fetchPriority='high'
                         loading="eager"
                         decoding="async"
                     />

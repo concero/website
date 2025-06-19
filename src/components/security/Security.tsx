@@ -11,14 +11,14 @@ export const Security: FC = (): JSX.Element => {
 					title="Chainlink"
 					subtitle="Cryptographic security"
 					tags={['Infrastructure', 'Relayer', 'Settlement']}
-					logo="/Security/Chainlink.png"
+					logo="/Security/Chainlink.svg"
 					link="https://chain.link/"
 				/>
 				<SecurityPartner
 					title="Symbiotic"
 					subtitle="Economic security"
 					tags={['Infrastructure', 'Relayer']}
-					logo="/Security/Symbiotic.png"
+					logo="/Security/Symbiotic.svg"
 					link="https://symbiotic.fi/"
 				/>
 			</div>

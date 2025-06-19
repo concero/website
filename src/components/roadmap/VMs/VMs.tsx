@@ -25,6 +25,7 @@ export const VMs: FC = (): JSX.Element => {
 					<img src="/Roadmap/Aptos.svg" alt="Aptos" className="vm_logo" />
 				</div>
 			</div>
+			<div className='vms_divider'/>
 		</div>
 	)
 }
