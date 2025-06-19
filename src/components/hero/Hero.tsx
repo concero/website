@@ -34,7 +34,7 @@ export const Hero: FC = (): JSX.Element => {
     const isUltrawide = useIsUltrawide()
     const { dispatch } = useModalContext()
 
-    const heroImage = isTablet ? '/Hero/HeroTablet.png' : isMobile ? '/Hero/HeroMobile.svg' : '/Hero/Hero.svg'
+    const heroImage = isTablet ? '/Hero/HeroTablet.svg' : isMobile ? '/Hero/HeroMobile.svg' : '/Hero/Hero.svg'
     const buttonSize = isTablet || isUltrawide ? 'xl' : 'l'
 
     const handleContactClick = () => {
