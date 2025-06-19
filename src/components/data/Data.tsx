@@ -23,7 +23,7 @@ const integrationData = [
 const transactionData = [
 	{
 		title: 'Total TXs',
-		data: '600k +',
+		data: '600k+',
 		icon: <TotalTxsIcon />,
 	},
 	{
