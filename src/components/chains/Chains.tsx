@@ -53,7 +53,7 @@ export const Chains: FC = (): ReactElement => {
             { name: 'Ink Sepolia', logo: '/Chains/ink.svg' },
             { name: 'BNB Chain Testnet', logo: '/Chains/bnb.svg' },
             { name: 'Arbitrum Sepolia', logo: '/Chains/arbitrum.svg' },
-            { name: 'Other chains', logo: '/Chains/Other.svg' },
+            { name: 'Polygon Amoy', logo: '/Chains/polygon.svg' },
         ]
 
     const renderChains = (chains: ChainData[]): ReactElement[] =>
