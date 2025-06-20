@@ -1,8 +1,12 @@
 import type { FC, ReactElement } from 'react'
+import { Fragment } from 'react'
 import { Chain } from '../common/Chain/Chain'
 import { useIsMobile } from '@/hooks/useMediaQuery'
+import { Button } from '@concero/ui-kit'
+import { ExpandIcon } from '@/assets/icons/expand'
+import { useIsUltrawide } from '@/hooks/useMediaQuery'
+import { useModalContext } from '@/reducer/modalContext'
 import './Chains.pcss'
-import { Fragment } from 'react'
 
 type ChainData = {
     name: string
@@ -10,7 +14,15 @@ type ChainData = {
 }
 
 export const Chains: FC = (): ReactElement => {
+    const { dispatch } = useModalContext();
     const isMobile = useIsMobile()
+    const isUltrwide = useIsUltrawide()
+	const size = isUltrwide ? 'xl' : 'l'
+
+
+    const openChainsModal = () => {
+    dispatch({ type: 'OPEN_CHAINS' });
+    };
 
     const defaultLeftChains: ChainData[] = [
         { name: 'Ethereum Sepolia', logo: '/Chains/ethereum.svg' },
@@ -23,12 +35,10 @@ export const Chains: FC = (): ReactElement => {
     
     const otherChain = { name: 'Other chains', logo: '/Chains/Other.svg' }
     
-    // Add "Other chains" to left side for mobile view
     const leftChains = isMobile 
         ? [...defaultLeftChains, otherChain]
         : defaultLeftChains
     
-    // Remove "Other chains" from right side for mobile view
     const rightChains: ChainData[] = isMobile 
         ? [
             { name: 'Soneium Minato', logo: '/Chains/soneium.svg' },
@@ -64,6 +74,11 @@ export const Chains: FC = (): ReactElement => {
                     <div className="chains_content_left">{renderChains(leftChains)}</div>
                     <div className="chains_content_right">{renderChains(rightChains)}</div>
                 </div>
+				<div className="chains_action">
+					<Button size={size} variant="secondary" rightIcon={<ExpandIcon />} onClick={openChainsModal}>
+						Open Full List
+					</Button>
+				</div>
             </section>
         </>
     )
