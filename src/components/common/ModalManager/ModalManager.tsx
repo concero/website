@@ -2,6 +2,7 @@ import { FC, memo } from 'react'
 import { useModalContext } from '@/reducer/modalContext'
 import { ContactModal } from '../ContactModal/ContactModal'
 import { BrandModal } from '../BrandModal/BrandModal'
+import { ChainsModal } from '../ChainsModal/ChainsModal'
 
 export const ModalManager: FC = memo((): JSX.Element => {
     const { state, dispatch } = useModalContext()
@@ -31,6 +32,13 @@ export const ModalManager: FC = memo((): JSX.Element => {
                 <BrandModal
                     isOpen={state.brandAssets} 
                     onClose={closeBrandModal}
+                />
+            )}
+
+            {state.chains && (
+                <ChainsModal
+                    isOpen={state.chains}
+                    onClose={closeChainsModal}
                 />
             )}
         </>
