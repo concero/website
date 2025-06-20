@@ -133,7 +133,7 @@ export const chains: Chain[] = [
 	{ name: 'Superseed Sepolia', logoUrl: '/Chains/superseed.svg', keywords: ['superseed', 'sepolia', 'testnet'] },
 	{
 		name: 'Syscoin Tanenbaum Testnet',
-		logoUrl: '/Chains/syscon.svg',
+		logoUrl: '/Chains/syscoin.svg',
 		keywords: ['syscoin', 'tanenbaum', 'testnet'],
 	},
 
