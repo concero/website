@@ -6,16 +6,19 @@ import { Footer } from './components/footer/Footer'
 import { HelmetProvider } from 'react-helmet-async'
 import { ModalProvider } from './reducer/modalProvider'
 import { ModalManager } from './components/common/ModalManager/ModalManager'
+import { PosthogProvider } from './providers/PosthogProvider'
 
 function App() {
 	return (
 		<HelmetProvider>
-			<ModalProvider>
-				<ModalManager />
-				<Header />
-				<Home />
-				<Footer />
-			</ModalProvider>
+			<PosthogProvider>
+				<ModalProvider>
+					<ModalManager />
+					<Header />
+					<Home />
+					<Footer />
+				</ModalProvider>
+			</PosthogProvider>
 		</HelmetProvider>
 	)
 }
