@@ -8,6 +8,7 @@ import { Roadmap } from '@/components/roadmap/Roadmap'
 import { Build } from '@/components/build/Build'
 import { Hero } from '@/components/hero/Hero'
 import { HowItWorks } from '@/components/how_it_works/HowItWorks'
+import { JoinUs } from '@/components/join_us/JoinUs'
 
 const META_TITLE = 'Concero | Cross-chain Messaging & Bridging'
 const META_DESCRIPTION = 'Making cross-chain effortless. A quicker, safer &amp; easier to use cross-chain infrastructure. Scalable, secure, capital efficient and decentralised bridging & messaging'
@@ -18,6 +19,7 @@ export const Home: FC = (): JSX.Element => {
 			<MetaTags title={META_TITLE} description={META_DESCRIPTION}/>
 			<main>
 				<HowItWorks />
+				<JoinUs />
 				{/* <Hero />
 				<WhyUs />
 				<Chains />
