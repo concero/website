@@ -49,7 +49,7 @@ export const WhyUs: FC = (): JSX.Element => {
                         video="/WhyUs/Bridging.mp4"
                         icon={<BridgeIcon />}
                         integrationAction={handleOpenContactModal}
-                        documentationLink={links.lanca_whitepaper}
+                        documentationLink={links.bridging_framework}
                     />
                 </div>
             </div>

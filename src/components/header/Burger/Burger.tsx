@@ -39,7 +39,7 @@ const burgerSections: BurgerSection[] = [
             },
             {
                 title: 'Bridging Whitepaper',
-                href: links.lanca_whitepaper,
+                href: links.bridging_framework,
                 icon: <SwapIcon />,
                 showTag: true,
                 tagText: '.PDF',

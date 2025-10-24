@@ -23,7 +23,7 @@ export const Navigation: FC = (): JSX.Element => {
                 },
                 { 
                     title: 'Bridging Whitepaper', 
-                    link: links.lanca_whitepaper, 
+                    link: links.bridging_framework, 
                     icon: <SwapIcon />,
                     showTag: true,
                     tagText: '.PDF'
