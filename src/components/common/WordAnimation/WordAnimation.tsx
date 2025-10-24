@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './WordAnimation.pcss'
 
-const WORDS = ['scalable', 'decentralised', 'modular', 'capital efficient', 'secure'] as const
+const WORDS = ['in minutes', 'for asset issuers', 'for protocols', 'for dApps', 'for you'] as const
 
 export const AnimatedWords: React.FC = () => {
 	const [index, setIndex] = useState(0)

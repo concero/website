@@ -48,13 +48,13 @@ export const Hero: FC = (): JSX.Element => {
                     <div className="hero_description">
                         <div className="hero_title_container">
                             <span className="hero_title">
-                                Interoperability solution that is{' '}
+                                Purpose-built interoperability{' '}
                                 <span className="concero_color">
                                     <AnimatedWords />
                                 </span>
                             </span>
                         </div>
-                        <span className="hero_subtitle">Go anywhere with Concero today</span>
+                        <span className="hero_subtitle">Take control of distribution by configuring your interoperability stack</span>
                     </div>
                     <div className="hero_actions">
                         <Button size={buttonSize} variant="secondary_color" onClick={handleContactClick}>
