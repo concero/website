@@ -9,6 +9,7 @@ import { Build } from '@/components/build/Build'
 import { Hero } from '@/components/hero/Hero'
 import { HowItWorks } from '@/components/how_it_works/HowItWorks'
 import { JoinUs } from '@/components/join_us/JoinUs'
+import { Vision } from '@/components/vision/Vision'
 
 const META_TITLE = 'Concero | Cross-chain Messaging & Bridging'
 const META_DESCRIPTION = 'Making cross-chain effortless. A quicker, safer &amp; easier to use cross-chain infrastructure. Scalable, secure, capital efficient and decentralised bridging & messaging'
@@ -20,6 +21,7 @@ export const Home: FC = (): JSX.Element => {
 			<main>
 				<HowItWorks />
 				<JoinUs />
+				<Vision />
 				{/* <Hero />
 				<WhyUs />
 				<Chains />
