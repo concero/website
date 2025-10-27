@@ -2,11 +2,11 @@ import type { FC, ReactElement } from 'react'
 import { memo } from 'react'
 import { InsightCard } from '../common/InsightCard/InsightCard'
 import { DataWidget } from '../common/DataWidget/DataWidget'
+import { ChainsIcon } from '@/assets/icons/chains'
 import { ChainIntegrationsIcon } from '@/assets/icons/chainIntegrations'
-import { MessageTimeIcon } from '@/assets/icons/messageTime'
-import { TotalTxsIcon } from '@/assets/icons/totalTx'
-import { AverageTxTimeIcon } from '@/assets/icons/averageTxTime'
-import { MainnetVolumeIcon } from '@/assets/icons/mainnetVolume'
+import { IntegrationCostIcon } from '@/assets/icons/integrationCost'
+import { TransactionsIcon } from '@/assets/icons/transactions'
+import { WalletsIcon } from '@/assets/icons/wallets'
 import './Insights.pcss'
 
 enum InsightType {
@@ -65,13 +65,13 @@ const INSIGHTS_DATA: readonly SectionData[] = [
 		type: InsightType.WIDGET,
 		columns: [
 			[
-				{ title: 'Chains', data: '500+', icon: <ChainIntegrationsIcon /> },
-				{ title: 'Chain integration time', data: '<30 min', icon: <MessageTimeIcon /> },
-				{ title: 'Integration cost', data: 'Free', icon: <TotalTxsIcon /> },
+				{ title: 'Chains', data: '500+', icon: <ChainsIcon /> },
+				{ title: 'Chain integration time', data: '<30 min', icon: <ChainIntegrationsIcon/> },
+				{ title: 'Integration cost', data: 'Free', icon: <IntegrationCostIcon /> },
 			],
 			[
-				{ title: 'Transactions', data: '2M +', icon: <AverageTxTimeIcon /> },
-				{ title: 'Wallets', data: '250k', icon: <MainnetVolumeIcon /> },
+				{ title: 'Transactions', data: '2M +', icon: <TransactionsIcon /> },
+				{ title: 'Wallets', data: '250k', icon: <WalletsIcon /> },
 			],
 		],
 	},
