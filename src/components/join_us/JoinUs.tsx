@@ -15,7 +15,7 @@ export const JoinUs: FC = memo((): ReactElement => {
             {
                 title: "Verifier Networks",
                 description: "Generate proofs for events",
-                tags: ["No RPC needed", "Reduce Capex", "No cross-chain infrastructure needed"],
+                tags: ["No RPC needed", "Reduce Capex", "No cross-chain infra needed"],
                 img: "/JoinUs/verifier_networks.svg"
             }
         ],
@@ -24,13 +24,13 @@ export const JoinUs: FC = memo((): ReactElement => {
                 title: "RPC Providers",
                 description: "Provide read/write services",
                 tags: ["No setup required", "Monetise your resting compute"],
-                img: "/JoinUs/verifier_networks.svg"
+                img: "/JoinUs/rpcs.svg"
             },
             {
                 title: "Chains",
                 description: "Deploy Concero Router",
                 tags: ["Connect to every chain", "Reach every user", "30 min setup no added cost"],
-                img: "/JoinUs/verifier_networks.svg"
+                img: "/JoinUs/chains.svg"
             }
         ]
     ], []);
@@ -62,4 +62,3 @@ export const JoinUs: FC = memo((): ReactElement => {
     );
 });
 
-JoinUs.displayName = 'JoinUs';

@@ -2,7 +2,6 @@
 	display: flex;
 	padding: var(--space-l);
 	gap: var(--space-l);
-	flex: 1 0 0;
 	width: 100%;
 	border-radius: var(--border-radius-xlarge);
 	background-color: var(--color-gray-50);
@@ -49,7 +48,71 @@
 }
 
 .role_card_visual {
-	flex: 1 0 0;
 	width: 100%;
+	flex: 1 0 0;
 	border-radius: var(--border-radius-large);
+	overflow: hidden;
+}
+
+.role_card_visual img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+	.role_card_title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+	}
+
+	.role_card_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+
+	.role_card_visual {
+		height: 195px;
+		aspect-ratio: 4 / 3;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.role_card_title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+	}
+
+	.role_card_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+
+	.role_card_visual {
+		height: 222px;
+		aspect-ratio: 4 / 3;
+	}
+}
+
+@media (max-width: 640px) {
+	.role_card {
+		flex-direction: column-reverse;
+	}
+
+	.role_card_title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+	}
+
+	.role_card_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+
+	.role_card_visual {
+		flex: none;
+		height: 192px;
+		aspect-ratio: 4 / 3;
+	}
 }
