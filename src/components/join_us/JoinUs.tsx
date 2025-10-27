@@ -2,6 +2,7 @@ import type { FC, ReactElement } from "react";
 import { memo, useMemo } from "react";
 import { RoleCard } from "../common/RoleCard/RoleCard";
 import "./JoinUs.pcss";
+import { Button } from "@concero/ui-kit";
 
 export const JoinUs: FC = memo((): ReactElement => {
     const cards = useMemo(() => [
@@ -57,6 +58,10 @@ export const JoinUs: FC = memo((): ReactElement => {
                         ))}
                     </div>
                 ))}
+            </div>
+            <div className="join_us_action">
+                <span className="join_us_action_title">Compete on merit - not distribution</span>
+                <Button variant="primary" size="xl" className="join_us_action_button">Join Concero</Button>
             </div>
         </section>
     );
