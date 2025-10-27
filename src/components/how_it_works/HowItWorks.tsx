@@ -1,17 +1,16 @@
-
 import type { FC, ReactElement } from "react";
 import { memo, useMemo } from "react";
+import { useLottie } from "lottie-react";
 import { Button } from "@concero/ui-kit";
 
-import Lottie from "lottie-react";
 import LottieAnimation from "@/assets/animations/how_it_works.json";
-
 import "./HowItWorks.pcss";
 
 export const HowItWorks: FC = memo((): ReactElement => {
     const lottieOptions = useMemo(() => ({
         animationData: LottieAnimation,
         loop: true,
+        autoplay: false,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid meet'
         }
@@ -19,8 +18,19 @@ export const HowItWorks: FC = memo((): ReactElement => {
 
     const lottieStyle = useMemo(() => ({
         width: '100%',
-        height: '100%'
+        height: '100%',
+        transition: 'opacity 300ms ease-in-out'
     }), []);
+
+    const { View, play, stop } = useLottie(lottieOptions, lottieStyle);
+
+    const onMouseEnter = () => {
+        play();
+    };
+
+    const onMouseLeave = () => {
+        stop();
+    };
 
     return (
         <section className="how_it_works">
@@ -31,14 +41,12 @@ export const HowItWorks: FC = memo((): ReactElement => {
                     interoperability for those who bring value and users on-chain
                 </p>
             </div>
-            <div className="how_it_works_visual">
-                <Lottie
-                    animationData={lottieOptions.animationData}
-                    loop={lottieOptions.loop}
-                    renderer="svg"
-                    rendererSettings={lottieOptions.rendererSettings}
-                    style={lottieStyle}
-                />
+            <div 
+                className="how_it_works_visual"
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+            >
+                {View}
             </div>
             <div className="how_it_works_action">
                 <Button 
@@ -52,3 +60,4 @@ export const HowItWorks: FC = memo((): ReactElement => {
         </section>
     );
 });
+
