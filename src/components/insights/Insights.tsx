@@ -9,6 +9,11 @@ import { AverageTxTimeIcon } from '@/assets/icons/averageTxTime';
 import { MainnetVolumeIcon } from '@/assets/icons/mainnetVolume';
 import "./Insights.pcss";
 
+enum InsightType {
+    CARD = 'card',
+    WIDGET = 'widget'
+}
+
 type CardData = {
     title: string;
     img: string;
@@ -22,14 +27,14 @@ type WidgetData ={
 
 type SectionData = {
     title: string;
-    type: 'card' | 'widget';
+    type: InsightType;
     columns: (WidgetData | CardData)[][];
 }
 
 const INSIGHTS_DATA: readonly SectionData[] = [
     {
         title: "Partners",
-        type: 'card',
+        type: InsightType.CARD,
         columns: [
             [
                 { title: "Chainlink", img: "/Insights/Chainlink.svg" },
@@ -43,7 +48,7 @@ const INSIGHTS_DATA: readonly SectionData[] = [
     },
     {
         title: "Grants",
-        type: 'card',
+        type: InsightType.CARD,
         columns: [
             [
                 { title: "Arbitrum Grant", img: "/Insights/Arbitrum.svg" },
@@ -57,7 +62,7 @@ const INSIGHTS_DATA: readonly SectionData[] = [
     },
     {
         title: "Numbers",
-        type: 'widget',
+        type: InsightType.WIDGET,
         columns: [
             [
                 { title: "Chains", data: "500+", icon: <ChainIntegrationsIcon /> },
@@ -97,9 +102,9 @@ export const Insights: FC = memo((): ReactElement => {
             </div>
             <div className="insights_info">
                 <h3 className="insights_title">{INSIGHTS_DATA[2].title}</h3>
-                <div className="insights_container">
+                <div className="insights_data_container">
                     {INSIGHTS_DATA[2].columns.map((column, columnIndex) => (
-                        <div key={`numbers-${columnIndex}`} className="insights_column">
+                        <div key={`numbers-${columnIndex}`} className="insights_data_column">
                             {column.map((item) => {
                                 const widget = item as WidgetData;
                                 return (

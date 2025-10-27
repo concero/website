@@ -11,13 +11,16 @@ type DataWidgetProps = {
 export const DataWidget: FC<DataWidgetProps> = memo(({ title, data, icon }): ReactElement => {
     return (
         <article className="data_widget">
-            <div className="data_widget_content">
-                <div className="data_widget_icon_container" aria-hidden="true">
-                    {icon}
+            <div className='data_widget_container'>
+                <div className="data_widget_content">
+                    <div className="data_widget_icon_container" aria-hidden="true">
+                        {icon}
+                    </div>
+                    <h4 className="data_widget_title">{title}</h4>
                 </div>
-                <h4 className="data_widget_title">{title}</h4>
+                <p className="data_widget_data">{data}</p>
             </div>
-            <p className="data_widget_data">{data}</p>
+            <div className='data_widget_divider'/>
         </article>
     );
 });
