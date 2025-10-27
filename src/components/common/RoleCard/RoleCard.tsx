@@ -1,4 +1,5 @@
 import type { FC, ReactElement } from "react";
+import { memo } from "react";
 import { Tag } from "@concero/ui-kit";
 import "./RoleCard.pcss";
 
@@ -9,18 +10,18 @@ type RoleCardProps = {
     img: string;
 }
 
-export const RoleCard: FC<RoleCardProps> = ({ title, description, tags, img }): ReactElement => {
+export const RoleCard: FC<RoleCardProps> = memo(({ title, description, tags, img }): ReactElement => {
     return (
-        <div className="role_card">
+        <article className="role_card">
             <div className="role_card_content">
                 <div className="role_card_description">
-                    <span className="role_card_title">{title}</span>
+                    <h3 className="role_card_title">{title}</h3>
                     <p className="role_card_subtitle">{description}</p>
                 </div>
-                <div className="role_card_tags">
-                    {tags.map((tag, index) => (
+                <div className="role_card_tags" role="list">
+                    {tags.map((tag) => (
                         <Tag 
-                            key={index}
+                            key={tag}
                             variant="branded" 
                             className="role_card_tag"
                         >
@@ -30,8 +31,13 @@ export const RoleCard: FC<RoleCardProps> = ({ title, description, tags, img }): 
                 </div>
             </div>
             <div className="role_card_visual">
-                <img src={img} alt={`${title} visual`} />
+                <img 
+                    src={img} 
+                    alt={`${title} visual representation`}
+                    loading="lazy"
+                />
             </div>
-        </div>
-    )
-}
+        </article>
+    );
+});
+
