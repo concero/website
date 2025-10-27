@@ -13,12 +13,13 @@ import { Vision } from '@/components/vision/Vision'
 import { Insights } from '@/components/insights/Insights'
 
 const META_TITLE = 'Concero | Cross-chain Messaging & Bridging'
-const META_DESCRIPTION = 'Making cross-chain effortless. A quicker, safer &amp; easier to use cross-chain infrastructure. Scalable, secure, capital efficient and decentralised bridging & messaging'
+const META_DESCRIPTION =
+	'Making cross-chain effortless. A quicker, safer &amp; easier to use cross-chain infrastructure. Scalable, secure, capital efficient and decentralised bridging & messaging'
 
 export const Home: FC = (): JSX.Element => {
 	return (
 		<>
-			<MetaTags title={META_TITLE} description={META_DESCRIPTION}/>
+			<MetaTags title={META_TITLE} description={META_DESCRIPTION} />
 			<main>
 				<HowItWorks />
 				<JoinUs />

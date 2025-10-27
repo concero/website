@@ -8,7 +8,7 @@ type ShowcaseWidgetProps = {
 	subtitle: string
 	icon: ReactNode
 	video: string
-    integrationAction?: () => void
+	integrationAction?: () => void
 	documentationLink: string
 }
 

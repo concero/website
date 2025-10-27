@@ -9,9 +9,9 @@ const DEFAULT_KEYWORDS =
 	'concero, blockchain testing, decentralized applications, blockchain integration, ethereum, arbitrum, optimism, sepolia, megaeth, monad, berachain, chainlink, ccip, concero'
 
 const CRITICAL_IMAGES = [
-    'https://concero.io/Hero/Hero.svg',
-    'https://concero.io/Hero/HeroTablet.png',
-    'https://concero.io/Hero/HeroMobile.svg'
+	'https://concero.io/Hero/Hero.svg',
+	'https://concero.io/Hero/HeroTablet.png',
+	'https://concero.io/Hero/HeroMobile.svg',
 ]
 
 const IMAGE = 'https://concero.io/OG/OG.png'
@@ -53,9 +53,9 @@ export const MetaTags = ({ title = DEFAULT_TITLE, description = DEFAULT_DESCRIPT
 			</>
 		)}
 
-		{CRITICAL_IMAGES.concat(CRITICAL_IMAGES).map((imgPath) => (
-            <link key={imgPath} rel="preload" as="image" href={imgPath} />
-        ))}
+		{CRITICAL_IMAGES.concat(CRITICAL_IMAGES).map(imgPath => (
+			<link key={imgPath} rel="preload" as="image" href={imgPath} />
+		))}
 
 		<link rel="shortcut icon" href="/Favicons/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/Favicons/apple-touch-icon.png" />

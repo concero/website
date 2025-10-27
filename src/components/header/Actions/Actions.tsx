@@ -8,56 +8,56 @@ import { useModalContext } from '@/reducer/modalContext'
 import './Actions.pcss'
 
 export const Actions = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-    const { dispatch } = useModalContext()
-    const isTablet = useIsTablet()
-    const isMobile = useIsMobile()
-    const showBurger = isMobile || isTablet
-    
-    const buttonSize = isTablet ? 'm' : isMobile ? 'm' : 's'
+	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const { dispatch } = useModalContext()
+	const isTablet = useIsTablet()
+	const isMobile = useIsMobile()
+	const showBurger = isMobile || isTablet
 
-    useEffect(() => {
-        if (!showBurger) setIsOpen(false)
-    }, [showBurger])
+	const buttonSize = isTablet ? 'm' : isMobile ? 'm' : 's'
 
-    const handleContactClick = () => {
-        dispatch({ type: 'OPEN_CONTACT' })
-    }
+	useEffect(() => {
+		if (!showBurger) setIsOpen(false)
+	}, [showBurger])
 
-    return (
-        <>
-            <div className="actions_container">
-                <div className="actions_buttons">
-                    {!isOpen && (
-                        <>
-                            {isMobile ? (
-                                <Button size={buttonSize} variant="primary" onClick={handleContactClick}>
-                                    Contact us
-                                </Button>
-                            ) : (
-                                <>
-                                    <Button
-                                        size={buttonSize}
-                                        variant="secondary_color"
-                                        onClick={() => window.open('https://testnet.concero.io', '_blank')}
-                                    >
-                                        Open Testnet
-                                    </Button>
-                                    <Button size={buttonSize} variant="primary" onClick={handleContactClick}>
-                                        Contact us
-                                    </Button>
-                                </>
-                            )}
-                        </>
-                    )}
-                    {showBurger && (
-                        <IconButton size={buttonSize} variant="secondary" onClick={() => setIsOpen(prev => !prev)}>
-                            {isOpen ? <CloseIcon /> : <MenuIcon />}
-                        </IconButton>
-                    )}
-                </div>
-            </div>
-            {isOpen && <Burger />}
-        </>
-    )
+	const handleContactClick = () => {
+		dispatch({ type: 'OPEN_CONTACT' })
+	}
+
+	return (
+		<>
+			<div className="actions_container">
+				<div className="actions_buttons">
+					{!isOpen && (
+						<>
+							{isMobile ? (
+								<Button size={buttonSize} variant="primary" onClick={handleContactClick}>
+									Contact us
+								</Button>
+							) : (
+								<>
+									<Button
+										size={buttonSize}
+										variant="secondary_color"
+										onClick={() => window.open('https://testnet.concero.io', '_blank')}
+									>
+										Open Testnet
+									</Button>
+									<Button size={buttonSize} variant="primary" onClick={handleContactClick}>
+										Contact us
+									</Button>
+								</>
+							)}
+						</>
+					)}
+					{showBurger && (
+						<IconButton size={buttonSize} variant="secondary" onClick={() => setIsOpen(prev => !prev)}>
+							{isOpen ? <CloseIcon /> : <MenuIcon />}
+						</IconButton>
+					)}
+				</div>
+			</div>
+			{isOpen && <Burger />}
+		</>
+	)
 }

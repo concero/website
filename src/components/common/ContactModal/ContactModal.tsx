@@ -44,7 +44,7 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 		)
 	}
 
-	return createPortal (
+	return createPortal(
 		<div className="contact_modal_overlay">
 			<div className="contact_modal_container">
 				<div className="contact_modal_header">
@@ -166,6 +166,6 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
 				</form>
 			</div>
 		</div>,
-		document.body
+		document.body,
 	)
 }

@@ -15,13 +15,13 @@ type BrandModalProps = {
 }
 
 const downloadKit = () => {
-    const link = document.createElement('a');
-    link.href = '/BrandKit/ConceroBrandKit.zip';
-    link.download = 'ConceroBrandKit.zip';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+	const link = document.createElement('a')
+	link.href = '/BrandKit/ConceroBrandKit.zip'
+	link.download = 'ConceroBrandKit.zip'
+	document.body.appendChild(link)
+	link.click()
+	document.body.removeChild(link)
+}
 
 export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 	useEffect(() => {

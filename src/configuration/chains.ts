@@ -7,7 +7,7 @@ export type Chain = {
 export const chains: Chain[] = [
 	{ name: 'Abstract Sepolia Testnet', logoUrl: '/Chains/abstract.svg', keywords: ['abstract', 'sepolia'] },
 	{ name: 'Acala Mandala Testnet', logoUrl: '/Chains/acala.svg', keywords: ['acala', 'mandala'] },
-	
+
 	{ name: 'Aleph Zero Testnet', logoUrl: '/Chains/aleph.svg', keywords: ['aleph', 'zero'] },
 	{ name: 'Ancient8 Testnet', logoUrl: '/Chains/ancient8.svg', keywords: ['ancient8'] },
 	{ name: 'Apechain Curtis', logoUrl: '/Chains/ape.svg', keywords: ['apechain', 'curtis'] },
@@ -62,11 +62,14 @@ export const chains: Chain[] = [
 	// H chains
 	{ name: 'HashKey Chain Testnet', logoUrl: '/Chains/hashkey.svg', keywords: ['hashkey', 'chain', 'testnet'] },
 	{ name: 'Hedera Testnet', logoUrl: '/Chains/hedera.svg', keywords: ['hedera', 'hbar', 'testnet'] },
-	{ name: 'Hyperliquid EVM Testnet', logoUrl: '/Chains/hyperliquid.svg', keywords: ['hyperliquid', 'evm', 'testnet'] },
+	{
+		name: 'Hyperliquid EVM Testnet',
+		logoUrl: '/Chains/hyperliquid.svg',
+		keywords: ['hyperliquid', 'evm', 'testnet'],
+	},
 
 	// I chains
 	{ name: 'Irys Testnet v1', logoUrl: '/Chains/irys.svg', keywords: ['irys', 'v1', 'testnet'] },
-
 
 	// K chains
 	{ name: 'Kaia Kairos Testnet', logoUrl: '/Chains/kaia.svg', keywords: ['kaia', 'kairos', 'testnet'] },
@@ -167,5 +170,4 @@ export const chains: Chain[] = [
 	{ name: 'Zircuit Testnet', logoUrl: '/Chains/zircuit.svg', keywords: ['zircuit', 'testnet'] },
 	{ name: 'ZKsync Sepolia', logoUrl: '/Chains/zksync.svg', keywords: ['zksync', 'sepolia', 'testnet'] },
 	{ name: 'ZKcandy Sepolia', logoUrl: '/Chains/zkcandy.svg', keywords: ['zkcandy', 'sepolia', 'testnet'] },
-
 ]
