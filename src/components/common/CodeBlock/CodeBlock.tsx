@@ -5,6 +5,7 @@ import { Cost } from './Cost/Cost'
 import { Compliance } from './Compliance/Compliance'
 import { Deliverability } from './Deliverability/Deliverability'
 import { Sovereignty } from './Sovereignty/Sovereignty'
+import { Security } from './Security/Security'
 import './CodeBlock.pcss'
 
 type CodeBlockProps = {
@@ -16,6 +17,8 @@ export const CodeBlock: FC<CodeBlockProps> = ({ currentIndex }) => {
 		switch (currentIndex) {
 			case 0:
 				return <Speed />
+            case 1:
+                return <Security />
 			case 2:
 				return <Cost />
 			case 3:
