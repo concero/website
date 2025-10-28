@@ -14,7 +14,7 @@ function App() {
 				<ModalManager />
 				{/* <Header /> */}
 				<Home />
-				{/* <Footer /> */}
+				<Footer />
 			</ModalProvider>
 		</HelmetProvider>
 	)

@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { links } from '@/configuration/links'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './Ecosystem.pcss'
 
 const ecosystem_sections = [
