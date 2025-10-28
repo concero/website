@@ -1,5 +1,5 @@
 import { FC, memo } from 'react'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import { ContactModal } from '../ContactModal/ContactModal'
 import { BrandModal } from '../BrandModal/BrandModal'
 import { ChainsModal } from '../ChainsModal/ChainsModal'
