@@ -1,5 +1,5 @@
 import { Button } from '@concero/ui-kit'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './BurgerActions.pcss'
 
 export const BurgerActions = () => {

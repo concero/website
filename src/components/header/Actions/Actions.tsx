@@ -4,7 +4,7 @@ import { useIsMobile, useIsTablet } from '@/hooks/useMediaQuery'
 import { MenuIcon } from '@/assets/icons/menu'
 import { CloseIcon } from '@/assets/icons/close'
 import { Burger } from '../Burger/Burger'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './Actions.pcss'
 
 export const Actions = () => {

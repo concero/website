@@ -7,7 +7,7 @@ import { ShowcaseWidget } from '../common/ShowcaseWidget/ShowcaseWidget'
 import { MessagingIcon } from '@/assets/icons/messaging'
 import { BridgeIcon } from '@/assets/icons/bridge'
 import { links } from '@/configuration/links'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './WhyUs.pcss'
 
 export const WhyUs: FC = (): JSX.Element => {

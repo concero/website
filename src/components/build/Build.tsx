@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { useIsMobile, useIsTablet } from '@/hooks/useMediaQuery'
 import { Button } from '@concero/ui-kit'
 import { BuildInfo } from '../common/BuildInfo/BuildInfo'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './Build.pcss'
 
 export const Build: FC = (): JSX.Element => {

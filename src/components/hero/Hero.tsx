@@ -7,7 +7,7 @@ import { links } from '@/configuration/links'
 import { SocialIcon } from '../common/SocialIcon/SocialIcon'
 import { useIsMobile, useIsTablet, useIsUltrawide } from '@/hooks/useMediaQuery'
 import { AnimatedWords } from '../common/WordAnimation/WordAnimation'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './Hero.pcss'
 
 const SOCIALS = [

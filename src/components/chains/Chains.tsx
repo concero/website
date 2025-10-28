@@ -5,7 +5,7 @@ import { useIsMobile } from '@/hooks/useMediaQuery'
 import { Button } from '@concero/ui-kit'
 import { ExpandIcon } from '@/assets/icons/expand'
 import { useIsUltrawide } from '@/hooks/useMediaQuery'
-import { useModalContext } from '@/reducer/modalContext'
+import { useModalContext } from '@/reducer/modal/modalContext'
 import './Chains.pcss'
 
 type ChainData = {
