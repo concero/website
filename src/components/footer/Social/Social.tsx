@@ -25,7 +25,6 @@ const socials = [
 
 export const Social = () => (
 	<div className="social_section">
-		<h3 className="social_title">Follow</h3>
 		<div className="social_icons">
 			{socials.map(({ icon, name, link }) => (
 				<SocialIcon key={name} icon={icon} social={name} link={link} />
