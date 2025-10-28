@@ -11,6 +11,7 @@ import { HowItWorks } from '@/components/how_it_works/HowItWorks'
 import { JoinUs } from '@/components/join_us/JoinUs'
 import { Vision } from '@/components/vision/Vision'
 import { Insights } from '@/components/insights/Insights'
+import { Setup } from '@/components/setup/Setup'
 
 const META_TITLE = 'Concero | Cross-chain Messaging & Bridging'
 const META_DESCRIPTION =
@@ -21,6 +22,7 @@ export const Home: FC = (): JSX.Element => {
 		<>
 			<MetaTags title={META_TITLE} description={META_DESCRIPTION} />
 			<main>
+				<Setup />
 				<HowItWorks />
 				<JoinUs />
 				<Vision />

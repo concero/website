@@ -66,7 +66,7 @@ const INSIGHTS_DATA: readonly SectionData[] = [
 		columns: [
 			[
 				{ title: 'Chains', data: '500+', icon: <ChainsIcon /> },
-				{ title: 'Chain integration time', data: '<30 min', icon: <ChainIntegrationsIcon/> },
+				{ title: 'Chain integration time', data: '<30 min', icon: <ChainIntegrationsIcon /> },
 				{ title: 'Integration cost', data: 'Free', icon: <IntegrationCostIcon /> },
 			],
 			[
