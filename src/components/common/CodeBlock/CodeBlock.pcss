@@ -90,6 +90,10 @@ pre[class*='language-'] {
 }
 
 @media (min-width: 1025px) and (max-width: 1920px) {
+	.code_block {
+		min-height: 348px;
+	}
+
 	code[class*='language-'],
 	pre[class*='language-'] {
 		font-size: 1rem;
@@ -98,6 +102,10 @@ pre[class*='language-'] {
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
+	.code_block {
+		min-height: 348px;
+	}
+
 	code[class*='language-'],
 	pre[class*='language-'] {
 		font-size: 1rem;
@@ -108,6 +116,7 @@ pre[class*='language-'] {
 @media (max-width: 640px) {
 	.code_block {
 		padding: var(--space-m);
+		min-height: 348px;
 	}
 
 	code[class*='language-'],
