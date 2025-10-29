@@ -28,8 +28,8 @@ export const Target: FC = memo((): ReactElement => {
 					subtitle="Unify liquidity and distribute to any user"
 					icon={<BridgeIcon />}
 					tags={[
-						'Capital-efficient liquidity framework',
-						'Full control over your burn/mint rights ',
+						'Capital-efficient framework',
+						'Control over burn/mint rights ',
 						'Enforce regulatory requirements',
 					]}
 					visual={<AssetVisual />}
