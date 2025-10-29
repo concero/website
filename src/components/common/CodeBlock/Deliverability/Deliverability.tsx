@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { BaseCodeBlock } from '../BaseBlock'
 
 const CODE_CONFIG = {
-  base: `import {IConceroRouter} from "../interfaces/IConceroRouter.sol";
+	base: `import {IConceroRouter} from "../interfaces/IConceroRouter.sol";
 
 contract YourContract {
   function yourFunction() external payable {
@@ -11,16 +11,16 @@ contract YourContract {
       dstChainSelector: 123,
       receiver: "0xMyContract",
       message: "Hello, world!",`,
-  verifier: 'compliantVerifier',
-  relayer: 'relayerA, relayerB, relayerC',
-  verifierRPC: 'reliableRPC',
-  relayerRPC: 'reliableRPC',
-  end: `
+	verifier: 'compliantVerifier',
+	relayer: 'relayerA, relayerB, relayerC',
+	verifierRPC: 'reliableRPC',
+	relayerRPC: 'reliableRPC',
+	end: `
     );
   }
 }`,
 }
 
 export const Deliverability: FC = () => {
-  return <BaseCodeBlock {...CODE_CONFIG} />
+	return <BaseCodeBlock {...CODE_CONFIG} />
 }

@@ -38,10 +38,7 @@ export const TargetCard: FC<TargetCardProps> = ({ title, subtitle, icon, tags, v
 						</div>
 					))}
 				</div>
-				<div className='target_card_visual'>
-					{visual}
-				</div>
-			
+				<div className="target_card_visual">{visual}</div>
 			</div>
 		</div>
 	)
