@@ -17,7 +17,7 @@ export const Home: FC = (): JSX.Element => {
 		<>
 			<MetaTags title={META_TITLE} description={META_DESCRIPTION} />
 			<main>
-				{/* <Hero /> */}
+				<Hero />
 				<Target />
 				<Setup />
 				<HowItWorks />

@@ -6,6 +6,7 @@ import { CloseIcon } from '@/assets/icons/close'
 import { Burger } from '../Burger/Burger'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import './Actions.pcss'
+import { links } from '@/configuration/links'
 
 export const Actions = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -39,9 +40,9 @@ export const Actions = () => {
 									<Button
 										size={buttonSize}
 										variant="secondary_color"
-										onClick={() => window.open('https://testnet.concero.io', '_blank')}
+										onClick={() => window.open(links.scan, '_blank', 'noopener noreferrer')}
 									>
-										Open Testnet
+										Open Scan
 									</Button>
 									<Button size={buttonSize} variant="primary" onClick={handleContactClick}>
 										Contact us
