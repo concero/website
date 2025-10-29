@@ -26,13 +26,13 @@ code[class*='language-'],
 pre[class*='language-'] {
 	color: var(--color-gray-600);
 	overflow: hidden;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	font-family: Menlo, Monaco, 'Courier New', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-	line-height: 1.25;
+	line-height: 1.75;
 }
 
 .token.comment,
@@ -90,14 +90,18 @@ pre[class*='language-'] {
 }
 
 @media (min-width: 1025px) and (max-width: 1920px) {
-	.code_block_pre {
+	code[class*='language-'],
+	pre[class*='language-'] {
 		font-size: 1rem;
+		line-height: 1.25;
 	}
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-	.code_block_pre {
+	code[class*='language-'],
+	pre[class*='language-'] {
 		font-size: 1rem;
+		line-height: 1.25;
 	}
 }
 
@@ -106,7 +110,9 @@ pre[class*='language-'] {
 		padding: var(--space-m);
 	}
 
-	.code_block_pre {
-		font-size: 1rem;
+	code[class*='language-'],
+	pre[class*='language-'] {
+		font-size: 0.875rem;
+		line-height: 1.125;
 	}
 }
