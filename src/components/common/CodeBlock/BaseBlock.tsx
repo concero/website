@@ -166,7 +166,7 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
     }, [base, end, state, hasExtra])
 
     return (
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
             <motion.pre
                 key={blockKey}
                 className="code_block_pre"
@@ -175,7 +175,7 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
                 exit={{ opacity: 0 }}
                 transition={{
                     duration: 0.4,
-                    ease: 'easeInOut',
+                    ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
                 }}
             >
                 <code className="language-solidity" dangerouslySetInnerHTML={{ __html: coloredHTML }} />
