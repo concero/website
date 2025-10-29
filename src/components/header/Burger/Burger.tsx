@@ -1,14 +1,17 @@
 import { useEffect } from 'react'
 import { LiquidityIcon } from '@/assets/icons/liquidity'
 import { RewardsIcon } from '@/assets/icons/rewards'
-import { MessagingIcon } from '@/assets/icons/messaging'
+import { BookIcon } from '@/assets/icons/book'
 import { DocumentationIcon } from '@/assets/icons/documentation'
 import { BlogIcon } from '@/assets/icons/blog'
 import { BurgerSectionItem } from './BurgerItem/BurgerItem'
 import { BurgerActions } from './BurgerActions/BurgerActions'
 import { LancaAction } from '@/components/common/LancaAction/LancaAction'
-import { SwapIcon } from '@/assets/icons/swap'
 import { links } from '@/configuration/links'
+import { DiscordDarkIcon } from '@/assets/icons/discordDark'
+import { TwitterDarkIcon } from '@/assets/icons/twitterDark'
+import { SearchIcon } from '@/assets/icons/search'
+import { TTagVariant } from '@concero/ui-kit'
 import './Burger.pcss'
 
 type BurgerItem = {
@@ -17,6 +20,7 @@ type BurgerItem = {
 	icon: React.ReactNode
 	showTag?: boolean
 	tagText?: string
+	tagVariant?: TTagVariant
 }
 
 type BurgerSection = {
@@ -31,18 +35,12 @@ const burgerSections: BurgerSection[] = [
 		items: [
 			{ title: 'Documentation', href: links.documentation, icon: <DocumentationIcon /> },
 			{
-				title: 'Messaging Whitepaper',
+				title: 'Whitepaper',
 				href: links.whitepaper,
-				icon: <MessagingIcon color="#66767D" />,
+				icon: <BookIcon />,
 				showTag: true,
 				tagText: '.PDF',
-			},
-			{
-				title: 'Bridging Whitepaper',
-				href: links.bridging_framework,
-				icon: <SwapIcon />,
-				showTag: true,
-				tagText: '.PDF',
+				tagVariant: 'neutral',
 			},
 		],
 		showSpecialAction: false,
@@ -50,10 +48,25 @@ const burgerSections: BurgerSection[] = [
 	{
 		title: 'Ecosystem',
 		items: [
-			{ title: 'Rewards', href: links.rewards, icon: <RewardsIcon /> },
-			{ title: 'Provide Liquidity', href: links.liquidity, icon: <LiquidityIcon /> },
+			{
+				title: 'Concero Scan',
+				href: links.scan,
+				icon: <SearchIcon />,
+				showTag: true,
+				tagText: 'New!',
+				tagVariant: 'branded',
+			},
 		],
 		showSpecialAction: true,
+	},
+	{
+		title: 'Community',
+		items: [
+			{ title: 'Rewards Portal', href: links.rewards, icon: <RewardsIcon /> },
+			{ title: 'Discord', href: links.discord, icon: <DiscordDarkIcon /> },
+			{ title: 'X', href: links.twitter, icon: <TwitterDarkIcon /> },
+		],
+		showSpecialAction: false,
 	},
 	{
 		title: null,
@@ -88,6 +101,7 @@ export const Burger = () => {
 											icon={item.icon}
 											showTag={item.showTag}
 											tagText={item.tagText}
+											tagVariant={item.tagVariant}
 										/>
 									))}
 								</div>
