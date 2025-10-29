@@ -3,7 +3,7 @@ import { BaseCodeBlock } from '../BaseBlock'
 import { useIsMobile } from '@/hooks/useMediaQuery'
 
 const DESKTOP_CONFIG = {
-    base: `import {IConceroRouter} from "../interfaces/IConceroRouter.sol";
+	base: `import {IConceroRouter} from "../interfaces/IConceroRouter.sol";
 
 contract YourContract {
   function yourFunction() external payable {
@@ -11,16 +11,16 @@ contract YourContract {
       dstChainSelector: 123,
       receiver: "0xMyContract",
       message: "Hello, world!",`,
-    verifier: 'safeVerifierA, safeVerifierB',
-    relayer: 'anyRelayer',
-    end: `
+	verifier: 'safeVerifierA, safeVerifierB',
+	relayer: 'anyRelayer',
+	end: `
     );
   }
 }`,
 }
 
 const MOBILE_CONFIG = {
-    base: `import {
+	base: `import {
   IConceroRouter
 } from "../interfaces/IConceroRouter.sol";
 
@@ -38,17 +38,17 @@ contract YourContract {
         "0xMyContract",
       message: 
         "Hello, world!",`,
-    verifier: 'safeVerifierA, safeVerifierB',
-    relayer: 'anyRelayer',
-    end: `
+	verifier: 'safeVerifierA, safeVerifierB',
+	relayer: 'anyRelayer',
+	end: `
     );
   }
 }`,
 }
 
 export const Security: FC = () => {
-    const isMobile = useIsMobile()
-    const config = isMobile ? MOBILE_CONFIG : DESKTOP_CONFIG
-    
-    return <BaseCodeBlock {...config} />
+	const isMobile = useIsMobile()
+	const config = isMobile ? MOBILE_CONFIG : DESKTOP_CONFIG
+
+	return <BaseCodeBlock {...config} />
 }

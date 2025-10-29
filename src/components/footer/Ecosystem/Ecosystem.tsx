@@ -20,9 +20,7 @@ const ecosystem_sections = [
 	},
 	{
 		title: 'Community',
-		links: [
-			{ href: links.rewards, label: 'Rewards Portal' },
-		],
+		links: [{ href: links.rewards, label: 'Rewards Portal' }],
 	},
 	{
 		title: 'Resources',

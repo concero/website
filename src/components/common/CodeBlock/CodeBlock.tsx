@@ -17,8 +17,8 @@ export const CodeBlock: FC<CodeBlockProps> = ({ currentIndex }) => {
 		switch (currentIndex) {
 			case 0:
 				return <Speed />
-            case 1:
-                return <Security />
+			case 1:
+				return <Security />
 			case 2:
 				return <Cost />
 			case 3:

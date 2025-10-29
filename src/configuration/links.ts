@@ -9,5 +9,5 @@ export const links = {
 	swap: 'https://app.lanca.io/',
 	liquidity: 'https://app.lanca.io/pools',
 	rewards: 'https://app.concero.io/rewards',
-	scan: "https://scan.concero.io/",
+	scan: 'https://scan.concero.io/',
 }
