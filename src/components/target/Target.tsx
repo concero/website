@@ -15,6 +15,8 @@ import { InfinityIcon } from '@/assets/icons/infinity'
 import { ServicingIcon } from '@/assets/icons/servicing'
 import { PermissionlessIcon } from '@/assets/icons/permissionless'
 import { ReachIcon } from '@/assets/icons/reach'
+import { useModalContext } from '@/reducer/modal/modalContext'
+import { links } from '@/configuration/links'
 import './Target.pcss'
 
 const TARGET_CARDS = [
@@ -49,6 +51,16 @@ const BENEFIT_CARDS_ROW_2 = [
 ]
 
 export const Target: FC = memo((): ReactElement => {
+    const { dispatch } = useModalContext()
+
+    const handleIntegrate = () => {
+        dispatch({ type: 'OPEN_CONTACT' })
+    }
+
+    const handleDocumentation = () => {
+        window.open(links.documentation, '_blank', 'noopener,noreferrer')
+    }
+
     return (
         <section className="target">
             <span className="target_title">Who do we serve</span>
@@ -68,10 +80,10 @@ export const Target: FC = memo((): ReactElement => {
                 ))}
             </div>
             <div className="target_actions">
-                <Button variant="secondary" size="xl" className="target_action_button">
+                <Button variant="secondary" size="xl" className="target_action_button" onClick={handleDocumentation}>
                     Documentation
                 </Button>
-                <Button variant="primary" size="xl" className="target_action_button">
+                <Button variant="primary" size="xl" className="target_action_button" onClick={handleIntegrate}>
                     Integrate
                 </Button>
             </div>
