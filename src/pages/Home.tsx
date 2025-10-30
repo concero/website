@@ -22,8 +22,8 @@ export const Home: FC = (): JSX.Element => {
 				<Setup />
 				<HowItWorks />
 				<JoinUs />
-				<Vision />
 				<Insights />
+				<Vision />
 			</main>
 		</>
 	)

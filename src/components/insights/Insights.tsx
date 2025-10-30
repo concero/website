@@ -37,12 +37,12 @@ const INSIGHTS_DATA: readonly SectionData[] = [
 		type: InsightType.CARD,
 		columns: [
 			[
-				{ title: 'Chainlink', img: '/Insights/Chainlink.svg' },
-				{ title: 'Symbiotic', img: '/Insights/Symbiotic.svg' },
+				{ title: 'Chainlink', img: '/Insights/Chainlink.webp' },
+				{ title: 'Symbiotic', img: '/Insights/Symbiotic.webp' },
 			],
 			[
-				{ title: 'Biconomy', img: '/Insights/Biconomy.svg' },
-				{ title: 'Unichain ecosystem', img: '/Insights/Unichain.svg' },
+				{ title: 'Biconomy', img: '/Insights/Biconomy.webp' },
+				{ title: 'Unichain ecosystem', img: '/Insights/Unichain.webp' },
 			],
 		],
 	},
@@ -51,12 +51,12 @@ const INSIGHTS_DATA: readonly SectionData[] = [
 		type: InsightType.CARD,
 		columns: [
 			[
-				{ title: 'Arbitrum Grant', img: '/Insights/Arbitrum.svg' },
-				{ title: 'Uniswap Grant', img: '/Insights/Uniswap.svg' },
+				{ title: 'Arbitrum Grant', img: '/Insights/Arbitrum.webp' },
+				{ title: 'Uniswap Grant', img: '/Insights/Uniswap.webp' },
 			],
 			[
-				{ title: 'Aave Grant', img: '/Insights/Aave.svg' },
-				{ title: 'Circle Grant', img: '/Insights/Circle.svg' },
+				{ title: 'Aave Grant', img: '/Insights/Aave.webp' },
+				{ title: 'Circle Grant', img: '/Insights/Circle.webp' },
 			],
 		],
 	},

@@ -112,7 +112,6 @@ export const Hero: FC = (): JSX.Element => {
                         src={heroImage}
                         alt="Hero Illustration"
                         className="hero_illustration"
-                        fetchPriority="high"
                         loading="eager"
                         decoding="async"
                     />

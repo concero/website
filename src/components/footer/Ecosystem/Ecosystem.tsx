@@ -12,7 +12,7 @@ const ecosystem_sections = [
 		],
 	},
 	{
-		title: 'Resources',
+		title: 'Ecosystem',
 		links: [
 			{ href: links.scan, label: 'Concero Scan' },
 			{ href: links.swap, label: 'Lanca' },

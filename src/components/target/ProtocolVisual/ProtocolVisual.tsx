@@ -14,14 +14,14 @@ type Icon = {
 
 const icons: Icon[] = [
 	// Top row
-	{ src: '/Target/first_visual.svg', alt: 'Cloud', x: -200, y: -97.5, hoverX: -280, hoverY: -140 },
-	{ src: '/Target/second_visual.svg', alt: 'Lock', x: 0, y: -115, hoverX: 0, hoverY: -165 },
-	{ src: '/Target/third_visual.svg', alt: 'Heart', x: 200, y: -97.5, hoverX: 280, hoverY: -140 },
+	{ src: '/Target/first_visual.webp', alt: 'Cloud', x: -200, y: -97.5, hoverX: -280, hoverY: -140 },
+	{ src: '/Target/second_visual.webp', alt: 'Lock', x: 0, y: -115, hoverX: 0, hoverY: -165 },
+	{ src: '/Target/third_visual.webp', alt: 'Heart', x: 200, y: -97.5, hoverX: 280, hoverY: -140 },
 
 	// Bottom row
-	{ src: '/Target/fourth_visual.svg', alt: 'Shield', x: -200, y: 97.5, hoverX: -280, hoverY: 140 },
-	{ src: '/Target/fifth_visual.svg', alt: 'Badge', x: 0, y: 115, hoverX: 0, hoverY: 165 },
-	{ src: '/Target/sixth_visual.svg', alt: 'Cloud 2', x: 200, y: 97.5, hoverX: 280, hoverY: 140 },
+	{ src: '/Target/fourth_visual.webp', alt: 'Shield', x: -200, y: 97.5, hoverX: -280, hoverY: 140 },
+	{ src: '/Target/fifth_visual.webp', alt: 'Badge', x: 0, y: 115, hoverX: 0, hoverY: 165 },
+	{ src: '/Target/sixth_visual.webp', alt: 'Cloud 2', x: 200, y: 97.5, hoverX: 280, hoverY: 140 },
 ]
 
 const BASE_WIDTH = 856
