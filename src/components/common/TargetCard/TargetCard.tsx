@@ -25,7 +25,8 @@ export const TargetCard: FC<TargetCardProps> = ({ title, subtitle, icon, tags, v
 					<span className="target_card_title">{title}</span>
 					<span className="target_card_subtitle">{subtitle}</span>
 				</div>
-				<div className="target_card_tags">
+			</div>
+			<div className="target_card_tags">
 					{widgets.map((row, rowIndex) => (
 						<div key={rowIndex} className="target_card_tags_row">
 							{row.map(tag => (
@@ -38,8 +39,7 @@ export const TargetCard: FC<TargetCardProps> = ({ title, subtitle, icon, tags, v
 						</div>
 					))}
 				</div>
-				<div className="target_card_visual">{visual}</div>
-			</div>
+			<div className="target_card_visual">{visual}</div>
 		</div>
 	)
 }
