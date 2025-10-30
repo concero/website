@@ -36,7 +36,7 @@ export const Navigation: FC = (): JSX.Element => {
 			dropdownItems: [
 				{
 					title: 'Concero Scan',
-					link: links.liquidity,
+					link: links.scan,
 					icon: <SearchIcon />,
 					tag: {
 						text: 'New!',
