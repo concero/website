@@ -49,7 +49,7 @@ export const Hero: FC = (): JSX.Element => {
     const [wordIndex, setWordIndex] = useState(0)
 
     const heroImage = useMemo(
-        () => (isTablet ? '/Hero/HeroTablet.webp' : isMobile ? '/Hero/HeroMobile.webp' : '/Hero/Hero.webp'),
+        () => (isTablet ? '/Hero/HeroTablet.webp' : isMobile ? '/Hero/HeroMobile.png' : '/Hero/Hero.webp'),
         [isMobile, isTablet]
     )
 
@@ -74,7 +74,8 @@ export const Hero: FC = (): JSX.Element => {
                     <div className="hero_description">
                         <h1 className="hero_title_container">
                             <span className="hero_title">
-                                Purpose-built interoperability{' '}
+                                Purpose-built interoperability
+                                {isMobile && <br />}
                                 <span className="concero_color">
                                     <AnimatePresence mode="wait">
                                         <motion.span
