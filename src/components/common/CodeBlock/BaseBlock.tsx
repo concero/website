@@ -144,7 +144,6 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
     const isMobile = useIsMobile()
     const hasExtra = !!verifierRPC && !!relayerRPC
     const [state, setState] = useState<State>(INITIAL_STATE)
-    const [exitState, setExitState] = useState<State | null>(null)
     const [blockKey, setBlockKey] = useState(0)
     const timerRefs = useRef<ReturnType<typeof setInterval>[]>([])
     const propsRef = useRef({ verifier, relayer, verifierRPC, relayerRPC })
@@ -158,14 +157,14 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
             propsRef.current.relayerRPC !== relayerRPC
 
         if (propsChanged) {
-            setExitState(state)
+            setBlockKey(prev => prev + 1)
             propsRef.current = { verifier, relayer, verifierRPC, relayerRPC }
         }
 
         timerRefs.current.forEach(clearInterval)
         timerRefs.current = []
 
-        if (exitState) return
+        setState(INITIAL_STATE)
 
         const items: TypingItem[] = [
             { value: verifier, field: Field.TEXT1, next: Step.RELAYER },
@@ -205,23 +204,20 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
             timerRefs.current.push(timer)
         }
 
-        setState(INITIAL_STATE)
         typeStep(Step.VERIFIER)
 
         return () => {
             timerRefs.current.forEach(clearInterval)
         }
-    }, [verifier, relayer, verifierRPC, relayerRPC, hasExtra, exitState])
-
-    const displayState = exitState || state
+    }, [verifier, relayer, verifierRPC, relayerRPC, hasExtra])
 
     const coloredHTML = useMemo(() => {
         const code = synthesizeCode({
             base,
-            t1: displayState[Field.TEXT1],
-            t2: displayState[Field.TEXT2],
-            t3: displayState[Field.TEXT3],
-            t4: displayState[Field.TEXT4],
+            t1: state[Field.TEXT1],
+            t2: state[Field.TEXT2],
+            t3: state[Field.TEXT3],
+            t4: state[Field.TEXT4],
             end,
             hasExtra,
             isMobile,
@@ -229,26 +225,18 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
 
         let html = Prism.highlight(code, Prism.languages.solidity, 'solidity')
 
-        html = highlightCode(html, displayState[Field.TEXT1])
-        html = highlightCode(html, displayState[Field.TEXT2])
+        html = highlightCode(html, state[Field.TEXT1])
+        html = highlightCode(html, state[Field.TEXT2])
         if (hasExtra) {
-            html = highlightCode(html, displayState[Field.TEXT3])
-            html = highlightCode(html, displayState[Field.TEXT4])
+            html = highlightCode(html, state[Field.TEXT3])
+            html = highlightCode(html, state[Field.TEXT4])
         }
 
         return html
-    }, [base, end, displayState, hasExtra, isMobile])
-
-    const handleAnimationComplete = (definition: any) => {
-        if (definition === 'exit' && exitState) {
-            setExitState(null)
-            setState(INITIAL_STATE)
-            setBlockKey(prev => prev + 1)
-        }
-    }
+    }, [base, end, state, hasExtra, isMobile])
 
     return (
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="wait">
             <motion.pre
                 key={blockKey}
                 className="code_block_pre"
@@ -259,7 +247,6 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
                     duration: 0.4,
                     ease: [0.4, 0, 0.2, 1] as [number, number, number, number],
                 }}
-                onAnimationComplete={handleAnimationComplete}
             >
                 <code className="language-solidity" dangerouslySetInnerHTML={{ __html: coloredHTML }} />
             </motion.pre>
