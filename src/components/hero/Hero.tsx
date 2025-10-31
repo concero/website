@@ -11,35 +11,27 @@ import { useIsMobile, useIsTablet, useIsUltrawide } from '@/hooks/useMediaQuery'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import './Hero.pcss'
 
+
 const SOCIALS = [
-    {
-        icon: <TwitterDarkIcon />,
-        name: 'twitter' as const,
-        link: links.twitter,
-    },
-    {
-        icon: <DiscordDarkIcon />,
-        name: 'discord' as const,
-        link: links.discord,
-    },
-    {
-        icon: <MediumDarkIcon />,
-        name: 'medium' as const,
-        link: links.medium,
-    },
+    { icon: <TwitterDarkIcon />, name: 'twitter' as const, link: links.twitter },
+    { icon: <DiscordDarkIcon />, name: 'discord' as const, link: links.discord },
+    { icon: <MediumDarkIcon />, name: 'medium' as const, link: links.medium },
 ] as const
 
 const WORDS = ['in minutes', 'for asset issuers', 'for protocols', 'for dApps', 'for you'] as const
 const WORD_INTERVAL = 3400
+
 const ANIMATION_VARIANTS = {
     initial: { opacity: 0, y: -5 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -5 },
-}
+} as const
+
 const ANIMATION_TRANSITION = {
     duration: 0.4,
     ease: [0.4, 0, 0.2, 1] as const,
-}
+} as const
+
 
 export const Hero: FC = (): JSX.Element => {
     const isMobile = useIsMobile()
@@ -48,12 +40,15 @@ export const Hero: FC = (): JSX.Element => {
     const { dispatch } = useModalContext()
     const [wordIndex, setWordIndex] = useState(0)
 
+    const isSmallDevice = isMobile || isTablet
+    const isLargeDevice = isTablet || isUltrawide
+
     const heroImage = useMemo(
         () => (isTablet ? '/Hero/HeroTablet.webp' : isMobile ? '/Hero/HeroMobile.png' : '/Hero/Hero.webp'),
         [isMobile, isTablet]
     )
 
-    const buttonSize = useMemo(() => (isTablet || isUltrawide ? 'xl' : 'l'), [isTablet, isUltrawide])
+    const buttonSize = useMemo(() => (isLargeDevice ? 'xl' : 'l'), [isLargeDevice])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -75,8 +70,9 @@ export const Hero: FC = (): JSX.Element => {
                         <h1 className="hero_title_container">
                             <span className="hero_title">
                                 Purpose-built interoperability
-                                {isMobile && <br />}
+                                {isSmallDevice && <br />}
                                 <span className="concero_color">
+                                    {!isSmallDevice && ' '}
                                     <AnimatePresence mode="wait">
                                         <motion.span
                                             key={wordIndex}

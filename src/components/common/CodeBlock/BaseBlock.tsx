@@ -3,10 +3,11 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-solidity'
-import { useIsMobile } from '@/hooks/useMediaQuery'
+
 
 
 const TYPING_SPEED = 1000
+
 
 
 enum Field {
@@ -17,6 +18,7 @@ enum Field {
 }
 
 
+
 enum Step {
     VERIFIER = 0,
     RELAYER = 1,
@@ -24,6 +26,7 @@ enum Step {
     RELAYER_RPC = 3,
     COMPLETE = 4,
 }
+
 
 
 type Props = {
@@ -36,6 +39,7 @@ type Props = {
 }
 
 
+
 type State = {
     [Field.TEXT1]: string
     [Field.TEXT2]: string
@@ -43,6 +47,7 @@ type State = {
     [Field.TEXT4]: string
     step: Step
 }
+
 
 
 type CodeParts = {
@@ -53,8 +58,8 @@ type CodeParts = {
     t4: string
     end: string
     hasExtra: boolean
-    isMobile: boolean
 }
+
 type TypingItem = {
     value: string
     field: Field
@@ -62,44 +67,8 @@ type TypingItem = {
 }
 
 
-const formatForMobile = (value: string): string => {
-    if (!value) return ''
-    
-    if (value.includes(',')) {
-        const items = value.split(',').map(item => item.trim())
-        return items.map(item => `        ${item}`).join(',\n')
-    }
-    
-    return `        ${value}`
-}
 
-
-const synthesizeCode = ({ base, t1, t2, t3, t4, end, hasExtra, isMobile }: CodeParts): string => {
-    if (isMobile) {
-        return hasExtra
-            ? `${base}
-      verifiers: [
-${formatForMobile(t1)}
-      ],
-      relayers: [
-${formatForMobile(t2)}
-      ],
-      verifierRPCs: [
-${formatForMobile(t3)}
-      ],
-      relayerRPCs: [
-${formatForMobile(t4)}
-      ]${end}`
-            : `${base}
-      verifiers: [
-${formatForMobile(t1)}
-      ],
-      relayers: [
-${formatForMobile(t2)}
-      ]${end}`
-    }
-
-
+const synthesizeCode = ({ base, t1, t2, t3, t4, end, hasExtra }: CodeParts): string => {
     return hasExtra
         ? `${base}
       verifiers: [${t1}],
@@ -112,11 +81,14 @@ ${formatForMobile(t2)}
 }
 
 
+
 const highlightCode = (html: string, word: string): string => {
     if (!word) return html
 
 
+
     const words = word.includes(',') ? word.split(',').map(w => w.trim()) : [word]
+
 
 
     words.forEach(w => {
@@ -127,8 +99,10 @@ const highlightCode = (html: string, word: string): string => {
     })
 
 
+
     return html
 }
+
 
 
 const INITIAL_STATE: State = {
@@ -140,13 +114,14 @@ const INITIAL_STATE: State = {
 }
 
 
+
 export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC, relayerRPC, end }) => {
-    const isMobile = useIsMobile()
     const hasExtra = !!verifierRPC && !!relayerRPC
     const [state, setState] = useState<State>(INITIAL_STATE)
     const [blockKey, setBlockKey] = useState(0)
     const timerRefs = useRef<ReturnType<typeof setInterval>[]>([])
     const propsRef = useRef({ verifier, relayer, verifierRPC, relayerRPC })
+
 
 
     useEffect(() => {
@@ -156,15 +131,19 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
             propsRef.current.verifierRPC !== verifierRPC ||
             propsRef.current.relayerRPC !== relayerRPC
 
+
         if (propsChanged) {
             setBlockKey(prev => prev + 1)
             propsRef.current = { verifier, relayer, verifierRPC, relayerRPC }
         }
 
+
         timerRefs.current.forEach(clearInterval)
         timerRefs.current = []
 
+
         setState(INITIAL_STATE)
+
 
         const items: TypingItem[] = [
             { value: verifier, field: Field.TEXT1, next: Step.RELAYER },
@@ -173,10 +152,13 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
             { value: relayerRPC || '', field: Field.TEXT4, next: Step.COMPLETE },
         ]
 
+
         const maxStep = hasExtra ? Step.COMPLETE : Step.VERIFIER_RPC
+
 
         const typeStep = (currentStep: Step) => {
             if (currentStep >= maxStep) return
+
 
             const item = items[currentStep]
             if (!item.value) {
@@ -184,8 +166,10 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
                 return
             }
 
+
             let charIndex = 0
             const charSpeed = TYPING_SPEED / item.value.length
+
 
             const timer = setInterval(() => {
                 if (charIndex <= item.value.length) {
@@ -201,15 +185,19 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
                 }
             }, charSpeed)
 
+
             timerRefs.current.push(timer)
         }
 
+
         typeStep(Step.VERIFIER)
+
 
         return () => {
             timerRefs.current.forEach(clearInterval)
         }
     }, [verifier, relayer, verifierRPC, relayerRPC, hasExtra])
+
 
     const coloredHTML = useMemo(() => {
         const code = synthesizeCode({
@@ -220,10 +208,11 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
             t4: state[Field.TEXT4],
             end,
             hasExtra,
-            isMobile,
         })
 
+
         let html = Prism.highlight(code, Prism.languages.solidity, 'solidity')
+
 
         html = highlightCode(html, state[Field.TEXT1])
         html = highlightCode(html, state[Field.TEXT2])
@@ -232,8 +221,10 @@ export const BaseCodeBlock: FC<Props> = ({ base, verifier, relayer, verifierRPC,
             html = highlightCode(html, state[Field.TEXT4])
         }
 
+
         return html
-    }, [base, end, state, hasExtra, isMobile])
+    }, [base, end, state, hasExtra])
+
 
     return (
         <AnimatePresence mode="wait">
