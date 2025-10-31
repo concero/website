@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Tag } from '@concero/ui-kit'
+import { Tag, TTagVariant } from '@concero/ui-kit'
 import './BurgerItem.pcss'
 
 type BurgerItemProps = {
@@ -8,9 +8,10 @@ type BurgerItemProps = {
 	icon: ReactNode
 	showTag?: boolean
 	tagText?: string
+	tagVariant?: TTagVariant
 }
 
-export const BurgerSectionItem = ({ title, href, icon, showTag, tagText }: BurgerItemProps) => (
+export const BurgerSectionItem = ({ title, href, icon, showTag, tagText, tagVariant = 'neutral' }: BurgerItemProps) => (
 	<a href={href} target="_blank" rel="noopener noreferrer" className="burger_item_link">
 		<div className="burger_item">
 			<div className="burger_item_icon_container">
@@ -19,7 +20,7 @@ export const BurgerSectionItem = ({ title, href, icon, showTag, tagText }: Burge
 			<div className="burger_title_container">
 				<span className="burger_item_title">{title}</span>
 				{showTag && tagText && (
-					<Tag variant="neutral" size="s">
+					<Tag variant={tagVariant} size="s">
 						{tagText}
 					</Tag>
 				)}

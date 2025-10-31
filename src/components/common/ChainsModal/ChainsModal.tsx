@@ -1,4 +1,4 @@
-import type { FC, KeyboardEvent, ChangeEvent } from 'react'
+import type { FC, KeyboardEvent, ChangeEvent, MouseEvent } from 'react'
 import type { Chain as ChainType } from '@/configuration/chains'
 import { useEffect, useMemo, useState, useCallback } from 'react'
 import { CloseIcon } from '@/assets/icons/close'
@@ -18,6 +18,15 @@ type ChainsGrouped = Record<string, ChainType[]>
 
 export const ChainsModal: FC<ChainsModalProps> = ({ isOpen, onClose }) => {
 	const [search, setSearch] = useState<string>('')
+
+	const handleOverlayClick = useCallback(
+		(e: MouseEvent<HTMLDivElement>) => {
+			if (e.target === e.currentTarget) {
+				onClose()
+			}
+		},
+		[onClose],
+	)
 
 	useEffect(() => {
 		if (!isOpen) return
@@ -71,7 +80,7 @@ export const ChainsModal: FC<ChainsModalProps> = ({ isOpen, onClose }) => {
 	if (!isOpen) return null
 
 	return (
-		<div className="chains_modal_overlay" role="dialog" aria-modal="true">
+		<div className="chains_modal_overlay" role="dialog" aria-modal="true" onClick={handleOverlayClick}>
 			<div className="chains_modal_container">
 				<div className="chains_modal_header">
 					<span className="chains_modal_title">Chains</span>
