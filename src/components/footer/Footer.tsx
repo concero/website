@@ -1,7 +1,6 @@
 import { Copyright } from './Copyright/Copyright'
 import { Ecosystem } from './Ecosystem/Ecosystem'
 import { Social } from './Social/Social'
-import { Developers } from './Developers/Developers'
 import './Footer.pcss'
 
 export const Footer = () => (
@@ -11,7 +10,6 @@ export const Footer = () => (
 			<img src="/Footer/ConceroDark.svg" className="concero_footer_logo" alt="Concero Logo" />
 		</div>
 		<div className="concero_footer_main">
-			<Developers />
 			<div className="concero_footer_secondary">
 				<Ecosystem />
 				<Social />

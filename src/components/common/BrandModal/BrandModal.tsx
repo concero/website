@@ -15,15 +15,21 @@ type BrandModalProps = {
 }
 
 const downloadKit = () => {
-    const link = document.createElement('a');
-    link.href = '/BrandKit/ConceroBrandKit.zip';
-    link.download = 'ConceroBrandKit.zip';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+	const link = document.createElement('a')
+	link.href = '/BrandKit/ConceroBrandKit.zip'
+	link.download = 'ConceroBrandKit.zip'
+	document.body.appendChild(link)
+	link.click()
+	document.body.removeChild(link)
+}
 
 export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
+	const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (e.target === e.currentTarget) {
+			onClose()
+		}
+	}
+
 	useEffect(() => {
 		if (!isOpen) return
 		const originalOverflow = document.body.style.overflow
@@ -69,7 +75,7 @@ export const BrandModal: FC<BrandModalProps> = ({ isOpen, onClose }) => {
 	if (!isOpen) return null
 
 	return (
-		<div className="brand_modal_overlay" role="dialog" aria-modal="true">
+		<div className="brand_modal_overlay" role="dialog" aria-modal="true" onClick={handleOverlayClick}>
 			<div className="brand_modal_container">
 				<div className="brand_modal_header">
 					<span className="brand_modal_title">Brand Kit</span>

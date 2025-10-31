@@ -24,7 +24,7 @@ export const DePin: FC = (): JSX.Element => {
 					/>
 				</div>
 			</div>
-			<div className='depin_divider'/>
+			<div className="depin_divider" />
 		</div>
 	)
 }

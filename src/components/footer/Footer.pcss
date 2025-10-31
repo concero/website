@@ -29,35 +29,36 @@
 .concero_footer_main {
 	display: flex;
 	flex-direction: row;
+	margin-top: var(--space);
 	gap: var(--space-xl);
+	margin-bottom: var(--space-xl);
 	width: 100%;
 }
 
 .concero_footer_secondary {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	width: 100%;
 	align-items: flex-start;
 	gap: var(--space-xl);
-	flex: 1 0 0;
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-	.concero_footer_main {
+	.concero_footer_secondary {
 		flex-direction: column;
 	}
 }
 
 @media (max-width: 640px) {
-	.concero_footer_main {
-		flex-direction: column;
-	}
-
 	.concero_footer {
-		padding: var(--space-xl) var(--space-m);
+		padding: var(--space-xl) var(--space-m) var(--space-xl) var(--space-m);
 	}
-
 	.concero_footer_secondary {
 		flex-direction: column;
+	}
+
+	.concero_footer_main {
+		margin-bottom: 0;
 	}
 }

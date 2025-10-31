@@ -3,10 +3,11 @@ export const links = {
 	discord: 'https://discord.com/invite/nBMAdxYTZK',
 	medium: 'https://medium.com/@concero',
 	whitepaper: 'https://concero.io/v2_whitepaper.pdf',
-	lanca_whitepaper: 'https://concero.io/lanca_whitepaper.pdf',
+	bridging_framework: 'https://concero.io/concero_liquidity_framework.pdf',
 	documentation: 'https://docs.concero.io/',
 	blog: 'https://blog.concero.io/',
 	swap: 'https://app.lanca.io/',
 	liquidity: 'https://app.lanca.io/pools',
 	rewards: 'https://app.concero.io/rewards',
+	scan: 'https://scan.concero.io/',
 }

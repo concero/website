@@ -1,0 +1,139 @@
+.target_card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--space-l);
+	gap: var(--space-l);
+	flex: 1;
+	min-width: 0;
+	border-radius: var(--border-radius-xlarge);
+	background-color: var(--color-gray-50);
+}
+
+.target_card_info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-s);
+	width: 100%;
+	min-width: 0;
+}
+
+.target_card_icon {
+	display: flex;
+	width: 64px;
+	height: 64px;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-large);
+	background-color: var(--color-gray-25);
+	flex-shrink: 0;
+}
+
+.target_card_description {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-xs);
+	width: 100%;
+	min-width: 0;
+}
+
+.target_card_title {
+	color: var(--color-gray-700);
+	font-family: var(--font-heading-medium-family);
+	font-size: 3rem;
+	font-weight: 500;
+	line-height: 3.5rem;
+	letter-spacing: -0.96px;
+	text-align: center;
+}
+
+.target_card_subtitle {
+	color: var(--color-gray-600);
+	font-family: var(--font-heading-medium-family);
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.375rem;
+	text-align: center;
+}
+
+.target_card_tags {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-xs);
+	width: 100%;
+	min-width: 0;
+}
+
+.target_card_tags_row {
+	display: flex;
+	gap: var(--space-xs);
+	align-items: center;
+}
+
+.target_card_visual {
+	display: flex;
+	width: 100%;
+	min-width: 0;
+	min-height: 0;
+	position: relative;
+}
+
+@media (min-width: 1025px) and (max-width: 1919px) {
+	.target_card_title {
+		font-size: 2rem;
+		line-height: 2.25rem;
+	}
+
+	.target_card_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.target_card {
+		min-width: 100%;
+	}
+
+	.target_card_title {
+		font-size: 2rem;
+		line-height: 2.25rem;
+	}
+
+	.target_card_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.target_card {
+		min-width: 100%;
+	}
+
+	.target_card_title {
+		font-size: 2rem;
+		line-height: 2.25rem;
+	}
+
+	.target_card_subtitle {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+
+	.target_card_tags_row {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.target_card_tag_wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+}
