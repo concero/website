@@ -14,7 +14,7 @@ type Flower = {
 
 const flowers: Flower[] = [
 	{
-		src: '/Target/seventh_visual.webp',
+		src: '/Target/seventh_visual.svg',
 		alt: 'Flower 1',
 		x: -170,
 		y: -60,
@@ -22,7 +22,7 @@ const flowers: Flower[] = [
 		rotation: -15,
 	},
 	{
-		src: '/Target/eight_visual.webp',
+		src: '/Target/eight_visual.svg',
 		alt: 'Flower 2',
 		x: 170,
 		y: 80,
