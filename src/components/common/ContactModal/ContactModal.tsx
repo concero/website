@@ -9,12 +9,15 @@ import { Success } from './Success/Success'
 import { OpenTrail } from '@/assets/icons/openTrail'
 import './ContactModal.pcss'
 
+
 type ContactModalProps = {
     isOpen: boolean
     onClose: () => void
 }
 
+
 const PROJECT_OPTIONS = [
+    'dApp',
     'Relayer Network',
     'Verifier Network',
     'RPC Provider',
@@ -22,15 +25,18 @@ const PROJECT_OPTIONS = [
     'Other',
 ]
 
+
 export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
-    const { values, errors, status, handleChange, onSubmit, resetForm, setValues } = useContactForm()
+    const { values, errors, status, handleChange, handleBlur, onSubmit, resetForm, setValues } = useContactForm()
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const dropdownRef = useRef<HTMLDivElement>(null)
+
 
     const handleClose = () => {
         resetForm()
         onClose()
     }
+
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
@@ -38,14 +44,17 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
         }
     }
 
+
     const handleInputClick = () => {
         setIsDropdownOpen(!isDropdownOpen)
     }
+
 
     const handleOptionSelect = (option: string) => {
         setValues({ whoareyou: option })
         setIsDropdownOpen(false)
     }
+
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -54,14 +63,17 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
             }
         }
 
+
         if (isDropdownOpen) {
             document.addEventListener('mousedown', handleClickOutside)
         }
+
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
         }
     }, [isDropdownOpen])
+
 
     useEffect(() => {
         if (isOpen) {
@@ -73,9 +85,11 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
         }
     }, [isOpen])
 
+
     if (!isOpen) {
         return null
     }
+
 
     if (status.succeeded) {
         return createPortal(
@@ -87,6 +101,7 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
             document.body,
         )
     }
+
 
     return createPortal(
         <div className="contact_modal_overlay" onClick={handleOverlayClick}>
@@ -199,7 +214,9 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         )}
                     </div>
                     <div className="contact_modal_input_elem">
-                        <span className="contact_modal_label">Tg handle</span>
+                        <span className="contact_modal_label">
+                            Tg handle <span>{'(Optional)'}</span>
+                        </span>
                         <Input
                             value={values.tgHandle}
                             onChange={handleChange}
@@ -242,8 +259,8 @@ export const ContactModal: FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         )}
                     </div>
                     <div className="contact_modal_button_container">
-                        <button type="submit" className="contact_modal_button">
-                            Send Message
+                        <button type="submit" className="contact_modal_button" disabled={status.isSubmitting}>
+                            {status.isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
                     </div>
                 </form>
