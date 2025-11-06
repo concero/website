@@ -2,6 +2,7 @@ import type { FormEvent, ChangeEvent, FocusEvent } from 'react'
 import { useState, useCallback, useReducer, useMemo } from 'react'
 import { useForm } from '@formspree/react'
 
+
 enum FormField {
     Name = 'name',
     Email = 'email',
@@ -11,11 +12,13 @@ enum FormField {
     Message = 'message',
 }
 
+
 type FormState = {
     values: Record<FormField, string>
     errors: Record<FormField, string>
     touched: Record<FormField, boolean>
 }
+
 
 type FormAction =
     | { type: 'SET_VALUE'; field: FormField; value: string }
@@ -23,6 +26,7 @@ type FormAction =
     | { type: 'SET_TOUCHED'; field: FormField }
     | { type: 'SET_VALUES'; values: Partial<Record<FormField, string>> }
     | { type: 'RESET' }
+
 
 const initialFormState: FormState = {
     values: {
@@ -50,6 +54,7 @@ const initialFormState: FormState = {
         [FormField.Message]: false,
     },
 }
+
 
 const formReducer = (state: FormState, action: FormAction): FormState => {
     switch (action.type) {
@@ -82,19 +87,23 @@ const formReducer = (state: FormState, action: FormAction): FormState => {
     }
 }
 
+
 const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/i
 const telegramRegex = /^@?[a-zA-Z0-9_]{5,32}$/
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 
 export const useContactForm = () => {
     const [state, dispatch] = useReducer(formReducer, initialFormState)
     const [formspreeState, handleSubmit, resetFormspree] = useForm('movwdlqv')
     const [isSubmitting, setIsSubmitting] = useState(false)
 
+
     const validateField = useCallback((field: FormField, value: string): string => {
-        if (field === FormField.Message) {
+        if (field === FormField.Message || field === FormField.TgHandle) {
             return ''
         }
+
 
         const fieldNameMap: Record<FormField, string> = {
             [FormField.Name]: 'Name',
@@ -105,9 +114,11 @@ export const useContactForm = () => {
             [FormField.Message]: 'Message',
         }
 
+
         if (!value || !value.trim()) {
             return `${fieldNameMap[field]} is required`
         }
+
 
         switch (field) {
             case FormField.Email:
@@ -115,18 +126,17 @@ export const useContactForm = () => {
             case FormField.ProjectLink:
                 if (value.trim() === '') return ''
                 return urlRegex.test(value) ? '' : 'Please enter a valid URL'
-            case FormField.TgHandle:
-                const cleanHandle = value.startsWith('@') ? value.slice(1) : value
-                return telegramRegex.test(cleanHandle) ? '' : '5-32 characters, letters/numbers/_ only'
             default:
                 return ''
         }
     }, [])
 
+
     const handleChange = useCallback(
         (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
             const { name, value } = e.target
             const field = name as FormField
+
 
             if (field === FormField.TgHandle) {
                 const cleanValue = value.replace(/[^a-zA-Z0-9_@]/g, '')
@@ -134,6 +144,7 @@ export const useContactForm = () => {
             } else {
                 dispatch({ type: 'SET_VALUE', field, value })
             }
+
 
             if (state.touched[field]) {
                 const valueToValidate = field === FormField.TgHandle ? value.replace(/^@/, '') : value
@@ -146,20 +157,24 @@ export const useContactForm = () => {
         [state.touched, validateField],
     )
 
+
     const handleBlur = useCallback(
         (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
             const { name, value } = e.target
             const field = name as FormField
 
+
             if (!state.touched[field]) {
                 dispatch({ type: 'SET_TOUCHED', field })
             }
+
 
             const error = validateField(field, value)
             dispatch({ type: 'SET_ERROR', field, error })
         },
         [state.touched, validateField],
     )
+
 
     const setValues = useCallback(
         (newValues: Partial<Record<FormField, string>>) => {
@@ -168,9 +183,11 @@ export const useContactForm = () => {
         [],
     )
 
+
     const validateForm = useCallback(() => {
         let isValid = true
         const newErrors = { ...state.errors }
+
 
         Object.values(FormField).forEach(field => {
             const error = validateField(field, state.values[field])
@@ -181,13 +198,16 @@ export const useContactForm = () => {
             dispatch({ type: 'SET_ERROR', field, error })
         })
 
+
         return isValid
     }, [state.values, validateField])
+
 
     const onSubmit = useCallback(
         async (e: FormEvent) => {
             e.preventDefault()
             setIsSubmitting(true)
+
 
             if (validateForm()) {
                 try {
@@ -195,15 +215,18 @@ export const useContactForm = () => {
                 } catch (error) {}
             }
 
+
             setIsSubmitting(false)
         },
         [handleSubmit, validateForm],
     )
 
+
     const resetForm = useCallback(() => {
         dispatch({ type: 'RESET' })
         resetFormspree()
     }, [resetFormspree])
+
 
     const formContext = useMemo(
         () => ({
@@ -223,6 +246,7 @@ export const useContactForm = () => {
         }),
         [state, formspreeState, isSubmitting, handleChange, handleBlur, setValues, onSubmit, resetForm],
     )
+
 
     return formContext
 }
