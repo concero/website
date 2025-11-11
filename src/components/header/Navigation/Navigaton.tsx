@@ -2,80 +2,103 @@ import type { FC } from 'react'
 import { NavigationItem } from './NavigationItem/NavigationItem'
 import { links } from '@/configuration/links'
 import { DocumentationIcon } from '@/assets/icons/documentation'
-import { MessagingIcon } from '@/assets/icons/messaging'
 import { SearchIcon } from '@/assets/icons/search'
+import { DropdownItemType } from './Dropdown/Dropdown'
+import { OverviewIcon } from '@/assets/icons/overview'
+import { ConsoleIcon } from '@/assets/icons/console'
+import { LiqudityProtocolIcon } from '@/assets/icons/liquidityProtocol'
+import { DepoIcon } from '@/assets/icons/depo'
+import { DistroIcon } from '@/assets/icons/distro'
 import { RewardsIcon } from '@/assets/icons/rewards'
-import { DiscordDarkIcon } from '@/assets/icons/discordDark'
-import { TwitterDarkIcon } from '@/assets/icons/twitterDark'
 import './Navigation.pcss'
 
+type NavigationItemData = {
+	title: string
+	link?: string
+	dropdownItems?: DropdownItemType[]
+}
+
 export const Navigation: FC = (): JSX.Element => {
-	const items = [
+	const items: NavigationItemData[] = [
 		{
-			title: 'For Developers',
+			title: 'Motherboard',
 			dropdownItems: [
+				{
+					title: 'Overview',
+					link: '#',
+					subtitle: 'Design, actors and specs',
+					icon: <OverviewIcon />,
+				},
+				{
+					title: 'Scan',
+					link: links.scan,
+					subtitle: 'Track transactions',
+					icon: <SearchIcon />,
+				},
+				{
+					title: 'Console',
+					link: links.scan,
+					subtitle: 'Observability and onboarding',
+					icon: <ConsoleIcon />,
+					disabled: true,
+					tag: {
+						text: 'Soon',
+						variant: 'neutral',
+					},
+				},
 				{
 					title: 'Documentation',
 					link: links.documentation,
 					icon: <DocumentationIcon />,
-				},
-				{
-					title: 'Whitepaper',
-					link: links.whitepaper,
-					icon: <MessagingIcon color="#66767D" />,
-					tag: {
-						text: '.PDF',
-						variant: 'neutral' as const,
-					},
+					subtitle: 'Technical guides for developers',
 				},
 			],
-			specialAction: false,
 		},
 		{
-			title: 'Ecosystem & Apps',
+			title: 'Products',
 			dropdownItems: [
 				{
-					title: 'Concero Scan',
-					link: links.scan,
-					icon: <SearchIcon />,
-					tag: {
-						text: 'New!',
-						variant: 'branded' as const,
-					},
+					title: 'Lanca',
+					link: links.swap,
+					subtitle: 'Cross-chain liquidity protocol',
+					icon: <LiqudityProtocolIcon />,
+				},
+				{
+					title: 'Depo',
+					link: '#',
+					subtitle: 'Deposit/Withdrawal protocol',
+					icon: <DepoIcon />,
+				},
+				{
+					title: 'Distro',
+					link: '#',
+					subtitle: 'Token distribution protocol',
+					icon: <DistroIcon />,
 				},
 			],
-			specialAction: true,
 		},
-
 		{
 			title: 'Community',
 			dropdownItems: [
 				{
-					title: 'Rewards Portal',
+					title: 'Community Portal',
 					link: links.rewards,
+					subtitle: 'Rewards and testing hub',
 					icon: <RewardsIcon />,
 				},
 				{
-					title: 'Discord',
+					title: 'Developer Community',
 					link: links.discord,
-					icon: <DiscordDarkIcon />,
-				},
-				{
-					title: 'X',
-					link: links.twitter,
-					icon: <TwitterDarkIcon />,
-				},
+					subtitle: 'Chat with other developers',
+					icon: <DepoIcon />,
+				}
 			],
-		},
-		{
-			title: 'Blog',
-			link: links.blog,
 		},
 	]
 
 	return (
-		<div className="header_nav_container">
-			<div className="header_nav">
+		<div className="nav_container">
+			<nav className="nav">
 				{items.map(item => (
 					<NavigationItem
 						key={item.title}
@@ -83,10 +106,10 @@ export const Navigation: FC = (): JSX.Element => {
 						showTrail={!!item.dropdownItems}
 						link={item.link}
 						dropdownItems={item.dropdownItems}
-						specialAction={item.specialAction}
+						showSocials={item.title === 'Community'}
 					/>
 				))}
-			</div>
+			</nav>
 		</div>
 	)
 }

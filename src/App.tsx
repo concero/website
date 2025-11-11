@@ -13,8 +13,8 @@ function App() {
 			<ModalProvider>
 				<ModalManager />
 				<Header />
-				<Home />
-				<Footer />
+				{/* <Home />
+				<Footer /> */}
 			</ModalProvider>
 		</HelmetProvider>
 	)

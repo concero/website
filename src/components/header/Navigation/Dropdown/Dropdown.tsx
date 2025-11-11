@@ -1,33 +1,43 @@
 import type { FC, ReactNode } from 'react'
 import type { TTagVariant } from '@concero/ui-kit'
 import { DropdownItem } from './DropdownItem/DropdownItem'
-import { LancaAction } from '@/components/common/LancaAction/LancaAction'
+import { SocialActions } from '@/components/common/SocialActions/SocialActions'
 import './Dropdown.pcss'
 
-type DropdownItemType = {
-	readonly link: string
-	readonly icon: ReactNode
-	readonly title: string
-	readonly tag?: {
-		readonly text: string
-		readonly variant?: TTagVariant
-	}
+export type DropdownItemType = {
+    link: string
+    icon: ReactNode
+    title: string
+    subtitle: string
+    tag?: {
+        text: string
+        variant?: TTagVariant
+    }
+    disabled?: boolean
 }
 
-interface DropdownProps {
-	items: readonly DropdownItemType[]
-	specialAction?: boolean
+type DropdownProps = {
+    items: DropdownItemType[]
+    showSocials?: boolean
 }
 
-export const Dropdown: FC<DropdownProps> = ({ items, specialAction = true }) => {
-	return (
-		<div className="header_nav_dropdown" role="menu">
-			<div className="header_nav_dropdown_container">
-				{items.map(item => (
-					<DropdownItem key={item.link} link={item.link} icon={item.icon} title={item.title} tag={item.tag} />
-				))}
-				{specialAction && <LancaAction />}
-			</div>
-		</div>
-	)
+export const Dropdown: FC<DropdownProps> = ({ items, showSocials = false }) => {
+    return (
+        <div className="dropdown" role="menu">
+            <div className="dropdown_container">
+                {items.map(item => (
+                    <DropdownItem
+                        key={item.link}
+                        link={item.link}
+                        icon={item.icon}
+                        title={item.title}
+                        subtitle={item.subtitle}
+                        tag={item.tag}
+                        disabled={item.disabled}
+                    />
+                ))}
+                {showSocials && <SocialActions />}
+            </div>
+        </div>
+    )
 }

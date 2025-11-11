@@ -38,6 +38,6 @@ const useMediaQuery = (query: string | BreakpointKey): boolean => {
 export const useIsMobile = () => useMediaQuery('mobile')
 export const useIsTablet = () => useMediaQuery('tablet')
 export const useIsDesktop = () => useMediaQuery('desktop')
-export const useIsUltrawide = () => useMediaQuery('ultawide')
+export const useIsUltrawide = () => useMediaQuery('ultrawide')
 
 export default useMediaQuery

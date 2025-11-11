@@ -25,7 +25,6 @@ export const BurgerActions = () => {
 			<Button variant="primary" size="l" isFull onClick={handleContactClick}>
 				Contact Us
 			</Button>
-
 		</div>
 	)
 }

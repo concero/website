@@ -3,32 +3,48 @@ import type { TTagVariant } from '@concero/ui-kit'
 import { Tag } from '@concero/ui-kit'
 import './DropdownItem.pcss'
 
-type DropdownItemProps = {
-	link: string
-	icon: ReactNode
-	title: string
-	tag?: {
-		text: string
-		variant?: TTagVariant
-	}
+export type DropdownItemTag = {
+    text: string
+    variant?: TTagVariant
 }
 
-export const DropdownItem: FC<DropdownItemProps> = ({ link, icon, title, tag }): JSX.Element => {
-	return (
-		<a href={link} target="_blank" rel="noopener noreferrer">
-			<div className="header_nav_dropdown_item">
-				<div className="header_nav_dropdown_item_icon">
-					<div className="header_nav_icon_wrapper">{icon}</div>
-				</div>
-				<div className="header_nav_dropdown_title_container">
-					<div className="header_nav_dropdown_item_title">{title}</div>
-					{tag && (
-						<Tag variant={tag.variant || 'neutral'} size="s">
-							{tag.text}
-						</Tag>
-					)}
-				</div>
-			</div>
-		</a>
-	)
+export type DropdownItemProps = {
+    link: string
+    icon: ReactNode
+    title: string
+    subtitle: string
+    tag?: DropdownItemTag
+    disabled?: boolean
+}
+
+export const DropdownItem: FC<DropdownItemProps> = ({
+    link,
+    icon,
+    title,
+    subtitle,
+    tag,
+    disabled = false,
+}): JSX.Element => {
+    const anchorProps = disabled
+        ? { 'aria-disabled': true, onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault() }
+        : { href: link, target: '_blank', rel: 'noopener noreferrer' }
+
+    return (
+        <a {...anchorProps} className={`dropdown_item${disabled ? ' dropdown_item_disabled' : ''}`}>
+            <div className="dropdown_item_icon">
+                <div className="dropdown_item_icon_wrapper">{icon}</div>
+            </div>
+            <div className="dropdown_item_content">
+                <div className="dropdown_item_header">
+                    <div className="dropdown_item_title">{title}</div>
+                    {tag && (
+                        <Tag variant={tag.variant || 'neutral'} size="s" className="dropdown_item_tag">
+                            {tag.text}
+                        </Tag>
+                    )}
+                </div>
+                <div className="dropdown_item_subtitle">{subtitle}</div>
+            </div>
+        </a>
+    )
 }

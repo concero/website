@@ -1,59 +1,55 @@
-import type { FC, ReactNode } from 'react'
+import type { FC } from 'react'
 import { OpenTrail } from '@/assets/icons/openTrail'
-import { Dropdown } from '../Dropdown/Dropdown'
+import { Dropdown, DropdownItemType } from '../Dropdown/Dropdown'
 import './NavigationItem.pcss'
 
-type DropdownItem = {
-	readonly title: string
-	readonly link: string
-	readonly icon: ReactNode
-	readonly showTag?: boolean
-	readonly tagText?: string
-}
-
-type NavigationItemProps = {
-	readonly title: string
-	readonly showTrail: boolean
-	readonly link?: string
-	readonly dropdownItems?: readonly DropdownItem[]
-	readonly specialAction?: boolean
+export type NavigationItemProps = {
+    title: string
+    showTrail: boolean
+    link?: string
+    dropdownItems?: DropdownItemType[]
+    showSocials?: boolean
 }
 
 export const NavigationItem: FC<NavigationItemProps> = ({
-	title,
-	link,
-	showTrail,
-	dropdownItems = [],
-	specialAction = false,
+    title,
+    link,
+    showTrail,
+    dropdownItems = [],
+    showSocials = false,
 }) => {
-	const hasItems = dropdownItems.length > 0
+    const hasDropdown = dropdownItems.length > 0
 
-	return link ? (
-		<a href={link} className="header_nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
-			<div className="header_nav_item_content">
-				<span className="header_nav_item_title">{title}</span>
-				{showTrail && (
-					<div className="header_nav_item_trail" aria-hidden="true">
-						<OpenTrail />
-					</div>
-				)}
-			</div>
-		</a>
-	) : (
-		<div className="header_nav_item header_nav_item_has_dropdown">
-			<div className="header_nav_item_content">
-				<span className="header_nav_item_title">{title}</span>
-				{showTrail && (
-					<div className="header_nav_item_trail" aria-hidden="true">
-						<OpenTrail />
-					</div>
-				)}
-			</div>
-			{hasItems && (
-				<div className="dropdown-wrapper">
-					<Dropdown items={dropdownItems} specialAction={specialAction} />
-				</div>
-			)}
-		</div>
-	)
+    if (link) {
+        return (
+            <a href={link} className="nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
+                <div className="nav_item_content">
+                    <span className="nav_item_title">{title}</span>
+                    {showTrail && (
+                        <div className="nav_item_trail" aria-hidden="true">
+                            <OpenTrail />
+                        </div>
+                    )}
+                </div>
+            </a>
+        )
+    }
+
+    return (
+        <div className={`nav_item ${hasDropdown ? 'nav_item_dropdown' : ''}`}>
+            <div className="nav_item_content">
+                <span className="nav_item_title">{title}</span>
+                {showTrail && (
+                    <div className="nav_item_trail" aria-hidden="true">
+                        <OpenTrail />
+                    </div>
+                )}
+            </div>
+            {hasDropdown && (
+                <div className="dropdown_wrapper">
+                    <Dropdown items={dropdownItems} showSocials={showSocials} />
+                </div>
+            )}
+        </div>
+    )
 }
