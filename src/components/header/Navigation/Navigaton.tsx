@@ -13,103 +13,108 @@ import { RewardsIcon } from '@/assets/icons/rewards'
 import './Navigation.pcss'
 
 type NavigationItemData = {
-	title: string
-	link?: string
-	dropdownItems?: DropdownItemType[]
+    title: string
+    link?: string
+    dropdownItems?: DropdownItemType[]
+    dropdownWidth?: string 
 }
 
 export const Navigation: FC = (): JSX.Element => {
-	const items: NavigationItemData[] = [
-		{
-			title: 'Motherboard',
-			dropdownItems: [
-				{
-					title: 'Overview',
-					link: '#',
-					subtitle: 'Design, actors and specs',
-					icon: <OverviewIcon />,
-				},
-				{
-					title: 'Scan',
-					link: links.scan,
-					subtitle: 'Track transactions',
-					icon: <SearchIcon />,
-				},
-				{
-					title: 'Console',
-					link: links.scan,
-					subtitle: 'Observability and onboarding',
-					icon: <ConsoleIcon />,
-					disabled: true,
-					tag: {
-						text: 'Soon',
-						variant: 'neutral',
-					},
-				},
-				{
-					title: 'Documentation',
-					link: links.documentation,
-					icon: <DocumentationIcon />,
-					subtitle: 'Technical guides for developers',
-				},
-			],
-		},
-		{
-			title: 'Products',
-			dropdownItems: [
-				{
-					title: 'Lanca',
-					link: links.swap,
-					subtitle: 'Cross-chain liquidity protocol',
-					icon: <LiqudityProtocolIcon />,
-				},
-				{
-					title: 'Depo',
-					link: '#',
-					subtitle: 'Deposit/Withdrawal protocol',
-					icon: <DepoIcon />,
-				},
-				{
-					title: 'Distro',
-					link: '#',
-					subtitle: 'Token distribution protocol',
-					icon: <DistroIcon />,
-				},
-			],
-		},
-		{
-			title: 'Community',
-			dropdownItems: [
-				{
-					title: 'Community Portal',
-					link: links.rewards,
-					subtitle: 'Rewards and testing hub',
-					icon: <RewardsIcon />,
-				},
-				{
-					title: 'Developer Community',
-					link: links.discord,
-					subtitle: 'Chat with other developers',
-					icon: <DepoIcon />,
-				}
-			],
-		},
-	]
+    const items: NavigationItemData[] = [
+        {
+            title: 'Motherboard',
+            dropdownItems: [
+                {
+                    title: 'Overview',
+                    link: '#',
+                    subtitle: 'Design, actors and specs',
+                    icon: <OverviewIcon />,
+                },
+                {
+                    title: 'Scan',
+                    link: links.scan,
+                    subtitle: 'Track transactions',
+                    icon: <SearchIcon />,
+                },
+                {
+                    title: 'Console',
+                    link: links.scan,
+                    subtitle: 'Observability and onboarding',
+                    icon: <ConsoleIcon />,
+                    disabled: true,
+                    tag: {
+                        text: 'Soon',
+                        variant: 'neutral',
+                    },
+                },
+                {
+                    title: 'Documentation',
+                    link: links.documentation,
+                    icon: <DocumentationIcon />,
+                    subtitle: 'Technical guides for developers',
+                },
+            ],
+            dropdownWidth: '301px',
+        },
+        {
+            title: 'Products',
+            dropdownItems: [
+                {
+                    title: 'Lanca',
+                    link: links.swap,
+                    subtitle: 'Cross-chain liquidity protocol',
+                    icon: <LiqudityProtocolIcon />,
+                },
+                {
+                    title: 'Depo',
+                    link: '#',
+                    subtitle: 'Deposit/Withdrawal protocol',
+                    icon: <DepoIcon />,
+                },
+                {
+                    title: 'Distro',
+                    link: '#',
+                    subtitle: 'Token distribution protocol',
+                    icon: <DistroIcon />,
+                },
+            ],
+            dropdownWidth: '323px', 
+        },
+        {
+            title: 'Community',
+            dropdownItems: [
+                {
+                    title: 'Community Portal',
+                    link: links.rewards,
+                    subtitle: 'Rewards and testing hub',
+                    icon: <RewardsIcon />,
+                },
+                {
+                    title: 'Developer Community',
+                    link: links.discord,
+                    subtitle: 'Chat with other developers',
+                    icon: <DepoIcon />,
+                }
+            ],
+            dropdownWidth: '280px',
+        },
+    ]
 
-	return (
-		<div className="nav_container">
-			<nav className="nav">
-				{items.map(item => (
-					<NavigationItem
-						key={item.title}
-						title={item.title}
-						showTrail={!!item.dropdownItems}
-						link={item.link}
-						dropdownItems={item.dropdownItems}
-						showSocials={item.title === 'Community'}
-					/>
-				))}
-			</nav>
-		</div>
-	)
+    return (
+        <div className="nav_container">
+            <nav className="nav">
+                {items.map(item => (
+                    <NavigationItem
+                        key={item.title}
+                        title={item.title}
+                        showTrail={!!item.dropdownItems}
+                        link={item.link}
+                        dropdownItems={item.dropdownItems}
+                        showSocials={item.title === 'Community'}
+                        dropdownWidth={item.dropdownWidth}
+                    />
+                ))}
+            </nav>
+        </div>
+    )
 }

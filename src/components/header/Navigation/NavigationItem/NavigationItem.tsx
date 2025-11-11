@@ -9,6 +9,7 @@ export type NavigationItemProps = {
     link?: string
     dropdownItems?: DropdownItemType[]
     showSocials?: boolean
+    dropdownWidth?: string 
 }
 
 export const NavigationItem: FC<NavigationItemProps> = ({
@@ -17,6 +18,7 @@ export const NavigationItem: FC<NavigationItemProps> = ({
     showTrail,
     dropdownItems = [],
     showSocials = false,
+    dropdownWidth,
 }) => {
     const hasDropdown = dropdownItems.length > 0
 
@@ -47,7 +49,11 @@ export const NavigationItem: FC<NavigationItemProps> = ({
             </div>
             {hasDropdown && (
                 <div className="dropdown_wrapper">
-                    <Dropdown items={dropdownItems} showSocials={showSocials} />
+                    <Dropdown 
+                        items={dropdownItems} 
+                        showSocials={showSocials} 
+                        width={dropdownWidth} 
+                    />
                 </div>
             )}
         </div>

@@ -10,4 +10,6 @@ export const links = {
 	liquidity: 'https://app.lanca.io/pools',
 	rewards: 'https://app.concero.io/rewards',
 	scan: 'https://scan.concero.io/',
+	github: 'https://github.com/concero',
+	linkedin: 'https://www.linkedin.com/company/concero-io/posts/?feedView=all'
 }

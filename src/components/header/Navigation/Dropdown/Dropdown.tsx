@@ -19,11 +19,12 @@ export type DropdownItemType = {
 type DropdownProps = {
     items: DropdownItemType[]
     showSocials?: boolean
+    width?: string 
 }
 
-export const Dropdown: FC<DropdownProps> = ({ items, showSocials = false }) => {
+export const Dropdown: FC<DropdownProps> = ({ items, showSocials = false, width }) => {
     return (
-        <div className="dropdown" role="menu">
+        <div className="dropdown" role="menu" style={{ width, minWidth: width }}>
             <div className="dropdown_container">
                 {items.map(item => (
                     <DropdownItem
