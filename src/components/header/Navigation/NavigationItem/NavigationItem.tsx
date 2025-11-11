@@ -7,75 +7,86 @@ import { Tag } from '@concero/ui-kit'
 import './NavigationItem.pcss'
 
 export type NavigationItemProps = {
-  title: string
-  link?: string
-  showDropdown: boolean
-  dropdownItems?: DropdownItem[]
-  showSocials?: boolean
-  dropdownWidth?: string
-  disabled?: boolean
-  tag?: { text: string; variant?: TTagVariant }
+	title: string
+	link?: string
+	showDropdown: boolean
+	dropdownItems?: DropdownItem[]
+	showSocials?: boolean
+	dropdownWidth?: string
+	disabled?: boolean
+	tag?: { text: string; variant?: TTagVariant }
 }
 
 export const NavigationItem: FC<NavigationItemProps> = ({
-  title,
-  link,
-  showDropdown,
-  dropdownItems = [],
-  showSocials = false,
-  dropdownWidth,
-  disabled = false,
-  tag,
+	title,
+	link,
+	showDropdown,
+	dropdownItems = [],
+	showSocials = false,
+	dropdownWidth,
+	disabled = false,
+	tag,
 }) => {
-  if (link && disabled) {
-    return (
-      <div className="nav_item nav_item_disabled" aria-disabled="true" tabIndex={-1}>
-        <div className="nav_item_content">
-          <span className="nav_item_title_with_tag">
-            <span className="nav_item_title">{title}</span>
-            {tag && (
-              <Tag variant={tag.variant} size="s" className="nav_item_tag">
-                {tag.text}
-              </Tag>
-            )}
-          </span>
-        </div>
-      </div>
-    )
-  }
+	const hasDropdown = dropdownItems.length > 0
 
-  if (link) {
-    return (
-      <a href={link} className="nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
-        <div className="nav_item_content">
-          <span className="nav_item_title">{title}</span>
-          {showDropdown && (
-            <div className="nav_item_trail" aria-hidden="true">
-              <OpenTrail />
-            </div>
-          )}
-        </div>
-      </a>
-    )
-  }
+	const renderType: 0 | 1 | 2 = (() => {
+		if (link && disabled) return 0
+		if (link) return 1
+		if (hasDropdown) return 2
+		return 2
+	})()
 
-  const hasDropdown = dropdownItems.length > 0
+	function renderContent() {
+		switch (renderType) {
+			case 0:
+				return (
+					<div className="nav_item nav_item_disabled" aria-disabled="true" tabIndex={-1}>
+						<div className="nav_item_content">
+							<span className="nav_item_title_with_tag">
+								<span className="nav_item_title">{title}</span>
+								{tag && (
+									<Tag variant={tag.variant} size="s" className="nav_item_tag">
+										{tag.text}
+									</Tag>
+								)}
+							</span>
+						</div>
+					</div>
+				)
+			case 1:
+				return (
+					<a href={link} className="nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
+						<div className="nav_item_content">
+							<span className="nav_item_title">{title}</span>
+							{showDropdown && (
+								<div className="nav_item_trail" aria-hidden="true">
+									<OpenTrail />
+								</div>
+							)}
+						</div>
+					</a>
+				)
+			case 2:
+			default:
+				return (
+					<div className={`nav_item${hasDropdown ? ' nav_item_dropdown' : ''}`}>
+						<div className="nav_item_content">
+							<span className="nav_item_title">{title}</span>
+							{showDropdown && (
+								<div className="nav_item_trail" aria-hidden="true">
+									<OpenTrail />
+								</div>
+							)}
+						</div>
+						{hasDropdown && (
+							<div className="dropdown_wrapper">
+								<Dropdown items={dropdownItems} showSocials={showSocials} width={dropdownWidth} />
+							</div>
+						)}
+					</div>
+				)
+		}
+	}
 
-  return (
-    <div className={`nav_item${hasDropdown ? ' nav_item_dropdown' : ''}`}>
-      <div className="nav_item_content">
-        <span className="nav_item_title">{title}</span>
-        {showDropdown && (
-          <div className="nav_item_trail" aria-hidden="true">
-            <OpenTrail />
-          </div>
-        )}
-      </div>
-      {hasDropdown && (
-        <div className="dropdown_wrapper">
-          <Dropdown items={dropdownItems} showSocials={showSocials} width={dropdownWidth} />
-        </div>
-      )}
-    </div>
-  )
+	return renderContent()
 }
