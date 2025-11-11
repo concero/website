@@ -1,122 +1,159 @@
 import { useEffect } from 'react'
-import { LiquidityIcon } from '@/assets/icons/liquidity'
-import { RewardsIcon } from '@/assets/icons/rewards'
-import { BookIcon } from '@/assets/icons/book'
 import { DocumentationIcon } from '@/assets/icons/documentation'
-import { BlogIcon } from '@/assets/icons/blog'
+import { SearchIcon } from '@/assets/icons/search'
+import { RewardsIcon } from '@/assets/icons/rewards'
+import { DiscordDarkIcon } from '@/assets/icons/discordDark'
+import { ConsoleIcon } from '@/assets/icons/console'
+import { OverviewIcon } from '@/assets/icons/overview'
+import { LiqudityProtocolIcon } from '@/assets/icons/liquidityProtocol'
+import { DepoIcon } from '@/assets/icons/depo'
+import { DistroIcon } from '@/assets/icons/distro'
 import { BurgerSectionItem } from './BurgerItem/BurgerItem'
 import { BurgerActions } from './BurgerActions/BurgerActions'
-import { LancaAction } from '@/components/common/LancaAction/LancaAction'
+import { SocialActions } from '@/components/common/SocialActions/SocialActions'
 import { links } from '@/configuration/links'
-import { DiscordDarkIcon } from '@/assets/icons/discordDark'
-import { TwitterDarkIcon } from '@/assets/icons/twitterDark'
-import { SearchIcon } from '@/assets/icons/search'
 import { TTagVariant } from '@concero/ui-kit'
 import './Burger.pcss'
 
 type BurgerItem = {
-	title: string
-	href: string
-	icon: React.ReactNode
-	showTag?: boolean
-	tagText?: string
-	tagVariant?: TTagVariant
+  title: string
+  href: string
+  icon: React.ReactNode
+  subtitle?: string
+  showTag?: boolean
+  tagText?: string
+  tagVariant?: TTagVariant
+  disabled?: boolean
 }
 
 type BurgerSection = {
-	title: string | null
-	items: BurgerItem[]
-	showSpecialAction: boolean
+  title: string | null
+  items: BurgerItem[]
+  showSocialActions?: boolean
 }
 
 const burgerSections: BurgerSection[] = [
-	{
-		title: 'For Developers',
-		items: [
-			{ title: 'Documentation', href: links.documentation, icon: <DocumentationIcon /> },
-			{
-				title: 'Whitepaper',
-				href: links.whitepaper,
-				icon: <BookIcon />,
-				showTag: true,
-				tagText: '.PDF',
-				tagVariant: 'neutral',
-			},
-		],
-		showSpecialAction: false,
-	},
-	{
-		title: 'Ecosystem',
-		items: [
-			{
-				title: 'Concero Scan',
-				href: links.scan,
-				icon: <SearchIcon />,
-				showTag: true,
-				tagText: 'New!',
-				tagVariant: 'branded',
-			},
-		],
-		showSpecialAction: true,
-	},
-	{
-		title: 'Community',
-		items: [
-			{ title: 'Rewards Portal', href: links.rewards, icon: <RewardsIcon /> },
-			{ title: 'Discord', href: links.discord, icon: <DiscordDarkIcon /> },
-			{ title: 'X', href: links.twitter, icon: <TwitterDarkIcon /> },
-		],
-		showSpecialAction: false,
-	},
-	{
-		title: null,
-		items: [{ title: 'Blog', href: links.blog, icon: <BlogIcon /> }],
-		showSpecialAction: false,
-	},
+  {
+    title: 'Motherboard',
+    items: [
+      {
+        title: 'Overview',
+        href: links.overview,
+        subtitle: 'Design, actors and specs',
+        icon: <OverviewIcon />,
+      },
+      {
+        title: 'Scan',
+        href: links.scan,
+        subtitle: 'Track transactions',
+        icon: <SearchIcon />,
+      },
+      {
+        title: 'Console',
+        href: links.scan,
+        subtitle: 'Observability and onboarding',
+        icon: <ConsoleIcon />,
+        showTag: true,
+        tagText: 'Soon',
+        tagVariant: 'neutral',
+        disabled: true,
+      },
+      {
+        title: 'Documentation',
+        href: links.documentation,
+        subtitle: 'Technical guides for developers',
+        icon: <DocumentationIcon />,
+      },
+    ],
+  },
+  {
+    title: 'Products',
+    items: [
+      {
+        title: 'Lanca',
+        href: links.swap,
+        subtitle: 'Cross-chain liquidity protocol',
+        icon: <LiqudityProtocolIcon />,
+      },
+      {
+        title: 'Depo',
+        href: links.depo,
+        subtitle: 'Deposit/Withdrawal protocol',
+        icon: <DepoIcon />,
+      },
+      {
+        title: 'Distro',
+        href: links.distro,
+        subtitle: 'Token distribution protocol',
+        icon: <DistroIcon />,
+      },
+    ],
+  },
+  {
+    title: 'Community',
+    showSocialActions: true,
+    items: [
+      {
+        title: 'Community Portal',
+        href: links.rewards,
+        subtitle: 'Rewards and testing hub',
+        icon: <RewardsIcon />,
+      },
+      {
+        title: 'Developer Community',
+        href: links.discord,
+        subtitle: 'Chat with other developers',
+        icon: <DiscordDarkIcon />,
+      },
+    ],
+  },
 ]
 
 export const Burger = () => {
-	useEffect(() => {
-		const originalOverflow = document.body.style.overflow
-		document.body.style.overflow = 'hidden'
-		return () => {
-			document.body.style.overflow = originalOverflow
-		}
-	}, [])
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = originalOverflow
+    }
+  }, [])
 
-	return (
-		<div className="burger_container">
-			<div className="burger">
-				<div className="burger_content">
-					{burgerSections.map((section, idx) => (
-						<div key={section.title || idx} className="burger_section_wrapper">
-							<div className="burger_section">
-								{section.title && <span className="burger_section_title">{section.title}</span>}
-								<div className="burger_section_items">
-									{section.items.map(item => (
-										<BurgerSectionItem
-											key={item.title}
-											title={item.title}
-											href={item.href}
-											icon={item.icon}
-											showTag={item.showTag}
-											tagText={item.tagText}
-											tagVariant={item.tagVariant}
-										/>
-									))}
-								</div>
-								{section.showSpecialAction && (
-									<div className="burger_special_action">
-										<LancaAction size="small" />
-									</div>
-								)}
-							</div>
-							{idx < burgerSections.length - 1 && <div className="burger_section_divider" />}
-						</div>
-					))}
-					<BurgerActions />
-				</div>
-			</div>
-		</div>
-	)
+  return (
+    <div className="burger_container">
+      <div className="burger">
+        <div className="burger_content">
+          {burgerSections.map((section, idx) => (
+            <div key={section.title || idx} className="burger_section_wrapper">
+              <div className="burger_section">
+                {section.title && <span className="burger_section_title">{section.title}</span>}
+                <div className="burger_section_items">
+                  {section.items.map(item => {
+                    if (item.disabled) {
+                      console.log(`Burger item disabled: ${item.title}`)
+                    }
+                    return (
+                      <BurgerSectionItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={item.icon}
+                        subtitle={item.subtitle}
+                        showTag={item.showTag}
+                        tagText={item.tagText}
+                        tagVariant={item.tagVariant}
+                        disabled={item.disabled}
+                      />
+                    )
+                  })}
+                </div>
+                {section.showSocialActions && <SocialActions centered={false} />}
+              </div>
+              {idx < burgerSections.length - 1 && <div className="burger_section_divider" />}
+            </div>
+          ))}
+          <BurgerActions />
+        </div>
+      </div>
+    </div>
+  )
 }

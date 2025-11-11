@@ -12,4 +12,7 @@ export const links = {
 	scan: 'https://scan.concero.io/',
 	github: 'https://github.com/concero',
 	linkedin: 'https://www.linkedin.com/company/concero-io/posts/?feedView=all',
+	overview: '',
+	depo: '',
+	distro: '',
 }

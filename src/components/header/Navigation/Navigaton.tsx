@@ -28,7 +28,7 @@ export const Navigation: FC = () => {
 			title: 'Motherboard',
 			dropdownWidth: '301px',
 			dropdownItems: [
-				{ title: 'Overview', link: '#', subtitle: 'Design, actors and specs', icon: <OverviewIcon /> },
+				{ title: 'Overview', link: links.overview, subtitle: 'Design, actors and specs', icon: <OverviewIcon /> },
 				{ title: 'Scan', link: links.scan, subtitle: 'Track transactions', icon: <SearchIcon /> },
 				{
 					title: 'Console',
@@ -56,8 +56,8 @@ export const Navigation: FC = () => {
 					subtitle: 'Cross-chain liquidity protocol',
 					icon: <LiqudityProtocolIcon />,
 				},
-				{ title: 'Depo', link: '#', subtitle: 'Deposit/Withdrawal protocol', icon: <DepoIcon /> },
-				{ title: 'Distro', link: '#', subtitle: 'Token distribution protocol', icon: <DistroIcon /> },
+				{ title: 'Depo', link: links.depo, subtitle: 'Deposit/Withdrawal protocol', icon: <DepoIcon /> },
+				{ title: 'Distro', link: links.distro, subtitle: 'Token distribution protocol', icon: <DistroIcon /> },
 			],
 		},
 		{
