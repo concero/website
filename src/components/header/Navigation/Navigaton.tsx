@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import type { TTagVariant } from '@concero/ui-kit'
 import { NavigationItem } from './NavigationItem/NavigationItem'
 import { links } from '@/configuration/links'
 import { DocumentationIcon } from '@/assets/icons/documentation'
@@ -16,7 +17,12 @@ type NavigationItemData = {
     title: string
     link?: string
     dropdownItems?: DropdownItemType[]
-    dropdownWidth?: string 
+    dropdownWidth?: string
+    disabled?: boolean
+    tag?: {
+        text: string
+        variant?: TTagVariant
+    }
 }
 
 export const Navigation: FC = (): JSX.Element => {
@@ -78,7 +84,7 @@ export const Navigation: FC = (): JSX.Element => {
                     icon: <DistroIcon />,
                 },
             ],
-            dropdownWidth: '323px', 
+            dropdownWidth: '323px',
         },
         {
             title: 'Community',
@@ -94,9 +100,18 @@ export const Navigation: FC = (): JSX.Element => {
                     link: links.discord,
                     subtitle: 'Chat with other developers',
                     icon: <DepoIcon />,
-                }
+                },
             ],
             dropdownWidth: '280px',
+        },
+        {
+            title: 'Ecosystem',
+            link: links.blog,
+            disabled: true,
+            tag: {
+                text: 'Soon',
+                variant: 'neutral',
+            },
         },
     ]
 
@@ -112,6 +127,8 @@ export const Navigation: FC = (): JSX.Element => {
                         dropdownItems={item.dropdownItems}
                         showSocials={item.title === 'Community'}
                         dropdownWidth={item.dropdownWidth}
+                        disabled={item.disabled}
+                        tag={item.tag}
                     />
                 ))}
             </nav>

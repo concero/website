@@ -1,7 +1,11 @@
 import type { FC } from 'react'
+import type { TTagVariant } from '@concero/ui-kit/dist/common/Tag/Tag'
 import { OpenTrail } from '@/assets/icons/openTrail'
 import { Dropdown, DropdownItemType } from '../Dropdown/Dropdown'
+import { Tag } from '@concero/ui-kit'
 import './NavigationItem.pcss'
+
+
 
 export type NavigationItemProps = {
     title: string
@@ -9,7 +13,12 @@ export type NavigationItemProps = {
     link?: string
     dropdownItems?: DropdownItemType[]
     showSocials?: boolean
-    dropdownWidth?: string 
+    dropdownWidth?: string
+    disabled?: boolean
+    tag?: {
+        text: string
+        variant?: TTagVariant
+    }
 }
 
 export const NavigationItem: FC<NavigationItemProps> = ({
@@ -19,8 +28,28 @@ export const NavigationItem: FC<NavigationItemProps> = ({
     dropdownItems = [],
     showSocials = false,
     dropdownWidth,
+    disabled = false,
+    tag,
 }) => {
     const hasDropdown = dropdownItems.length > 0
+
+    if (link && disabled) {
+        return (
+            <div className="nav_item nav_item_disabled" aria-disabled="true" tabIndex={-1}>
+                <div className="nav_item_content">
+                    <span className="nav_item_title_with_tag">
+                        <span className='nav_item_title'>{title}</span>
+                        {tag && (
+                            <Tag variant={tag.variant} size="s" className="nav_item_tag">
+                                {tag.text}
+                            </Tag>
+                        )}
+                    </span>
+                </div>
+            </div>
+        )
+    }
+
 
     if (link) {
         return (
@@ -38,7 +67,7 @@ export const NavigationItem: FC<NavigationItemProps> = ({
     }
 
     return (
-        <div className={`nav_item ${hasDropdown ? 'nav_item_dropdown' : ''}`}>
+        <div className={`nav_item${hasDropdown ? ' nav_item_dropdown' : ''}`}>
             <div className="nav_item_content">
                 <span className="nav_item_title">{title}</span>
                 {showTrail && (
@@ -49,11 +78,7 @@ export const NavigationItem: FC<NavigationItemProps> = ({
             </div>
             {hasDropdown && (
                 <div className="dropdown_wrapper">
-                    <Dropdown 
-                        items={dropdownItems} 
-                        showSocials={showSocials} 
-                        width={dropdownWidth} 
-                    />
+                    <Dropdown items={dropdownItems} showSocials={showSocials} width={dropdownWidth} />
                 </div>
             )}
         </div>

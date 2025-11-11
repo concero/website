@@ -34,10 +34,6 @@
 	will-change: transform, opacity;
 }
 
-.nav_item_dropdown {
-	/* to be used on nav_item with dropdown */
-}
-
 .nav_item_dropdown:hover,
 .nav_item_dropdown:focus-within {
 	background-color: var(--color-gray-light-100);
@@ -84,4 +80,15 @@
 .nav_item_dropdown:focus-within .nav_item_trail {
 	transform: rotate(180deg) scale(1.15);
 	opacity: 0.85;
+}
+
+.nav_item_title_with_tag {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+
+.nav_item_disabled {
+	pointer-events: none;
+	cursor: not-allowed;
 }
