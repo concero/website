@@ -28,7 +28,12 @@ export const Navigation: FC = () => {
 			title: 'Motherboard',
 			dropdownWidth: '301px',
 			dropdownItems: [
-				{ title: 'Overview', link: links.overview, subtitle: 'Design, actors and specs', icon: <OverviewIcon /> },
+				{
+					title: 'Overview',
+					link: links.overview,
+					subtitle: 'Design, actors and specs',
+					icon: <OverviewIcon />,
+				},
 				{ title: 'Scan', link: links.scan, subtitle: 'Track transactions', icon: <SearchIcon /> },
 				{
 					title: 'Console',

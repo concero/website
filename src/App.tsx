@@ -1,8 +1,7 @@
 import '@concero/ui-kit/styles/concero/index.css'
 import './styles/App.css'
-import { Home } from './pages/Home'
+import { HomePage } from './pages/Home'
 import { Header } from './components/header/Header'
-import { Footer } from './components/footer/Footer'
 import { HelmetProvider } from 'react-helmet-async'
 import { ModalProvider } from './reducer/modal/modalProvider'
 import { ModalManager } from './components/common/ModalManager/ModalManager'
@@ -13,8 +12,7 @@ function App() {
 			<ModalProvider>
 				<ModalManager />
 				<Header />
-				{/* <Home />
-				<Footer /> */}
+				<HomePage />
 			</ModalProvider>
 		</HelmetProvider>
 	)

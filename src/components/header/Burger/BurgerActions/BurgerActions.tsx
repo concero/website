@@ -16,14 +16,14 @@ export const BurgerActions = () => {
 				variant="secondary_color"
 				size="l"
 				isFull
-				className='burger_action_button'
+				className="burger_action_button"
 				onClick={() => {
 					window.open(links.scan, '_blank', 'noopener noreferrer')
 				}}
 			>
 				Open Scan
 			</Button>
-			<Button variant="primary" size="l" isFull onClick={handleContactClick} className='burger_action_button'>
+			<Button variant="primary" size="l" isFull onClick={handleContactClick} className="burger_action_button">
 				Contact Us
 			</Button>
 		</div>
