@@ -5,6 +5,7 @@ import { Header } from './components/header/Header'
 import { HelmetProvider } from 'react-helmet-async'
 import { ModalProvider } from './reducer/modal/modalProvider'
 import { ModalManager } from './components/common/ModalManager/ModalManager'
+import { Footer } from './components/footer/Footer'
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 				<ModalManager />
 				<Header />
 				<HomePage />
+				<Footer />
 			</ModalProvider>
 		</HelmetProvider>
 	)
