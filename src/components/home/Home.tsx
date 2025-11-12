@@ -6,7 +6,7 @@ export const Home: FC = (): ReactElement => {
 	return (
 		<>
 			<Hero />
-            <Reach />
+			<Reach />
 		</>
 	)
 }

@@ -20,15 +20,28 @@
 .home_reach_options {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-xs);
+	gap: var(--space-m);
 	width: 100%;
 }
 
 .home_reach_protocols {
 	display: flex;
 	align-items: flex-start;
+	gap: var(--space-m);
+	width: 100%;
+}
+
+.home_reach_data {
+	display: flex;
 	gap: var(--space-xs);
 	width: 100%;
+	min-width: 0;
+	flex-wrap: wrap;
+}
+
+.home_reach_data > * {
+	flex: 1 1 0;
+	min-width: 0;
 }
 
 @media (min-width: 1025px) and (max-width: 1919px) {
@@ -36,6 +49,15 @@
 		font-size: 3rem;
 		line-height: 3.5rem;
 		letter-spacing: -0.96px;
+	}
+
+	.home_reach_data > :first-child {
+		flex: 0 0 33.5%;
+		max-width: 33.5%;
+	}
+	.home_reach_data > :not(:first-child) {
+		flex: 1 1 0;
+		max-width: calc((100% - 33.5%) / 3);
 	}
 }
 
@@ -45,6 +67,21 @@
 		line-height: 3.5rem;
 		letter-spacing: -0.96px;
 	}
+
+	.home_reach_protocols {
+		flex-direction: column;
+	}
+
+	.home_reach_data > :first-child {
+		flex: 0 0 100%;
+		max-width: 100%;
+		order: 0;
+	}
+	.home_reach_data > :not(:first-child) {
+		flex: 0 0 calc((100% - 2 * var(--space-xs)) / 3);
+		max-width: calc((100% - 2 * var(--space-xs)) / 3);
+		order: 1;
+	}
 }
 
 @media (max-width: 640px) {
@@ -52,5 +89,14 @@
 		font-size: 3rem;
 		line-height: 3.5rem;
 		letter-spacing: -0.96px;
+	}
+
+	.home_reach_protocols {
+		flex-direction: column;
+	}
+
+	.home_reach_data > * {
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 }
