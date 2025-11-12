@@ -1,0 +1,112 @@
+.reach_card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: var(--space-l);
+	width: 100%;
+	gap: var(--space-l);
+	border-radius: var(--border-radius-xlarge);
+	background-color: var(--color-gray-50);
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.reach_card:hover {
+	background-color: var(--color-gray-100);
+	transform: translateY(-2px);
+}
+
+.reach_card_link,
+.reach_card_button {
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.reach_card_button {
+	text-align: left;
+}
+
+.reach_card_header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-xs);
+	width: 100%;
+}
+
+.reach_card_title {
+	color: var(--color-gray-700);
+	font-family: var(--font-heading-medium-family);
+	font-size: 3rem;
+	font-weight: 500;
+	line-height: 3.5rem;
+	letter-spacing: -0.96px;
+}
+
+.reach_card_subtitle {
+	color: var(--color-gray-500);
+	font-family: var(--font-heading-medium-family);
+	font-size: 3rem;
+	font-weight: 500;
+	line-height: 3.5rem;
+	letter-spacing: 0.96px;
+}
+
+.reach_card_detail {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-xs);
+	width: 100%;
+}
+
+.reach_card_bullet {
+	flex: 0 0 10px;
+	height: 10px;
+	background-color: var(--color-accent-600);
+	border-radius: 50%;
+	margin-top: 6px;
+}
+
+.reach_card_text {
+	flex: 1;
+	color: var(--color-gray-600);
+	font-family: var(--font-heading-medium-family);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.25rem;
+}
+
+.reach_card_visual {
+	width: 100%;
+	height: 368px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-large);
+	background-color: var(--color-gray-25);
+	transition: background-color 0.2s ease;
+}
+
+@media (min-width: 641px) and (max-width: 1919px) {
+	.reach_card_title,
+	.reach_card_subtitle {
+		font-size: 2rem;
+		line-height: 2.25rem;
+		letter-spacing: -0.64px;
+	}
+}
+
+@media (max-width: 640px) {
+	.reach_card_title,
+	.reach_card_subtitle {
+		font-size: 2rem;
+		line-height: 2.25rem;
+		letter-spacing: -0.64px;
+	}
+}
