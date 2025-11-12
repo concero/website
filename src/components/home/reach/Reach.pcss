@@ -33,7 +33,7 @@
 
 .home_reach_data {
 	display: flex;
-	gap: var(--space-xs);
+	gap: var(--space-m);
 	width: 100%;
 	min-width: 0;
 	flex-wrap: wrap;
@@ -42,6 +42,13 @@
 .home_reach_data > * {
 	flex: 1 1 0;
 	min-width: 0;
+}
+
+.home_reach_partners {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-xxl);
 }
 
 @media (min-width: 1025px) and (max-width: 1919px) {
@@ -78,8 +85,8 @@
 		order: 0;
 	}
 	.home_reach_data > :not(:first-child) {
-		flex: 0 0 calc((100% - 2 * var(--space-xs)) / 3);
-		max-width: calc((100% - 2 * var(--space-xs)) / 3);
+		flex: 0 0 calc((100% - 2 * var(--space-m)) / 3);
+		max-width: calc((100% - 2 * var(--space-m)) / 3);
 		order: 1;
 	}
 }
