@@ -20,20 +20,20 @@
 .home_reach_options {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-m);
+	gap: var(--space-xs);
 	width: 100%;
 }
 
 .home_reach_protocols {
 	display: flex;
 	align-items: flex-start;
-	gap: var(--space-m);
+	gap: var(--space-xs);
 	width: 100%;
 }
 
 .home_reach_data {
 	display: flex;
-	gap: var(--space-m);
+	gap: var(--space-xs);
 	width: 100%;
 	min-width: 0;
 	flex-wrap: wrap;
@@ -85,8 +85,8 @@
 		order: 0;
 	}
 	.home_reach_data > :not(:first-child) {
-		flex: 0 0 calc((100% - 2 * var(--space-m)) / 3);
-		max-width: calc((100% - 2 * var(--space-m)) / 3);
+		flex: 0 0 calc((100% - 2 * var(--space-xs)) / 3);
+		max-width: calc((100% - 2 * var(--space-xs)) / 3);
 		order: 1;
 	}
 }

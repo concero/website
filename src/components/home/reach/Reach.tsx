@@ -6,75 +6,71 @@ import { links } from '@/configuration/links'
 import './Reach.pcss'
 
 const ProtocolCards: FC = (): ReactElement => (
-  <div className="home_reach_protocols">
-    <ReachCard
-      title="Lanca"
-      subtitle="Cross-chain liquidity protocol"
-      description="Move your liquidity across thousands of chains"
-      href={links.swap}
-    />
-    <ReachCard
-      title="Depo"
-      subtitle="Deposit and withdrawal protocol"
-      description="Deposit & withdraw across thousands of chains"
-      href={links.depo}
-    />
-    <ReachCard
-      title="Distro"
-      subtitle="Token distribution protocol"
-      description="Distribute your asset across thousands of chains"
-      href={links.distro}
-    />
-  </div>
+	<div className="home_reach_protocols">
+		<ReachCard
+			title="Lanca"
+			subtitle="Cross-chain liquidity protocol"
+			description="Move your liquidity across thousands of chains"
+			href={links.swap}
+		/>
+		<ReachCard
+			title="Depo"
+			subtitle="Deposit and withdrawal protocol"
+			description="Deposit & withdraw across thousands of chains"
+			href={links.depo}
+		/>
+		<ReachCard
+			title="Distro"
+			subtitle="Token distribution protocol"
+			description="Distribute your asset across thousands of chains"
+			href={links.distro}
+		/>
+	</div>
 )
 
 const MotherboardCard: FC = (): ReactElement => (
-  <div className="home_reach_motherboard">
-    <ReachCard
-      title="Motherboard"
-      subtitle="Open Interoperability Framework"
-      href={links.overview}
-    />
-  </div>
+	<div className="home_reach_motherboard">
+		<ReachCard title="Motherboard" subtitle="Open Interoperability Framework" href={links.overview} />
+	</div>
 )
 
 const DataCards: FC = (): ReactElement => (
-  <div className="home_reach_data">
-    <DataCard title="Total Reachable Wallets" number="163,024,531" isDark />
-    <DataCard title="Chains" number="1,503" />
-    <DataCard title="Supported VMs" number="1" />
-    <DataCard title="AVG. deployment time" number="20 min" />
-  </div>
+	<div className="home_reach_data">
+		<DataCard title="Total Reachable Wallets" number="163,024,531" isDark />
+		<DataCard title="Chains" number="1,503" />
+		<DataCard title="Supported VMs" number="1" />
+		<DataCard title="AVG. deployment time" number="20 min" />
+	</div>
 )
 
 const ReachOptions: FC = (): ReactElement => {
-  return (
-    <div className="home_reach_options">
-      <ProtocolCards />
-      <MotherboardCard />
-      <DataCards />
-    </div>
-  )
+	return (
+		<div className="home_reach_options">
+			<ProtocolCards />
+			<MotherboardCard />
+			<DataCards />
+		</div>
+	)
 }
 
 const Partners: FC = (): ReactElement => (
-  <div className="home_reach_partners">
-	<img src="/Partners/Chainlink.svg" alt="Chainlink" />
-	<img src="/Partners/Symbiotic.svg" alt="Symbiotic" />
-	<img src="/Partners/Biconomy.svg" alt="Biconomy" />
-	<img src="/Partners/Unichain.svg" alt="Unichain" />
-	<img src="/Partners/Arbitrum.svg" alt="Arbitrum" />
-  </div>
+	<div className="home_reach_partners">
+		<img src="/Partners/Chainlink.svg" alt="Chainlink" />
+		<img src="/Partners/Symbiotic.svg" alt="Symbiotic" />
+		<img src="/Partners/Biconomy.svg" alt="Biconomy" />
+		<img src="/Partners/Unichain.svg" alt="Unichain" />
+		<img src="/Partners/Arbitrum.svg" alt="Arbitrum" />
+	</div>
 )
 
 export const Reach: FC = (): ReactElement => {
-  const options = useMemo(() => <ReachOptions />, [])
-  const partners = useMemo(() => <Partners />, [])
-  return (
-    <section className="home_reach">
-      <span className="home_reach_title">Reach millions of users</span>
-      {options}
-      {partners}
-    </section>
-  )
+	const options = useMemo(() => <ReachOptions />, [])
+	const partners = useMemo(() => <Partners />, [])
+	return (
+		<section className="home_reach">
+			<span className="home_reach_title">Reach millions of users</span>
+			{options}
+			{partners}
+		</section>
+	)
 }
