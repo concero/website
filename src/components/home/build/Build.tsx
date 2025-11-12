@@ -11,8 +11,8 @@ export const Build: FC = (): ReactElement => {
 				<BuildCard
 					title="Take your project cross-chain"
 					bullets={['Reach millions of users', 'Unlock new revenue streams', 'Own your distribution']}
-                    url={links.overview}
-                    buttonText='Solutions'
+					url={links.overview}
+					buttonText="Solutions"
 				/>
 				<BuildCard
 					title="Build cross-chain protocols"
@@ -21,14 +21,14 @@ export const Build: FC = (): ReactElement => {
 						'Optimised infra for your needs',
 						'Remain sovereign',
 					]}
-                    url={links.documentation}
-                    buttonText='Documentation'
+					url={links.documentation}
+					buttonText="Documentation"
 				/>
 				<BuildCard
 					title="Connect to the motherboard"
 					bullets={['Provide infrastructure', 'Focus on your specialty', 'Compete on merit']}
-                    url={links.overview}
-                    buttonText='Explore Motherboard'
+					url={links.overview}
+					buttonText="Explore Motherboard"
 				/>
 			</div>
 		</section>

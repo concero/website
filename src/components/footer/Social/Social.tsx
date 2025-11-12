@@ -1,23 +1,35 @@
 import { SocialIcon } from '../../common/SocialIcon/SocialIcon'
-import { TwitterIcon } from '@/assets/icons/twitter'
-import { DiscordIcon } from '@/assets/icons/discord'
-import { MediumIcon } from '@/assets/icons/medium'
+import { MediumDarkIcon } from '@/assets/icons/mediumDark'
+import { DiscordDarkIcon } from '@/assets/icons/discordDark'
+import { TwitterDarkIcon } from '@/assets/icons/twitterDark'
+import { GithubIcon } from '@/assets/icons/github'
+import { LinkedinIcon } from '@/assets/icons/linkedin'
 import { links } from '@/configuration/links'
 import './Social.pcss'
 
 const socials = [
 	{
-		icon: <TwitterIcon />,
+		icon: <TwitterDarkIcon />,
 		name: 'twitter',
 		link: links.twitter,
 	},
 	{
-		icon: <DiscordIcon />,
+		icon: <DiscordDarkIcon />,
 		name: 'discord',
 		link: links.discord,
 	},
 	{
-		icon: <MediumIcon />,
+		icon: <MediumDarkIcon />,
+		name: 'medium',
+		link: links.medium,
+	},
+	{
+		icon: <GithubIcon />,
+		name: 'medium',
+		link: links.medium,
+	},
+	{
+		icon: <LinkedinIcon />,
 		name: 'medium',
 		link: links.medium,
 	},

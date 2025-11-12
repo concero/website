@@ -7,17 +7,11 @@ type SocialWidgetProps = {
 	icon: ReactNode
 	link: string
 	social: Social
-	isGrey?: boolean
 }
 
-export const SocialIcon: FC<SocialWidgetProps> = ({ link, icon, social, isGrey = false }) => {
+export const SocialIcon: FC<SocialWidgetProps> = ({ link, icon, social }) => {
 	return (
-		<a
-			href={link}
-			target="_blank"
-			rel="noreferrer"
-			className={`social_icon ${social} ${isGrey ? 'social_icon_grey' : ''}`}
-		>
+		<a href={link} target="_blank" rel="noreferrer" className={`social_icon ${social}`}>
 			{icon}
 		</a>
 	)

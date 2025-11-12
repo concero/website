@@ -7,44 +7,13 @@
 	padding: var(--space-xs);
 	border-radius: var(--border-radius-small);
 	cursor: pointer;
+	background-color: var(--color-gray-50);
 	transition:
 		background-color 0.2s ease,
-		transform 0.2s ease,
-		box-shadow 0.2s ease;
+		transform 0.2s ease;
 }
 
 .social_icon:hover {
+	background-color: var(--color-gray-light-100);
 	transform: translateY(-2px);
-}
-
-.twitter:not(.social_icon_grey) {
-	background-color: var(--color-gray-light-600);
-}
-
-.twitter:not(.social_icon_grey):hover {
-	background-color: var(--color-gray-light-700);
-}
-
-.discord:not(.social_icon_grey) {
-	background-color: rgba(88, 101, 242, 1);
-}
-
-.discord:not(.social_icon_grey):hover {
-	background-color: rgba(77, 90, 227, 1);
-}
-
-.medium:not(.social_icon_grey) {
-	background-color: var(--color-gray-light-600);
-}
-
-.medium:not(.social_icon_grey):hover {
-	background-color: var(--color-gray-light-700);
-}
-
-.social_icon_grey {
-	background-color: var(--color-gray-light-100) !important;
-}
-
-.social_icon_grey:hover {
-	background-color: var(--color-gray-light-200) !important;
 }

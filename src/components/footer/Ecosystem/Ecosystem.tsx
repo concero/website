@@ -5,22 +5,27 @@ import './Ecosystem.pcss'
 
 const ecosystem_sections = [
 	{
-		title: 'For Developers',
+		title: 'Motherboard',
 		links: [
+			{ href: links.overview, label: 'Overview' },
+			{ href: links.scan, label: 'Scan' },
 			{ href: links.documentation, label: 'Documentation' },
-			{ href: links.whitepaper, label: 'Whitepaper' },
 		],
 	},
 	{
-		title: 'Ecosystem',
+		title: 'Products',
 		links: [
-			{ href: links.scan, label: 'Concero Scan' },
 			{ href: links.swap, label: 'Lanca' },
+			{ href: links.depo, label: 'Depo' },
+			{ href: links.distro, label: 'Distro' },
 		],
 	},
 	{
 		title: 'Community',
-		links: [{ href: links.rewards, label: 'Rewards Portal' }],
+		links: [
+			{ href: links.rewards, label: 'Rewards Portal' },
+			{ href: links.discord, label: 'Developer Community' },
+		],
 	},
 	{
 		title: 'Resources',

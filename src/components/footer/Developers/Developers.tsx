@@ -4,7 +4,7 @@ import { links } from '@/configuration/links'
 import './Developers.pcss'
 
 const developer_links = [
-	{ title: 'Documentation', link: links.documentation },
+	{ title: 'Overview', link: links.documentation },
 	{ title: 'Messaging Whitepaper', link: links.whitepaper },
 	{ title: 'Bridging Framework', link: links.bridging_framework },
 ] as const
