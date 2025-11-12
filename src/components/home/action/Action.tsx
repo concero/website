@@ -1,6 +1,6 @@
 import type { FC, ReactElement } from 'react'
-import './Action.pcss'
 import { Button } from '@concero/ui-kit'
+import './Action.pcss'
 
 export const Action: FC = (): ReactElement => {
 	return (
