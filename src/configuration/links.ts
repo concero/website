@@ -1,4 +1,5 @@
 export const links = {
+	home: '/',
 	twitter: 'https://x.com/concero_io',
 	discord: 'https://discord.com/invite/nBMAdxYTZK',
 	medium: 'https://medium.com/@concero',
@@ -12,7 +13,7 @@ export const links = {
 	scan: 'https://scan.concero.io/',
 	github: 'https://github.com/concero',
 	linkedin: 'https://www.linkedin.com/company/concero-io/posts/?feedView=all',
-	overview: '',
+	overview: '/overview',
 	depo: '',
 	distro: '',
 }
