@@ -35,6 +35,7 @@
 	letter-spacing: -1.28px;
 	text-align: center;
 }
+
 .overview_infra_description_subtitle {
 	font-family: var(--font-heading-large-family);
 	font-size: 1.125rem;
@@ -42,6 +43,14 @@
 	line-height: 1.375rem;
 	color: var(--color-gray-light-600);
 	text-align: center;
+}
+
+.overview_infra_card {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-m);
+	width: 100%;
+	justify-content: center;
 }
 
 @media (min-width: 1025px) and (max-width: 1919px) {
@@ -53,6 +62,10 @@
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
+	.overview_infra_card > * {
+		flex: 1 1 calc(50% - var(--space-m) / 2);
+	}
+
 	.overview_infra_description_title {
 		font-size: 3rem;
 		line-height: 3.5rem;
@@ -60,7 +73,17 @@
 	}
 }
 
+@media (min-width: 1025px) {
+	.overview_infra_card > * {
+		flex: 1 1 calc(25% - var(--space-m));
+	}
+}
+
 @media (max-width: 640px) {
+	.overview_infra_card > * {
+		flex: 1 1 100%;
+	}
+
 	.overview_infra_description_title {
 		font-size: 2rem;
 		line-height: 2.25rem;

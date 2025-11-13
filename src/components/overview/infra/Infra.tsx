@@ -1,5 +1,6 @@
 import type { FC, ReactElement } from "react";
 import { Button } from "@concero/ui-kit";
+import { InfraCard } from "@/components/common/InfraCard/InfraCard";
 import "./Infra.pcss";
 
 export const Infra: FC = (): ReactElement => {
@@ -13,6 +14,12 @@ export const Infra: FC = (): ReactElement => {
             <Button variant="primary" size="xl" className="overview_infra_description_action">
                 Integrate
             </Button>
+        </div>
+        <div className="overview_infra_card">
+            <InfraCard title="Relayer" />
+            <InfraCard title="Validator" />
+            <InfraCard title="Sequencer" />
+            <InfraCard title="Bridge" />
         </div>
     </div>
   )
