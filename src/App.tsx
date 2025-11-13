@@ -30,7 +30,7 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path={links.home} element={<HomePage />} />
-				<Route path={links.overview} element={<OverviewPage/>} />
+				<Route path={links.overview} element={<OverviewPage />} />
 			</Routes>
 			<Footer />
 		</AppProviders>
