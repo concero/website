@@ -6,7 +6,7 @@ import { TwitterDarkIcon } from '@/assets/icons/twitterDark'
 import { DiscordDarkIcon } from '@/assets/icons/discordDark'
 import { MediumDarkIcon } from '@/assets/icons/mediumDark'
 import { links } from '@/configuration/links'
-import { SocialIcon } from '../common/SocialIcon/SocialIcon'
+import { SocialIcon } from '../../common/SocialIcon/SocialIcon'
 import { useIsMobile, useIsTablet, useIsUltrawide } from '@/hooks/useMediaQuery'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import './Hero.pcss'
@@ -97,7 +97,7 @@ export const Hero: FC = (): JSX.Element => {
 						</Button>
 						<div className="hero_socials">
 							{SOCIALS.map(({ icon, name, link }) => (
-								<SocialIcon key={name} isGrey icon={icon} social={name} link={link} />
+								<SocialIcon key={name}  icon={icon} social={name} link={link} />
 							))}
 						</div>
 					</div>
