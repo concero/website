@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m) var(--space-m) var(--space-m);
+	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m) var(--space-m);
 	width: 100%;
 	gap: var(--space-xxxl);
 }
@@ -35,6 +35,58 @@
 	text-align: center;
 }
 
+.overview_schematics_visual_wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-l);
+}
+
+.overview_schematics_image_container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.overview_schematics_image {
+	width: 100%;
+	height: auto;
+	user-select: none;
+	pointer-events: none;
+	-webkit-user-drag: none;
+}
+
+.overview_schematics_cards_outer {
+	position: relative;
+	width: 100%;
+}
+
+.overview_schematics_cards_wrapper {
+	width: 100%;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.overview_schematics_cards_wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.overview_schematics_cards_outer.overflow-shadow::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 24px;
+	height: 100%;
+	pointer-events: none;
+	background: linear-gradient(90deg, rgba(252, 252, 253, 0) 0%, var(--color-gray-25, #fcfcfd) 100%);
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+
 .overview_schematics_cards {
 	display: flex;
 	flex-direction: row;
@@ -42,26 +94,9 @@
 	padding: 0 var(--space-l);
 	gap: var(--space-xl);
 	width: 100%;
-	overflow-x: auto;
-	scroll-behavior: smooth;
-
-	scrollbar-width: none;
-	-ms-overflow-style: none;
 }
 
-.overview_schematics_cards::-webkit-scrollbar {
-	display: none;
-}
-
-@media (min-width: 1025px) and (max-width: 1919px) {
-	.overview_schematics_title {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		letter-spacing: -0.64px;
-	}
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
+@media (min-width: 641px) and (max-width: 1919px) {
 	.overview_schematics_title {
 		font-size: 3rem;
 		line-height: 3.5rem;
