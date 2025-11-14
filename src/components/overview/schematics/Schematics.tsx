@@ -18,75 +18,75 @@ const STEPS: readonly Step[] = [
   { step: 5, title: 'Validate', description: 'Destination chain router validates proof and message and emits an event.' },
 ] as const
 
-const STEP_DURATION = 9500
-const TRANSITION_DELAY = 500
-const UPDATE_INTERVAL = 50
+const STEP_DURATION: number = 9500
+const TRANSITION_DELAY: number = 500
+const UPDATE_INTERVAL: number = 50
 
 export const Schematics: FC = (): ReactElement => {
-  const [currentStepIndex, setCurrentStepIndex] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const [isOverflowing, setIsOverflowing] = useState(false)
+  const [current_step_index, set_current_step_index] = useState<number>(0)
+  const [progress, set_progress] = useState<number>(0)
+  const [is_overflowing, set_is_overflowing] = useState<boolean>(false)
 
-  const intervalRef = useRef<number | null>(null)
-  const timeoutRef = useRef<number | null>(null)
-  const startTimeRef = useRef<number>(0)
-  const cardsRef = useRef<HTMLDivElement>(null)
+  const interval_ref = useRef<ReturnType<typeof setInterval> | null>(null)
+  const timeout_ref = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const start_time_ref = useRef<number>(0)
+  const cards_ref = useRef<HTMLDivElement>(null)
 
-  const clearTimers = () => {
-    if (intervalRef.current !== null) {
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
+  const clear_timers = (): void => {
+    if (interval_ref.current !== null) {
+      clearInterval(interval_ref.current)
+      interval_ref.current = null
     }
-    if (timeoutRef.current !== null) {
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = null
+    if (timeout_ref.current !== null) {
+      clearTimeout(timeout_ref.current)
+      timeout_ref.current = null
     }
   }
 
-  const startAnimation = useCallback((stepIndex: number) => {
-    clearTimers()
-    setCurrentStepIndex(stepIndex)
-    setProgress(0)
-    startTimeRef.current = Date.now()
+  const start_animation = useCallback((step_index: number): void => {
+    clear_timers()
+    set_current_step_index(step_index)
+    set_progress(0)
+    start_time_ref.current = Date.now()
 
-    intervalRef.current = window.setInterval(() => {
-      const elapsed = Date.now() - startTimeRef.current
-      setProgress(Math.min((elapsed / STEP_DURATION) * 100, 100))
+    interval_ref.current = setInterval(() => {
+      const elapsed: number = Date.now() - start_time_ref.current
+      set_progress(Math.min((elapsed / STEP_DURATION) * 100, 100))
     }, UPDATE_INTERVAL)
 
-    timeoutRef.current = window.setTimeout(() => {
-      clearTimers()
-      setProgress(100)
-      window.setTimeout(() => {
-        startAnimation((stepIndex + 1) % STEPS.length)
+    timeout_ref.current = setTimeout(() => {
+      clear_timers()
+      set_progress(100)
+      setTimeout(() => {
+        start_animation((step_index + 1) % STEPS.length)
       }, TRANSITION_DELAY)
     }, STEP_DURATION)
   }, [])
 
-  const checkOverflow = useCallback(() => {
-    if (cardsRef.current) {
-      const el = cardsRef.current
-      setIsOverflowing(el.scrollWidth > el.clientWidth)
+  const check_overflow = useCallback((): void => {
+    if (cards_ref.current) {
+      const el: HTMLDivElement = cards_ref.current
+      set_is_overflowing(el.scrollWidth > el.clientWidth)
     }
   }, [])
 
   useEffect(() => {
-    startAnimation(0)
-    checkOverflow()
-    window.addEventListener('resize', checkOverflow)
-    return () => {
-      clearTimers()
-      window.removeEventListener('resize', checkOverflow)
+    start_animation(0)
+    check_overflow()
+    window.addEventListener('resize', check_overflow)
+    return (): void => {
+      clear_timers()
+      window.removeEventListener('resize', check_overflow)
     }
-  }, [startAnimation, checkOverflow])
+  }, [start_animation, check_overflow])
 
-  const onScroll = useCallback(() => {
-    if (!cardsRef.current) {
-      setIsOverflowing(false)
+  const on_scroll = useCallback((): void => {
+    if (!cards_ref.current) {
+      set_is_overflowing(false)
       return
     }
-    const el = cardsRef.current
-    setIsOverflowing(el.scrollLeft + el.clientWidth < el.scrollWidth)
+    const el: HTMLDivElement = cards_ref.current
+    set_is_overflowing(el.scrollLeft + el.clientWidth < el.scrollWidth)
   }, [])
 
   return (
@@ -95,13 +95,13 @@ export const Schematics: FC = (): ReactElement => {
         <h2 className="overview_schematics_title">Motherboard Schematics</h2>
         <p className="overview_schematics_subtitle">User-defined modules work together to propagate messages</p>
       </div>
-      <div className="overview_schematics_visual_wrapper">
+      <div className={`overview_schematics_visual_wrapper`}>
         <div className="overview_schematics_image_container">
           <AnimatePresence mode="wait">
             <motion.img
-              key={`step-image-${currentStepIndex}`}
-              src={`/Schematics/Step${STEPS[currentStepIndex].step}.svg`}
-              alt={`Step ${STEPS[currentStepIndex].step}: ${STEPS[currentStepIndex].title}`}
+              key={`step-image-${current_step_index}`}
+              src={`/Schematics/Step${STEPS[current_step_index].step}.svg`}
+              alt={`Step ${STEPS[current_step_index].step}: ${STEPS[current_step_index].title}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -111,23 +111,20 @@ export const Schematics: FC = (): ReactElement => {
             />
           </AnimatePresence>
         </div>
-        <div className={`overview_schematics_cards_outer${isOverflowing ? ' overflow-shadow' : ''}`}>
-          <div
-            className="overview_schematics_cards_wrapper"
-            onScroll={onScroll}
-          >
-            <div className="overview_schematics_cards" ref={cardsRef}>
-              {STEPS.map((step, index) => {
-                const isActive = index === currentStepIndex
+        <div className={`overview_schematics_cards_outer${is_overflowing ? ' overview_overflow_shadow' : ''}`}>
+          <div className="overview_schematics_cards_wrapper" onScroll={on_scroll}>
+            <div className="overview_schematics_cards" ref={cards_ref}>
+              {STEPS.map((step: Step, index: number) => {
+                const is_active: boolean = index === current_step_index
                 return (
                   <SchematicStep
                     key={step.step}
                     step={step.step}
                     title={step.title}
                     description={step.description}
-                    isActive={isActive}
-                    progress={isActive ? progress : 0}
-                    onClick={!isActive ? () => startAnimation(index) : undefined}
+                    isActive={is_active}
+                    progress={is_active ? progress : 0}
+                    onClick={!is_active ? (): void => start_animation(index) : undefined}
                   />
                 )
               })}
