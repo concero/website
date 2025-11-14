@@ -2,6 +2,7 @@ import type { FC, ReactElement } from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { SchematicStep } from '@/components/common/SchematicStep/SchematicStep'
+import { useIsTablet, useIsMobile } from '@/hooks/useMediaQuery'
 import './Schematics.pcss'
 
 type Step = {
@@ -26,6 +27,9 @@ export const Schematics: FC = (): ReactElement => {
   const [current_step_index, set_current_step_index] = useState<number>(0)
   const [progress, set_progress] = useState<number>(0)
   const [is_overflowing, set_is_overflowing] = useState<boolean>(false)
+  const isTablet: boolean = useIsTablet()
+  const isMobile: boolean = useIsMobile()
+  const isShortMode: boolean = isMobile || isTablet
 
   const interval_ref = useRef<ReturnType<typeof setInterval> | null>(null)
   const timeout_ref = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -89,18 +93,20 @@ export const Schematics: FC = (): ReactElement => {
     set_is_overflowing(el.scrollLeft + el.clientWidth < el.scrollWidth)
   }, [])
 
+  const image_base_path = isShortMode ? '/Schematics/Mobile' : '/Schematics/Desktop'
+
   return (
     <div className="overview_schematics">
       <div className="overview_schematics_description">
         <h2 className="overview_schematics_title">Motherboard Schematics</h2>
         <p className="overview_schematics_subtitle">User-defined modules work together to propagate messages</p>
       </div>
-      <div className={`overview_schematics_visual_wrapper`}>
+      <div className="overview_schematics_visual_wrapper">
         <div className="overview_schematics_image_container">
           <AnimatePresence mode="wait">
             <motion.img
               key={`step-image-${current_step_index}`}
-              src={`/Schematics/Step${STEPS[current_step_index].step}.svg`}
+              src={`${image_base_path}/Step${STEPS[current_step_index].step}.svg`}
               alt={`Step ${STEPS[current_step_index].step}: ${STEPS[current_step_index].title}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
