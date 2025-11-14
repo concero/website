@@ -87,6 +87,19 @@
 	opacity: 1;
 }
 
+.overview_schematics_cards_outer.overflow-shadow::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 24px;
+	height: 100%;
+	pointer-events: none;
+	background: linear-gradient(90deg, rgba(252, 252, 253, 0) 0%, var(--color-gray-25, #fcfcfd) 100%);
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+
 .overview_schematics_cards {
 	display: flex;
 	flex-direction: row;
