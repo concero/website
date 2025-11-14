@@ -97,7 +97,7 @@ export const Hero: FC = (): JSX.Element => {
 						</Button>
 						<div className="hero_socials">
 							{SOCIALS.map(({ icon, name, link }) => (
-								<SocialIcon key={name}  icon={icon} social={name} link={link} />
+								<SocialIcon key={name} icon={icon} social={name} link={link} />
 							))}
 						</div>
 					</div>

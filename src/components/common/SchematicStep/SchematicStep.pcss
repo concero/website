@@ -1,0 +1,108 @@
+.schematic_step {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-s);
+	width: 100%;
+	min-width: 154px;
+	min-height: 232px;
+	cursor: pointer;
+}
+
+.schematic_step_indicator {
+	display: flex;
+	height: 8px;
+	width: 100%;
+	background-color: var(--color-gray-100);
+	align-items: center;
+	border-radius: var(--border-radius-medium);
+	overflow: hidden;
+}
+
+.schematic_step_indicator_fill {
+	height: 100%;
+	width: 0;
+	background: var(--color-gray-700);
+	border-radius: var(--border-radius-medium);
+	transition: width 180ms cubic-bezier(0.5, 1.6, 0.5, 1);
+}
+
+.schematic_step_active .schematic_step_indicator_fill {
+	width: 100%;
+	transition: width 250ms cubic-bezier(0.5, 1.6, 0.5, 1);
+}
+
+.schematic_step_tag,
+.schematic_step_title,
+.schematic_step_description {
+	transition: color 0.3s ease;
+}
+
+.schematic_step_tag_idle {
+	color: var(--color-gray-500) !important;
+	background-color: var(--color-gray-50) !important;
+}
+
+.schematic_step_title {
+	font-family: var(--font-heading-large-family);
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 2.25rem;
+	color: var(--color-gray-500);
+	letter-spacing: -0.48px;
+}
+
+.schematic_step_hovered .schematic_step_title_hovered {
+	color: var(--color-gray-600);
+}
+
+.schematic_step_active .schematic_step_title {
+	color: var(--color-gray-700) !important;
+}
+
+.schematic_step_description {
+	font-family: var(--font-heading-large-family);
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.375rem;
+	color: var(--color-gray-600);
+}
+
+.schematic_step_content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+}
+
+@media (min-width: 1025px) and (max-width: 1919px) {
+	.schematic_step_title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+	}
+	.schematic_step_description {
+		font-size: 1rem;
+		line-height: 1.375rem;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.schematic_step_title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+	}
+	.schematic_step_description {
+		font-size: 1rem;
+		line-height: 1.375rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.schematic_step_title {
+		font-size: 1.5rem;
+		line-height: 1.75rem;
+	}
+	.schematic_step_description {
+		font-size: 1rem;
+		line-height: 1.375rem;
+	}
+}

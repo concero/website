@@ -48,9 +48,13 @@
 .overview_infra_card {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-m);
+	gap: var(--space-xs);
 	width: 100%;
 	justify-content: center;
+}
+
+.overview_infra_card > * {
+	flex: 1 1 calc(25% - var(--space-xs));
 }
 
 @media (min-width: 1025px) and (max-width: 1919px) {
@@ -59,15 +63,11 @@
 		line-height: 3.5rem;
 		letter-spacing: -0.64px;
 	}
-
-	.overview_infra_card > * {
-		flex: 1 1 calc(25% - var(--space-m));
-	}
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
 	.overview_infra_card > * {
-		flex: 1 1 calc(50% - var(--space-m) / 2);
+		flex: 1 1 calc(50% - var(--space-xs) / 2);
 	}
 
 	.overview_infra_description_title {
