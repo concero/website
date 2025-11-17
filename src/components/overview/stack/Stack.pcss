@@ -49,15 +49,20 @@
 	width: 100%;
 }
 
-@media (min-width: 1025px) and (max-width: 1919px) {
-	.overview_stack_title {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		letter-spacing: -0.64px;
-	}
+.overview_stack_cards > * {
+	flex: 1 1 0;
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
+	.overview_stack_cards > :first-child {
+		flex: 0 0 34%;
+	}
+	.overview_stack_cards > :not(:first-child) {
+		flex: 1 1 calc((100% - 34%) / 3);
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1919px) {
 	.overview_stack_title {
 		font-size: 3rem;
 		line-height: 3.5rem;
