@@ -32,9 +32,9 @@
 .benefit_card_title {
 	color: var(--color-gray-700);
 	font-family: var(--font-body-medium-family);
-	font-size: 1.5rem;
+	font-size: 2rem;
 	font-weight: 500;
-	line-height: 1.75rem;
+	line-height: 2.25rem;
 	letter-spacing: -0.48px;
 }
 
@@ -46,24 +46,11 @@
 	line-height: 1.375rem;
 }
 
-@media (min-width: 1025px) and (max-width: 1919px) {
+@media (max-width: 1919px) {
 	.benefit_card_title {
-		font-size: 1.125rem;
-		line-height: 1.375rem;
+		font-size: 1.5rem;
+		line-height: 1.75rem;
 	}
-
-	.benefit_card_text {
-		font-size: 1rem;
-		line-height: 1.25rem;
-	}
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
-	.benefit_card_title {
-		font-size: 1.125rem;
-		line-height: 1.375rem;
-	}
-
 	.benefit_card_text {
 		font-size: 1rem;
 		line-height: 1.25rem;
@@ -71,23 +58,9 @@
 }
 
 @media (max-width: 640px) {
-	.benefit_card_title {
-		font-size: 1.125rem;
-		line-height: 1.375rem;
-	}
-
-	.benefit_card_text {
-		font-size: 1rem;
-		line-height: 1.25rem;
-	}
-}
-
-@media (max-width: 640px) {
-	@media (max-width: 640px) {
-		.benefit_card {
-			width: calc(50% - var(--space-xs));
-			min-width: calc(50% - var(--space-xs));
-			flex-shrink: 0;
-		}
+	.benefit_card {
+		width: calc(50% - var(--space-xs));
+		min-width: calc(50% - var(--space-xs));
+		flex-shrink: 0;
 	}
 }
