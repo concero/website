@@ -1,9 +1,9 @@
 import type { FC, ReactElement } from 'react'
-import { useMemo } from 'react'
+import { memo } from 'react'
 import { Button } from '@concero/ui-kit'
 import './Hero.pcss'
 
-const HeroDescription: FC = () => (
+const HeroDescription: FC = memo(() => (
 	<div className="overview_hero_description">
 		<div className="overview_hero_title_container">
 			<span className="overview_hero_title">Motherboard</span>
@@ -11,9 +11,9 @@ const HeroDescription: FC = () => (
 		</div>
 		<span className="overview_hero_subtitle">Make infrastructure work for you</span>
 	</div>
-)
+))
 
-const HeroActions: FC = () => (
+const HeroActions: FC = memo(() => (
 	<div className="overview_hero_actions">
 		<Button variant="primary" size="xl" className="overview_hero_action">
 			Connect
@@ -22,20 +22,18 @@ const HeroActions: FC = () => (
 			Contact Us
 		</Button>
 	</div>
-)
+))
 
-export const Hero: FC = (): ReactElement => {
-	const description = useMemo(() => <HeroDescription />, [])
-	const actions = useMemo(() => <HeroActions />, [])
-
-	return (
-		<section className="overview_hero">
-			<div className="overview_hero_container">
-				<div className="overview_hero_content">
-					{description}
-					{actions}
+export const Hero: FC = (): ReactElement => (
+	<section className="overview_hero">
+		<div className="overview_hero_container">
+			<div className="overview_hero_content">
+				<div className="overview_image_container">
+					<img src="/Overview/Hero/Background.png" alt="Hero Background" className="overview_hero_image" />
 				</div>
+				<HeroDescription />
+				<HeroActions />
 			</div>
-		</section>
-	)
-}
+		</div>
+	</section>
+)
