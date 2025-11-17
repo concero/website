@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { DataWidget } from '../common/DataWidget/DataWidget'
+import { DataWidget } from '@/components/common/DataWidget/DataWidget'
 import { ChainIntegrationsIcon } from '@/assets/icons/chainIntegrations'
 import { MessageTimeIcon } from '@/assets/icons/messageTime'
 import { TotalTxsIcon } from '@/assets/icons/totalTx'

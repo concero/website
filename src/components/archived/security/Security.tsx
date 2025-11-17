@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { SecurityPartner } from '../common/SecurityPartner/SecurityPartner'
+import { SecurityPartner } from '@/components/common/SecurityPartner/SecurityPartner'
 import './Security.pcss'
 
 export const Security: FC = (): JSX.Element => {

@@ -1,7 +1,7 @@
 import type { FC, ReactElement } from 'react'
 import { memo } from 'react'
 import { Button } from '@concero/ui-kit'
-import { RoleCard } from '../common/RoleCard/RoleCard'
+import { RoleCard } from '@/components/common/RoleCard/RoleCard'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import './JoinUs.pcss'
 

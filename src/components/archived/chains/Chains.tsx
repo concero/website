@@ -1,6 +1,6 @@
 import type { FC, ReactElement } from 'react'
 import { Fragment } from 'react'
-import { Chain } from '../common/Chain/Chain'
+import { Chain } from '@/components/common/Chain/Chain'
 import { useIsMobile } from '@/hooks/useMediaQuery'
 import { Button } from '@concero/ui-kit'
 import { ExpandIcon } from '@/assets/icons/expand'
