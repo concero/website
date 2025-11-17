@@ -5,6 +5,7 @@ import { Infra } from './infra/Infra'
 import { Schematics } from './schematics/Schematics'
 import { Stack } from './stack/Stack'
 import { FAQ } from './faq/FAQ'
+import { Action } from './action/Action'
 
 export const Overview: FC = (): ReactElement => {
 	return (
@@ -15,6 +16,7 @@ export const Overview: FC = (): ReactElement => {
 			<Schematics />
 			<Infra />
 			<FAQ />
+			<Action />
 		</>
 	)
 }
