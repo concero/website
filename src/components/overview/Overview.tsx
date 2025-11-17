@@ -4,6 +4,7 @@ import { Benefits } from './benefits/Benefits'
 import { Infra } from './infra/Infra'
 import { Schematics } from './schematics/Schematics'
 import { Stack } from './stack/Stack'
+import { FAQ } from './faq/FAQ'
 
 export const Overview: FC = (): ReactElement => {
 	return (
@@ -13,6 +14,7 @@ export const Overview: FC = (): ReactElement => {
 			<Stack />
 			<Schematics />
 			<Infra />
+			<FAQ />
 		</>
 	)
 }
