@@ -1,0 +1,134 @@
+.lanca_schematics {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m) var(--space-m);
+	width: 100%;
+	gap: var(--space-xxxl);
+}
+
+.lanca_schematics_description {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: var(--space-xs);
+}
+
+.lanca_schematics_title {
+	color: var(--color-gray-light-700);
+	font-family: var(--font-heading-large-family);
+	font-size: 4rem;
+	font-weight: 500;
+	line-height: 4.25rem;
+	letter-spacing: -1.28px;
+	text-align: center;
+}
+
+.lanca_schematics_subtitle {
+	font-family: var(--font-heading-large-family);
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.375rem;
+	color: var(--color-gray-light-600);
+	text-align: center;
+}
+
+.lanca_schematics_visual_wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-l);
+}
+
+.lanca_schematics_image_container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.lanca_schematics_image {
+	width: 100%;
+	height: auto;
+	user-select: none;
+	pointer-events: none;
+	-webkit-user-drag: none;
+}
+
+.lanca_schematics_cards_outer {
+	position: relative;
+	width: 100%;
+}
+
+.lanca_schematics_cards_wrapper {
+	width: 100%;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.lanca_schematics_cards_wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.lanca_overflow_shadow::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 24px;
+	height: 100%;
+	pointer-events: none;
+	background: linear-gradient(90deg, rgba(252, 252, 253, 0) 0%, var(--color-gray-25, #fcfcfd) 100%);
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+
+.lanca_overflow_shadow::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 24px;
+	height: 100%;
+	pointer-events: none;
+	background: linear-gradient(-90deg, rgba(252, 252, 253, 0) 0%, var(--color-gray-25, #fcfcfd) 100%);
+	transition: opacity 0.3s ease;
+	opacity: 1;
+}
+
+.lanca_schematics_cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding: 0 var(--space-l);
+	gap: var(--space-xl);
+	width: 100%;
+}
+
+@media (min-width: 641px) and (max-width: 1919px) {
+	.lanca_schematics_title {
+		font-size: 3rem;
+		line-height: 3.5rem;
+		letter-spacing: -0.64px;
+	}
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+	.lanca_schematics_title {
+		font-size: 3rem;
+		line-height: 3.5rem;
+		letter-spacing: -0.64px;
+	}
+}
+
+@media (max-width: 640px) {
+	.lanca_schematics_title {
+		font-size: 2rem;
+		line-height: 2.25rem;
+		letter-spacing: -0.64px;
+	}
+}

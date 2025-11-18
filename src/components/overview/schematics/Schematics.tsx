@@ -107,7 +107,7 @@ export const Schematics: FC = (): ReactElement => {
 		setOverflowing(el.scrollLeft + el.clientWidth < el.scrollWidth)
 	}, [])
 
-	const imgBasePath = isShortMode ? '/Schematics/Mobile' : '/Schematics/Desktop'
+	const imgBasePath = isShortMode ? '/Schematics/Overview/Mobile' : '/Schematics/Overview/Desktop'
 
 	return (
 		<div className="overview_schematics">
