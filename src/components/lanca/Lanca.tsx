@@ -4,6 +4,8 @@ import { Reach } from './reach/Reach'
 import { Benefits } from './benefits/Benefits'
 import { Schematics } from './schamatics/Schamatics'
 import { Build } from './build/Build'
+import { FAQ } from './faq/FAQ'
+import { Action } from './action/Action'
 
 export const Lanca: FC = (): ReactElement => {
     return (
@@ -13,6 +15,8 @@ export const Lanca: FC = (): ReactElement => {
             <Benefits />
             <Schematics />
             <Build />
+            <FAQ />
+            <Action />
         </>
     )
 }
