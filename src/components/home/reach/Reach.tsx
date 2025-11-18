@@ -11,7 +11,7 @@ const ProtocolCards: FC = (): ReactElement => (
 			title="Lanca"
 			subtitle="Cross-chain liquidity protocol"
 			description="Move your liquidity across thousands of chains"
-			href={links.swap}
+			href={links.lanca}
 		/>
 		<ReachCard
 			title="Depo"

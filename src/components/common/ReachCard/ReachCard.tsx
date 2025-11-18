@@ -21,6 +21,8 @@ export const ReachCard: FC<ReachCardProps> = ({
     const CardTag = href ? 'a' : onClick ? 'button' : 'div'
     const isInteractive = Boolean(href || onClick)
 
+    console.log(isInteractive)
+
     const cardProps = {
         className: `reach_card${href ? ' reach_card_link' : onClick ? ' reach_card_button' : ''}`,
         ...(href && {
