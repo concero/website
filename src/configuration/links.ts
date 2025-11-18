@@ -14,6 +14,7 @@ export const links = {
 	github: 'https://github.com/concero',
 	linkedin: 'https://www.linkedin.com/company/concero-io/posts/?feedView=all',
 	overview: '/overview',
+	lanca: '/lanca',
 	depo: '',
 	distro: '',
 }

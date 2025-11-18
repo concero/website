@@ -1,4 +1,4 @@
-.reach_card {
+.product_reach_card {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -7,29 +7,9 @@
 	gap: var(--space-l);
 	border-radius: var(--border-radius-xlarge);
 	background-color: var(--color-gray-50);
-	transition:
-		background-color 0.2s ease,
-		transform 0.2s ease;
 }
 
-.reach_card_link,
-.reach_card_button {
-	cursor: pointer;
-	text-decoration: none;
-	border: none;
-}
-
-.reach_card_link:hover,
-.reach_card_button:hover {
-	background-color: var(--color-gray-100);
-	transform: translateY(-2px);
-}
-
-.reach_card_button {
-	text-align: left;
-}
-
-.reach_card_header {
+.product_reach_card_header {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -37,7 +17,7 @@
 	width: 100%;
 }
 
-.reach_card_title {
+.product_reach_card_title {
 	color: var(--color-gray-700);
 	font-family: var(--font-heading-medium-family);
 	font-size: 3rem;
@@ -46,24 +26,14 @@
 	letter-spacing: -0.96px;
 }
 
-.reach_card_subtitle {
-	color: var(--color-gray-500);
-	font-family: var(--font-heading-medium-family);
-	font-size: 3rem;
-	font-weight: 500;
-	line-height: 3.5rem;
-	letter-spacing: -0.96px;
-	width: 90%;
-}
-
-.reach_card_detail {
+.product_reach_card_detail {
 	display: flex;
 	align-items: flex-start;
 	gap: var(--space-xs);
 	width: 100%;
 }
 
-.reach_card_bullet {
+.product_reach_card_bullet {
 	flex: 0 0 10px;
 	height: 10px;
 	background-color: var(--color-accent-600);
@@ -71,7 +41,7 @@
 	margin-top: 6px;
 }
 
-.reach_card_text {
+.product_reach_card_text {
 	flex: 1;
 	color: var(--color-gray-600);
 	font-family: var(--font-heading-medium-family);
@@ -80,7 +50,12 @@
 	line-height: 1.25rem;
 }
 
-.reach_card_visual {
+.product_reach_card_action {
+	display: flex;
+	width: 100%;
+}
+
+.product_reach_card_visual {
 	width: 100%;
 	height: 368px;
 	display: flex;
@@ -90,9 +65,12 @@
 	background-color: var(--color-gray-25);
 }
 
+.product_reach_card_action_button {
+	border-radius: var(--border-radius-xlarge) !important;
+}
+
 @media (min-width: 641px) and (max-width: 1919px) {
-	.reach_card_title,
-	.reach_card_subtitle {
+	.product_reach_card_title {
 		font-size: 2rem;
 		line-height: 2.25rem;
 		letter-spacing: -0.64px;
@@ -101,8 +79,7 @@
 }
 
 @media (max-width: 640px) {
-	.reach_card_title,
-	.reach_card_subtitle {
+	.product_reach_card_title {
 		font-size: 2rem;
 		line-height: 2.25rem;
 		letter-spacing: -0.64px;

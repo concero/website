@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react'
 import { HomePage } from './pages/Home'
+import { LancaPage } from './pages/Lanca'
 import { Header } from './components/header/Header'
 import { HelmetProvider } from 'react-helmet-async'
 import { ModalProvider } from './reducer/modal/modalProvider'
@@ -31,6 +32,7 @@ function App() {
 			<Routes>
 				<Route path={links.home} element={<HomePage />} />
 				<Route path={links.overview} element={<OverviewPage />} />
+				<Route path={links.lanca} element={<LancaPage />} />
 			</Routes>
 			<Footer />
 		</AppProviders>
