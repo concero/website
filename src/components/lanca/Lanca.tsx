@@ -8,15 +8,15 @@ import { FAQ } from './faq/FAQ'
 import { Action } from './action/Action'
 
 export const Lanca: FC = (): ReactElement => {
-    return (
-        <>
-            <Hero />
-            <Reach />
-            <Benefits />
-            <Schematics />
-            <Build />
-            <FAQ />
-            <Action />
-        </>
-    )
+	return (
+		<>
+			<Hero />
+			<Reach />
+			<Benefits />
+			<Schematics />
+			<Build />
+			<FAQ />
+			<Action />
+		</>
+	)
 }
