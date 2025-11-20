@@ -1,5 +1,5 @@
 import type { FC, ReactElement } from 'react'
-import { useMemo, useEffect, useState, useCallback } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import { ReachCard } from '@/components/common/ReachCard/ReachCard'
 import { DataCard } from '@/components/common/DataCard/DataCard'
 import { links } from '@/configuration/links'
