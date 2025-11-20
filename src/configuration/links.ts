@@ -15,6 +15,6 @@ export const links = {
 	linkedin: 'https://www.linkedin.com/company/concero-io/posts/?feedView=all',
 	overview: '/overview',
 	lanca: '/lanca',
-	depo: '',
+	depo: '/depo',
 	distro: '',
 }
