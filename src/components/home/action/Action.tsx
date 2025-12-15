@@ -8,11 +8,11 @@ export const Action: FC = (): ReactElement => {
 			<div className="home_action_content">
 				<span className="home_action_title">Scale with Concero today</span>
 				<div className="home_action_actions">
-					<Button variant="primary" className="home_action_button" size="xl">
+					<Button variant="primary" size="xl" isFull>
 						Start Building
 					</Button>
-					<Button variant="secondary" className="home_action_button" size="xl">
-						Let's chat
+					<Button variant="secondary" size="xl" isFull>
+						Contact Us
 					</Button>
 				</div>
 			</div>

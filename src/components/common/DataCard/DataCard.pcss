@@ -1,34 +1,12 @@
 .data_card {
 	display: flex;
-	padding: var(--space-l);
-	gap: var(--space-xl);
-	align-items: center;
-	width: 100%;
-	border-radius: var(--border-radius-xlarge);
-}
-
-.data_card_light {
-	background-color: var(--color-gray-50);
-}
-
-.data_card_dark {
-	background-color: var(--color-gray-700);
-}
-
-.data_card_content {
-	display: flex;
 	flex-direction: column;
-	gap: var(--space-xs);
 	align-items: flex-start;
-	width: 100%;
+	gap: var(--space-xs);
 }
 
 .data_card_title {
-	font-family: var(--font-heading-medium-family);
-	font-size: 1.5rem;
-	font-weight: 500;
-	line-height: 1.75rem;
-	letter-spacing: -0.48px;
+	color: var(--color-gray-700);
 }
 
 .data_card_number {
@@ -38,21 +16,8 @@
 	line-height: 4.25rem;
 	letter-spacing: -1.28px;
 }
-
-.data_card_title_dark {
-	color: var(--color-gray-400);
-}
-
-.data_card_title_light {
-	color: var(--color-gray-600);
-}
-
-.data_card_number_dark {
-	color: var(--color-gray-25);
-}
-
-.data_card_number_light {
-	color: var(--color-gray-700);
+.data_card_number_accent {
+	color: var(--color-accent-600);
 }
 
 @media (min-width: 1025px) and (max-width: 1919px) {
@@ -67,21 +32,11 @@
 		font-size: 1.125rem;
 		line-height: 1.375rem;
 	}
-
-	.data_card_number_light {
-		font-size: 3rem;
-		line-height: 3.5rem;
-	}
 }
 
 @media (max-width: 640px) {
 	.data_card_title {
 		font-size: 1.125rem;
 		line-height: 1.375rem;
-	}
-
-	.data_card_number_light {
-		font-size: 3rem;
-		line-height: 3.5rem;
 	}
 }

@@ -1,16 +1,22 @@
-import type { FC, ReactElement } from 'react'
+import { type ReactElement, type ReactNode } from 'react'
 import './ReachCard.pcss'
+import { Tag } from '@concero/ui-kit'
+import { Text } from '../Text/Text'
 
 type ReachCardProps = {
 	title: string
 	subtitle?: string
-	description?: string
-	img?: string
+	ImageNode?: ReactNode
 	href?: string
+	metaTitle?: string
+	tags?: string[]
+	ActionNode?: ReactNode
+	isSoon?: boolean
 	onClick?: () => void
 }
 
-export const ReachCard: FC<ReachCardProps> = ({ title, subtitle, description, href, onClick }): ReactElement => {
+export const ReachCard = (props: ReachCardProps): ReactElement => {
+	const { title, subtitle, href, onClick, ImageNode, metaTitle, tags, ActionNode, isSoon } = props
 	const ariaLabel = subtitle ? `${title} - ${subtitle}` : title
 	const CardTag = href ? 'a' : onClick ? 'button' : 'div'
 	const isInteractive = Boolean(href || onClick)
@@ -32,16 +38,32 @@ export const ReachCard: FC<ReachCardProps> = ({ title, subtitle, description, hr
 	return (
 		<CardTag {...cardProps}>
 			<div className="reach_card_header">
-				<span className="reach_card_title">{title}</span>
-				{subtitle && <span className="reach_card_subtitle">{subtitle}</span>}
-			</div>
-			{description && (
-				<div className="reach_card_detail">
-					<span className="reach_card_bullet" aria-hidden="true" />
-					<span className="reach_card_text">{description}</span>
+				<div className="reach_card_header_heading">
+					<Text variant="body_large" className="reach_card_header_meta_title">
+						{metaTitle}
+					</Text>
+					<div className="reach_card_header_meta_tags">
+						{tags?.map(text => (
+							<Tag size="m" variant="neutral">
+								{text}
+							</Tag>
+						))}
+					</div>
+					<div>
+						<div className="react_card_title_wrap">
+							<span className="reach_card_title">{title}</span>
+							{isSoon && (
+								<Tag size="m" variant="warning">
+									Soon
+								</Tag>
+							)}
+						</div>
+						{subtitle && <span className="reach_card_subtitle">{subtitle}</span>}
+					</div>
 				</div>
-			)}
-			<div className="reach_card_visual">{/* TODO Add visuals here */}</div>
+				<div>{ActionNode}</div>
+			</div>
+			<div className="reach_card_visual">{ImageNode}</div>
 		</CardTag>
 	)
 }

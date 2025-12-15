@@ -1,0 +1,126 @@
+.overview_stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m) var(--space-m);
+	width: 100%;
+	gap: var(--space-xxxl);
+
+	& .overview_stack_description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-xs);
+
+		& .overview_stack_title {
+			color: var(--color-gray-700);
+			font: var(--font-heading-xxxxlarge);
+			text-align: center;
+		}
+
+		& .overview_stack_subtitle {
+			font: var(--font-heading-xlarge);
+			color: var(--color-gray-light-600);
+			text-align: center;
+		}
+	}
+
+	& .overview_stack_content {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-xs);
+
+		& .overview_stack_cards {
+			display: flex;
+			width: 1148px;
+			align-items: center;
+			gap: var(--space-xs);
+
+			& > * {
+				display: flex;
+				padding: var(--space-l);
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+				gap: var(--space-space-05, 8px);
+				flex: 1 0 0;
+				border-radius: var(--space-xl);
+				background: var(--color-gray-700);
+			}
+
+			& > *:not(:first-child) {
+				background: var(--color-gray-50);
+			}
+
+			@media screen and (width > 1279px) and (width < 1920px) {
+				width: 904px;
+			}
+
+			@media screen and (width > 744px) and (width < 1280px) {
+				width: 100%;
+			}
+
+			@media (max-width: 744px) {
+				flex-wrap: wrap;
+				width: 100%;
+
+				& > :nth-child(1),
+				& > :nth-child(4) {
+					flex-basis: 100%;
+					flex-grow: 1;
+				}
+
+				& > :nth-child(2),
+				& > :nth-child(3) {
+					flex-basis: calc(50% - var(--space-xs) / 2);
+				}
+			}
+		}
+		& .overview_stack_imgs_block {
+			display: flex;
+			align-items: flex-start;
+			gap: 8px;
+			align-self: stretch;
+			& .overview_stack_image {
+				width: 100%;
+				max-width: 100%;
+				display: block;
+				aspect-ratio: 359.07 / 232.14;
+				object-fit: contain;
+			}
+			& > * {
+				flex: 1 1 50%;
+				min-width: 0;
+				height: 612.879px;
+				background: var(--color-gray-50);
+				border-radius: var(--space-xl);
+			}
+			@media screen and (width < 1920px) {
+				& > * {
+					height: 406px;
+				}
+			}
+			@media (max-width: 1279px) {
+				flex-direction: column;
+
+				& > * {
+					flex-basis: 100%;
+					flex-grow: 1;
+					height: auto;
+					/* min-height: 470px; */
+					max-height: 470px;
+					/* height: 470px; */
+				}
+			}
+		}
+		.overview_schematics_image_container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			position: relative;
+		}
+	}
+}

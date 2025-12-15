@@ -2,25 +2,50 @@ import type { FC, ReactElement } from 'react'
 import { ProductReachCard } from '@/components/common/ProductReachCard/ProductReachCard'
 import { links } from '@/configuration/links'
 import './Reach.pcss'
+import UnicornScene from 'unicornstudio-react'
 
 const PROTOCOLS = [
 	{
 		title: 'Chains',
-		description: 'Connect your chain to the Lanca liquidity protocol',
+		description: 'Connect your chain to the liquidity protocol',
 		buttonText: 'Deployment Docs',
 		buttonHref: links.documentation,
+		ImageNode: (
+			<UnicornScene
+				jsonFilePath={'/Lanca/Reach/chains.json'}
+				width="100%"
+				scale={1}
+				className={'lanca_reach_backgroung_animation'}
+			/>
+		),
 	},
 	{
 		title: 'Protocols',
 		description: 'Enable cross-chain value transfer for your users.',
 		buttonText: 'Integration Docs',
 		buttonHref: links.documentation,
+		ImageNode: (
+			<UnicornScene
+				jsonFilePath={'/Lanca/Reach/protocols.json'}
+				width="100%"
+				scale={1}
+				className={'lanca_reach_backgroung_animation'}
+			/>
+		),
 	},
 	{
-		title: 'Users',
+		title: 'Asset issuers',
 		description: 'Bridge across thousands of chains in seconds.',
 		buttonText: 'Lanca App',
 		buttonHref: links.swap,
+		ImageNode: (
+			<UnicornScene
+				jsonFilePath={'/Lanca/Reach/asset.json'}
+				width="100%"
+				scale={1}
+				className={'lanca_reach_backgroung_animation'}
+			/>
+		),
 	},
 ] as const
 

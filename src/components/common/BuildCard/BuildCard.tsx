@@ -1,6 +1,5 @@
-import type { FC, ReactElement } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import { Button } from '@concero/ui-kit'
-import { ArrowRightIcon } from '@/assets/icons/arrowRight'
 import './BuildCard.pcss'
 
 type BuildCardProps = {
@@ -8,16 +7,27 @@ type BuildCardProps = {
 	bullets: string[]
 	url: string
 	buttonText?: string
+	ImageNode?: ReactNode
+	isInverse?: boolean
+	isColumn?: boolean
 }
 
-export const BuildCard: FC<BuildCardProps> = ({ title, bullets, url, buttonText = 'Get Started' }): ReactElement => {
+export const BuildCard = ({
+	title,
+	bullets,
+	url,
+	buttonText = 'Get Started',
+	ImageNode,
+	isInverse,
+	isColumn,
+}: BuildCardProps): ReactElement => {
 	const handleClick = () => {
 		window.open(url, '_blank', 'noopener,noreferrer')
 	}
 
 	return (
-		<div className="build_card">
-			<div className="build_card_visual">{/* TODO Add visual here */}</div>
+		<div className={`build_card ${isInverse ? 'build_card_inverse' : ''} ${isColumn ? 'build_card_column' : ''}`}>
+			<div className="build_card_visual">{ImageNode}</div>
 			<div className="build_card_content">
 				<div className="build_card_description">
 					<span className="build_card_title">{title}</span>
@@ -30,13 +40,7 @@ export const BuildCard: FC<BuildCardProps> = ({ title, bullets, url, buttonText 
 						))}
 					</div>
 				</div>
-				<Button
-					variant="secondary"
-					size="l"
-					className="build_card_action"
-					onClick={handleClick}
-					trailIcon={{ show: true, icon: <ArrowRightIcon /> }}
-				>
+				<Button variant="secondary" size="xl" onClick={handleClick}>
 					{buttonText}
 				</Button>
 			</div>

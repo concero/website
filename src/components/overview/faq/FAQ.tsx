@@ -4,27 +4,27 @@ import './FAQ.pcss'
 
 const FAQ_DATA = [
 	{
-		question: 'Lorem ipsum dolor sit amet consectetur?',
-		answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+		question: 'What does Motherboard do? ',
+		answer: 'Motherboard is an interoperability framework that enables communication between chains. You are able to send a message (data/instructions) from one chain to another.',
 	},
 	{
-		question: 'Consectetur adipiscing elit sed do eiusmod?',
+		question: 'How is Motherboard different to interoperability protocols? ',
 		answer: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 	},
 	{
-		question: 'Sed do eiusmod tempor incididunt ut labore?',
+		question: 'How is Motherboard modular?',
 		answer: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
 	},
 	{
-		question: 'Ut enim ad minim veniam quis nostrud?',
+		question: 'What can I build with Motherboard? ',
 		answer: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.',
 	},
 	{
-		question: 'Quis nostrud exercitation ullamco laboris nisi?',
+		question: 'What are the fees? ',
 		answer: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
 	},
 	{
-		question: 'Excepteur sint occaecat cupidatat non proident?',
+		question: 'Is Motherboard permissionless?',
 		answer: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.',
 	},
 ] as const

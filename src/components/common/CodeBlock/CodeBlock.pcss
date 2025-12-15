@@ -2,16 +2,19 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	height: 100%;
 	width: 100%;
 	padding: var(--space-xl);
 	border-radius: var(--border-radius-xlarge);
 	background-color: var(--color-gray-50);
+	box-sizing: border-box;
 }
 
 .code_block_pre {
 	margin: 0;
 	width: 100%;
-	min-height: 320px;
+	height: 100%;
+	min-height: 0;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: pre;

@@ -1,20 +1,27 @@
 .product_reach_card {
 	display: flex;
+	padding: var(--space-xs);
 	flex-direction: column;
 	align-items: flex-start;
-	padding: var(--space-l);
-	width: 100%;
 	gap: var(--space-l);
-	border-radius: var(--border-radius-xlarge);
-	background-color: var(--color-gray-50);
+	flex: 1 0 0;
+	border-radius: var(--space-xl);
+	background: var(--color-gray-50);
 }
-
+.product_reach_card_heading {
+	display: flex;
+	padding: var(--space-m);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-l);
+	align-self: stretch;
+}
 .product_reach_card_header {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: var(--space-xs);
-	width: 100%;
+	align-self: stretch;
 }
 
 .product_reach_card_title {
@@ -33,14 +40,6 @@
 	width: 100%;
 }
 
-.product_reach_card_bullet {
-	flex: 0 0 10px;
-	height: 10px;
-	background-color: var(--color-accent-600);
-	border-radius: 50%;
-	margin-top: 6px;
-}
-
 .product_reach_card_text {
 	flex: 1;
 	color: var(--color-gray-600);
@@ -57,12 +56,16 @@
 
 .product_reach_card_visual {
 	width: 100%;
-	height: 368px;
+	height: 383.333px;
 	display: flex;
 	justify-content: center;
+	margin-top: auto;
 	align-items: center;
 	border-radius: var(--border-radius-large);
-	background-color: var(--color-gray-25);
+	overflow: auto;
+	& > * > *{
+		height: 100% !important;
+	}
 }
 
 .product_reach_card_action_button {

@@ -1,39 +1,47 @@
-import type { FC, ReactElement } from 'react'
-import { memo } from 'react'
+import UnicornScene from 'unicornstudio-react'
 import { Button } from '@concero/ui-kit'
-import './Hero.pcss'
+import { useModalContext } from '@/reducer/modal/modalContext'
+import { useWidthScreen } from '@/hooks/useWidthScreen'
+import { Text } from '@/components/common/Text/Text'
+import cls from './Hero.module.pcss'
 
-const HeroDescription: FC = memo(() => (
-	<div className="overview_hero_description">
-		<div className="overview_hero_title_container">
-			<span className="overview_hero_title">Motherboard</span>
-			<span className="overview_hero_title overview_hero_title_gray">Open Interoperability Framework</span>
-		</div>
-		<span className="overview_hero_subtitle">Make infrastructure work for you</span>
-	</div>
-))
-
-const HeroActions: FC = memo(() => (
-	<div className="overview_hero_actions">
-		<Button variant="primary" size="xl" className="overview_hero_action">
-			Connect
-		</Button>
-		<Button variant="secondary" size="xl" className="overview_hero_action">
-			Contact Us
-		</Button>
-	</div>
-))
-
-export const Hero: FC = (): ReactElement => (
-	<section className="overview_hero">
-		<div className="overview_hero_container">
-			<div className="overview_hero_content">
-				<div className="overview_image_container">
-					<img src="/Overview/Hero/Background.png" alt="Hero Background" className="overview_hero_image" />
+export const Hero = (): JSX.Element => {
+	const isDesktop = useWidthScreen('desktop', 'down')
+	const isMobile = useWidthScreen('mobile', 'only')
+	const { dispatch } = useModalContext()
+	const handleStartBuilding = () => {
+		dispatch({ type: 'OPEN_CONTACT' })
+	}
+	return (
+		<section className={cls.hero}>
+			<UnicornScene
+				jsonFilePath={'/Overview/Hero/motherboard.json'}
+				width="100%"
+				height="1024px"
+				scale={0.8}
+				className={cls.backgroung_animation}
+			/>
+			<div className={cls.heading}>
+				<div className={cls.title_block}>
+					<Text
+						variant={isMobile ? 'heading_xxlarge' : isDesktop ? 'heading_xxxlarge' : 'heading_xxxxlarge'}
+						className={cls.title}
+					>
+						Motherboard
+					</Text>
+					<Text variant={isMobile ? 'heading_medium' : 'heading_large'} className={cls.description}>
+						Open Interoperability Framework
+					</Text>
 				</div>
-				<HeroDescription />
-				<HeroActions />
+				<div className={cls.action_block}>
+					<Button variant="primary" size="xl" onClick={handleStartBuilding} isFull>
+						Connect
+					</Button>
+					<Button variant="secondary" size="xl" isFull>
+						Contact Us
+					</Button>
+				</div>
 			</div>
-		</div>
-	</section>
-)
+		</section>
+	)
+}

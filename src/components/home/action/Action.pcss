@@ -10,9 +10,10 @@
 .home_action_content {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	gap: var(--space-m);
 	width: 100%;
-	justify-content: center;
 }
 
 .home_action_title {
@@ -26,10 +27,22 @@
 }
 
 .home_action_actions {
+	width: 676px;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	gap: var(--space-xs);
+	align-items: center;
+	gap: var(--space-xxs);
+	flex: 1 0 0;
+	max-width: 100%;
+	@media screen and (width < 1280px) and (width > 744px) {
+		width: 502px;
+	}
+	@media screen and (width < 744px) {
+		width: 502px;
+	}
+	@media screen and (width < 375px) {
+		flex-wrap: wrap;
+	}
 }
 
 .home_action_button {

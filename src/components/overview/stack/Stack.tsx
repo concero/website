@@ -3,7 +3,8 @@ import { memo, useState, useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CodeBlock } from '@/components/common/CodeBlock/CodeBlock'
 import { StackCard } from '@/components/common/StackCard/StackCard'
-import './Stack.pcss'
+import { useIsTablet, useIsMobile } from '@/hooks/useMediaQuery'
+import cls from './Stack.module.pcss'
 
 type Keyword = {
 	word: string
@@ -15,8 +16,8 @@ const keywords: readonly Keyword[] = [
 	{ word: 'Security', duration: 4000 },
 	{ word: 'Cost', duration: 4000 },
 	{ word: 'Compliance', duration: 6000 },
-	{ word: 'Deliverability', duration: 6000 },
 	{ word: 'Sovereignty', duration: 4000 },
+	{ word: 'Deliverability', duration: 6000 },
 ] as const
 
 const FADE_DURATION_MS = 400
@@ -105,6 +106,10 @@ const AnimatedStackCard: FC<AnimatedStackCardProps> = memo(({ title, number, isD
 export const Stack: FC = memo(() => {
 	const [currentIndex, setCurrentIndex] = useState<number>(0)
 	const timeoutId = useRef<number | null>(null)
+	const isTablet = useIsTablet()
+	const isMobile = useIsMobile()
+	const isShortMode = isMobile || isTablet
+	const imgBasePath = isShortMode ? '/Stack/Mobile' : '/Stack/Desktop'
 
 	useEffect(() => {
 		const duration = keywords[currentIndex].duration
@@ -121,15 +126,15 @@ export const Stack: FC = memo(() => {
 	const cards = STACK_CARDS[currentIndex]
 
 	return (
-		<div className="overview_stack">
-			<div className="overview_stack_description">
-				<span className="overview_stack_title">Define your own stack</span>
-				<span className="overview_stack_subtitle">
+		<div className={cls.overview_stack}>
+			<div className={cls.overview_stack_description}>
+				<span className={cls.overview_stack_title}>Define your own stack</span>
+				<span className={cls.overview_stack_subtitle}>
 					Define your purpose-built interoperability stack within every transaction
 				</span>
 			</div>
-			<div className="overview_stack_content">
-				<div className="overview_stack_cards">
+			<div className={cls.overview_stack_content}>
+				<div className={cls.overview_stack_cards}>
 					{cards.map(({ title, number, isDark }) => (
 						<AnimatedStackCard
 							key={title}
@@ -140,7 +145,22 @@ export const Stack: FC = memo(() => {
 						/>
 					))}
 				</div>
-				<CodeBlock currentIndex={currentIndex} />
+				<div className={cls.overview_stack_imgs_block}>
+					<AnimatePresence mode="wait">
+						<motion.img
+							key={`stack-image-${currentIndex}`}
+							src={`${imgBasePath}/${keywords[currentIndex].word.toLowerCase()}.svg`}
+							alt={`Stack configuration: ${keywords[currentIndex].word}`}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.5, ease: 'easeInOut' }}
+							className={cls.overview_stack_image}
+							draggable={false}
+						/>
+					</AnimatePresence>
+					<CodeBlock currentIndex={currentIndex} />
+				</div>
 			</div>
 		</div>
 	)

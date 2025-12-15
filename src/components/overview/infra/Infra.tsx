@@ -40,7 +40,7 @@ export const Infra: FC = (): ReactElement => (
 					Permissinolessly deploy your own module and connect to Motherboard
 				</span>
 			</div>
-			<Button variant="primary" size="xl" className="overview_infra_description_action">
+			<Button variant="primary" size="xl">
 				Integrate
 			</Button>
 		</div>

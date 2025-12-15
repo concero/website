@@ -2,9 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: var(--space-l);
+	justify-content: space-between;
+	padding: var(--space-xs);
 	width: 100%;
-	gap: var(--space-l);
 	border-radius: var(--border-radius-xlarge);
 	background-color: var(--color-gray-50);
 	transition:
@@ -33,10 +33,33 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: var(--space-xs);
+	gap: var(--space-l);
+	width: 100%;
+	padding: var(--space-m);
+}
+.reach_card_header_heading {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-s);
 	width: 100%;
 }
-
+.reach_card_header_meta_title {
+	color: var(--color-gray-600);
+}
+.reach_card_header_meta_tags {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	flex-wrap: wrap;
+	gap: var(--space-xxs);
+}
+.react_card_title_wrap {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	align-items: center;
+}
 .reach_card_title {
 	color: var(--color-gray-700);
 	font-family: var(--font-heading-medium-family);
@@ -56,39 +79,14 @@
 	width: 90%;
 }
 
-.reach_card_detail {
-	display: flex;
-	align-items: flex-start;
-	gap: var(--space-xs);
-	width: 100%;
-}
-
-.reach_card_bullet {
-	flex: 0 0 10px;
-	height: 10px;
-	background-color: var(--color-accent-600);
-	border-radius: 50%;
-	margin-top: 6px;
-}
-
-.reach_card_text {
-	flex: 1;
-	color: var(--color-gray-600);
-	font-family: var(--font-heading-medium-family);
-	font-size: 1rem;
-	font-weight: 500;
-	line-height: 1.25rem;
-}
-
 .reach_card_visual {
 	width: 100%;
-	height: 368px;
 	display: flex;
 	justify-content: center;
 	margin-top: auto;
 	align-items: center;
 	border-radius: var(--border-radius-large);
-	background-color: var(--color-gray-25);
+	overflow: auto;
 }
 
 @media (min-width: 641px) and (max-width: 1919px) {

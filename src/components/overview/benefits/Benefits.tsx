@@ -8,8 +8,10 @@ import { ReachIcon } from '@/assets/icons/reach'
 import { TrustIcon } from '@/assets/icons/trust'
 import { UserIcon } from '@/assets/icons/user'
 import { StarIcon } from '@/assets/icons/star'
-import './Benefits.pcss'
-
+import cls from './Benefits.module.pcss'
+import { SettingsIcon } from '@/assets/icons/settings'
+import { ConsistencyIcon } from '@/assets/icons/consistency'
+import { LockIcon } from '@/assets/icons/lock'
 const BENEFIT_CARDS_ROWS = [
 	[
 		{
@@ -25,42 +27,42 @@ const BENEFIT_CARDS_ROWS = [
 		{
 			title: 'Permissionless',
 			description: 'Deploy Motherboard to where your users live',
-			icon: <OptimizeIcon />,
+			icon: <UserIcon />,
 		},
 		{
 			title: 'Infinite Reach',
 			description: 'Reach any user no matter the chain',
-			icon: <TrustIcon />,
+			icon: <ReachIcon />,
 		},
 	],
 	[
 		{
 			title: 'Optimise for you and your users',
 			description: 'Define your interoperability stack according to your demands',
-			icon: <InfinityIcon />,
+			icon: <SettingsIcon />,
 		},
 		{
 			title: 'Infinitely upgradable',
 			description: 'Integrate once and upgrade to the latest easily',
-			icon: <ServicingIcon />,
+			icon: <InfinityIcon />,
 		},
 		{
 			title: 'Self-Servicing',
 			description: 'Quickly deploy your own modules to gain as much control as you need',
-			icon: <UserIcon />,
+			icon: <ConsistencyIcon />,
 		},
 		{
 			title: 'Trustless',
 			description: 'No one party has control of your transaction',
-			icon: <ReachIcon />,
+			icon: <LockIcon />,
 		},
 	],
 ]
 
 export const Benefits: FC = (): ReactElement => (
-	<div className="overview_benefits">
+	<div className={cls.root}>
 		{BENEFIT_CARDS_ROWS.map((row, rowIndex) => (
-			<div key={rowIndex} className="overview_benefits_cards">
+			<div key={rowIndex} className={cls.cards}>
 				{row.map((card, cardIndex) => (
 					<BenefitCard key={cardIndex} {...card} />
 				))}
