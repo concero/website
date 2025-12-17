@@ -7,8 +7,18 @@ import { Text } from '@/components/common/Text/Text'
 import { Partners } from './Partners/Partners'
 
 export const Hero = (): JSX.Element => {
-	const isDesktop = useWidthScreen('desktop', 'down')
+	const isDesktopOrLess = useWidthScreen('desktop', 'down')
+	const isDesktop = useWidthScreen('desktop', 'only')
+	const isTablet = useWidthScreen('tablet', 'only')
 	const isMobile = useWidthScreen('mobile', 'only')
+	let heightImage = 1024
+	if (isDesktop) {
+		heightImage = 720
+	} else if (isTablet) {
+		heightImage = 1133
+	} else if (isMobile) {
+		heightImage = 667
+	}
 	const { dispatch } = useModalContext()
 	const handleStartBuilding = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
@@ -18,14 +28,16 @@ export const Hero = (): JSX.Element => {
 			<UnicornScene
 				jsonFilePath={'/Hero/hero.json'}
 				width="100%"
-				height="1024px"
+				height={heightImage}
 				scale={0.8}
 				className={cls.backgroung_animation}
 			/>
 			<div className={cls.heading}>
 				<div className={cls.title_block}>
 					<Text
-						variant={isMobile ? 'heading_xxlarge' : isDesktop ? 'heading_xxxlarge' : 'heading_xxxxlarge'}
+						variant={
+							isMobile ? 'heading_xxlarge' : isDesktopOrLess ? 'heading_xxxlarge' : 'heading_xxxxlarge'
+						}
 						className={cls.title}
 					>
 						DeFi’s largest distribution rails
@@ -35,10 +47,10 @@ export const Hero = (): JSX.Element => {
 					</Text>
 				</div>
 				<div className={cls.action_block}>
-					<Button variant="primary" size="xl" onClick={handleStartBuilding} isFull>
+					<Button variant="primary" size={isTablet ? 'l' : 'xl'} onClick={handleStartBuilding} isFull>
 						Start Building
 					</Button>
-					<Button variant="secondary" size="xl" isFull>
+					<Button variant="secondary" size={isTablet ? 'l' : 'xl'} isFull>
 						Contact Us
 					</Button>
 				</div>

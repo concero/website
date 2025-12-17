@@ -62,21 +62,28 @@
 }
 .reach_card_title {
 	color: var(--color-gray-700);
-	font-family: var(--font-heading-medium-family);
-	font-size: 3rem;
+	font: var(--font-heading-xxxlarge);
+	font-size: 40px;
+	font-style: normal;
 	font-weight: 500;
-	line-height: 3.5rem;
-	letter-spacing: -0.96px;
+	line-height: 48px; /* 120% */
+	letter-spacing: -0.8px;
+	@media (max-width: 1919px) {
+		font: var(--font-heading-xxlarge);
+	}
 }
 
 .reach_card_subtitle {
 	color: var(--color-gray-500);
-	font-family: var(--font-heading-medium-family);
-	font-size: 3rem;
+	font: var(--font-heading-xxxlarge);
+	font-size: 40px;
+	font-style: normal;
 	font-weight: 500;
-	line-height: 3.5rem;
-	letter-spacing: -0.96px;
-	width: 90%;
+	line-height: 48px; /* 120% */
+	letter-spacing: -0.8px;
+	@media (max-width: 1919px) {
+		font: var(--font-heading-xxlarge);
+	}
 }
 
 .reach_card_visual {
@@ -87,23 +94,4 @@
 	align-items: center;
 	border-radius: var(--border-radius-large);
 	overflow: auto;
-}
-
-@media (min-width: 641px) and (max-width: 1919px) {
-	.reach_card_title,
-	.reach_card_subtitle {
-		font-size: 2rem;
-		line-height: 2.25rem;
-		letter-spacing: -0.64px;
-		width: 100%;
-	}
-}
-
-@media (max-width: 640px) {
-	.reach_card_title,
-	.reach_card_subtitle {
-		font-size: 2rem;
-		line-height: 2.25rem;
-		letter-spacing: -0.64px;
-	}
 }

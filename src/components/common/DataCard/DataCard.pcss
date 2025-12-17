@@ -6,37 +6,27 @@
 }
 
 .data_card_title {
-	color: var(--color-gray-700);
+	color: var(--color-gray-600);
 }
 
 .data_card_number {
+	color: var(--color-gray-700);
 	font-family: var(--font-heading-medium-family);
-	font-size: 4rem;
+	font-size: 80px;
+	font-style: normal;
 	font-weight: 500;
-	line-height: 4.25rem;
-	letter-spacing: -1.28px;
+	line-height: 86px; /* 107.5% */
+	letter-spacing: -1.6px;
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		font: var(--font-heading-xxxxlarge);
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		font: var(--font-heading-xxxxlarge);
+	}
+	@media (max-width: 343px) {
+		font: var(--font-heading-xxxlarge);
+	}
 }
 .data_card_number_accent {
 	color: var(--color-accent-600);
-}
-
-@media (min-width: 1025px) and (max-width: 1919px) {
-	.data_card_title {
-		font-size: 1.125rem;
-		line-height: 1.375rem;
-	}
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
-	.data_card_title {
-		font-size: 1.125rem;
-		line-height: 1.375rem;
-	}
-}
-
-@media (max-width: 640px) {
-	.data_card_title {
-		font-size: 1.125rem;
-		line-height: 1.375rem;
-	}
 }

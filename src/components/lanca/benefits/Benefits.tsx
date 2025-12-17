@@ -19,14 +19,14 @@ const BENEFIT_CARDS_ROWS = [
 			icon: <ReachIcon />,
 		},
 		{
-			title: 'Scalable',
-			description: 'Quick deployment to new chains',
-			icon: <DistributionIcon />,
-		},
-		{
 			title: 'Decentralised execution',
 			description: 'No interaction with a centralised party when executing a transaction',
 			icon: <UserIcon />,
+		},
+		{
+			title: 'Scalable',
+			description: 'Quick deployment to new chains',
+			icon: <DistributionIcon />,
 		},
 	],
 ]

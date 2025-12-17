@@ -17,13 +17,15 @@
 }
 
 .home_action_title {
-	font-family: var(--font-heading-large-family);
-	font-size: 4rem;
-	font-weight: 500;
-	line-height: 4.25rem;
-	color: var(--color-gray-light-700);
-	letter-spacing: -1.28px;
+	font: var(--font-heading-xxxxlarge);
 	text-align: center;
+	color: var(--color-gray-light-700);
+	@media (max-width: 1919px) {
+		font: var(--font-heading-xxxlarge);
+	}
+	@media (max-width: 343px) {
+		font: var(--font-heading-xxlarge);
+	}
 }
 
 .home_action_actions {

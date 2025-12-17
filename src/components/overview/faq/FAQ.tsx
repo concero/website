@@ -9,23 +9,23 @@ const FAQ_DATA = [
 	},
 	{
 		question: 'How is Motherboard different to interoperability protocols? ',
-		answer: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		answer: 'Interoperability protocols run their own networks in order to pass messages. Your distribution is defined by said network and you have to inherit their pre-defined attributes. Motherboard allows you to define your own ‘interoperability protocol’ which you can optimise for what matters to you. Modules are chain-agnostic and if we do not support a chain that you would like to be on you are able to integrate it permissinolessly in under 20 minutes for a price of a coffee.',
 	},
 	{
 		question: 'How is Motherboard modular?',
-		answer: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+		answer: 'You specify individual modules within the transaction itself. This means that you are never vendor-locked to a specific service provider. You are able to switch a module or the entire stack in accordance to individual transaction requirements. ',
 	},
 	{
 		question: 'What can I build with Motherboard? ',
-		answer: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.',
+		answer: 'Cross-chain protocols. Where an event on one chain triggers an event on another chain.',
 	},
 	{
 		question: 'What are the fees? ',
-		answer: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
+		answer: 'Motherboard does not charge additional fees. Transaction cost is determined by the modules that you choose. ',
 	},
 	{
 		question: 'Is Motherboard permissionless?',
-		answer: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.',
+		answer: 'Anyone can deploy Motherboard to a new chain permissinolessly in under 20 minutes. Any Relayer network, Verifier network or RPC provider can connect to the motherboard permissinolessly. ',
 	},
 ] as const
 

@@ -40,7 +40,7 @@ const PROTOCOLS = [
 		buttonHref: links.swap,
 		ImageNode: (
 			<UnicornScene
-				jsonFilePath={'/Lanca/Reach/asset.json'}
+				jsonFilePath={'/Lanca/Reach/assets.json'}
 				width="100%"
 				scale={1}
 				className={'lanca_reach_backgroung_animation'}

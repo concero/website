@@ -15,10 +15,10 @@ const HeroHeading = () => (
 
 const HeroActions = () => (
 	<div className="lanca_hero_actions">
-		<Button variant="primary" size="l">
+		<Button variant="primary" size="xl">
 			Start Building
 		</Button>
-		<Button variant="secondary" size="l">
+		<Button variant="secondary" size="xl">
 			Contact Us
 		</Button>
 	</div>
@@ -26,18 +26,17 @@ const HeroActions = () => (
 
 export const Hero: FC = (): ReactElement => (
 	<section className="lanca_hero">
-		<div className="lanca_hero_heading">
-			<HeroHeading />
-			<HeroActions />
-		</div>
 		<div className={'lanca_hero_backgroung_animation_wrap'}>
-			
 			<UnicornScene
 				jsonFilePath={'/Lanca/Hero/hero.json'}
 				width="100%"
 				scale={1}
 				className={'lanca_hero_backgroung_animation'}
 			/>
+		</div>
+		<div className="lanca_hero_heading">
+			<HeroHeading />
+			<HeroActions />
 		</div>
 	</section>
 )

@@ -15,7 +15,6 @@ export const useWidthScreen = (screen: Screen, rangeType: RangeType = 'only'): b
 
 	useEffect(() => {
 		let media: MediaQueryList
-
 		if (rangeType === 'up') {
 			const index = screenOrder.indexOf(screen)
 			// Give prev resolution and plus 1px
@@ -25,9 +24,8 @@ export const useWidthScreen = (screen: Screen, rangeType: RangeType = 'only'): b
 			media = window.matchMedia(`(max-width: ${breakpoints[screen]}px)`)
 		} else {
 			const index = screenOrder.indexOf(screen)
-			const min = index === 0 ? 0 : breakpoints[screen] + 1
-			const max =
-				index === 0 ? breakpoints[screenOrder[index]] : (breakpoints[screenOrder[index + 1]] ?? Infinity)
+			const min = index === 0 ? 0 : breakpoints[screenOrder[index - 1]] + 1
+			const max = index === 0 ? breakpoints[screenOrder[index]] : (breakpoints[screenOrder[index]] ?? Infinity)
 
 			if (max === Infinity) {
 				media = window.matchMedia(`(min-width: ${min}px)`)
