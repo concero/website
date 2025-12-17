@@ -7,6 +7,7 @@ export const Action: FC = (): ReactElement => {
 	const isHdDesktop = useWidthScreen('desktop', 'down')
 	const onStartBuild = () => {
 		console.log('start build')
+		window.open('https://example.com', '_blank', 'noopener,noreferrer')
 	}
 	return (
 		<div className="lanca_action">
