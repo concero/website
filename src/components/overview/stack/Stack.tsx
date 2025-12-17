@@ -146,19 +146,21 @@ export const Stack: FC = memo(() => {
 					))}
 				</div>
 				<div className={cls.overview_stack_imgs_block}>
-					<AnimatePresence mode="wait">
-						<motion.img
-							key={`stack-image-${currentIndex}`}
-							src={`${imgBasePath}/${keywords[currentIndex].word.toLowerCase()}.svg`}
-							alt={`Stack configuration: ${keywords[currentIndex].word}`}
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 0.5, ease: 'easeInOut' }}
-							className={cls.overview_stack_image}
-							draggable={false}
-						/>
-					</AnimatePresence>
+					<div className={cls.overview_stack_img_block}>
+						<AnimatePresence mode="wait">
+							<motion.img
+								key={`stack-image-${currentIndex}`}
+								src={`${imgBasePath}/${keywords[currentIndex].word.toLowerCase()}.svg`}
+								alt={`Stack configuration: ${keywords[currentIndex].word}`}
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								transition={{ duration: 0.5, ease: 'easeInOut' }}
+								className={cls.overview_stack_image}
+								draggable={false}
+							/>
+						</AnimatePresence>
+					</div>
 					<CodeBlock currentIndex={currentIndex} />
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 import type { FC, ReactElement } from 'react'
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Tag } from '@concero/ui-kit'
+import { IconButton, Tag } from '@concero/ui-kit'
 import { OpenTrail } from '@/assets/icons/openTrail'
 import { CloseTrail } from '@/assets/icons/closeTrail'
 import './FAQItem.pcss'
@@ -22,9 +22,12 @@ export const FAQItem: FC<FAQItemProps> = ({ question, answer }): ReactElement =>
 		<div className="faq_item">
 			<div className="faq_question" onClick={handleToggle}>
 				<span className="faq_question_text">{question}</span>
-				<Tag variant="neutral" size="s">
+				<IconButton variant="secondary" size="s">
 					{isOpen ? <CloseTrail /> : <OpenTrail />}
-				</Tag>
+				</IconButton>
+				{/* <Tag variant="neutral" size="s">
+					{isOpen ? <CloseTrail /> : <OpenTrail />}
+				</Tag> */}
 			</div>
 			<AnimatePresence initial={false}>
 				{isOpen && (

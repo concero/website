@@ -2,6 +2,7 @@ import type { FC, ReactElement } from 'react'
 import { Button } from '@concero/ui-kit'
 import './Hero.pcss'
 import UnicornScene from 'unicornstudio-react'
+import { useWidthScreen } from '@/hooks/useWidthScreen'
 
 const HeroHeading = () => (
 	<div className="lanca_hero_description">
@@ -13,20 +14,23 @@ const HeroHeading = () => (
 	</div>
 )
 
-const HeroActions = () => (
-	<div className="lanca_hero_actions">
-		<Button variant="primary" size="xl">
-			Start Building
-		</Button>
-		<Button variant="secondary" size="xl">
-			Contact Us
-		</Button>
-	</div>
-)
+const HeroActions = () => {
+	const isTablet = useWidthScreen('tablet', 'only')
+	return (
+		<div className="lanca_hero_actions">
+			<Button variant="primary" size={isTablet ? 'l' : 'xl'}>
+				Start Building
+			</Button>
+			<Button variant="secondary" size={isTablet ? 'l' : 'xl'}>
+				Contact Us
+			</Button>
+		</div>
+	)
+}
 
 export const Hero: FC = (): ReactElement => (
 	<section className="lanca_hero">
-		<div className={'lanca_hero_backgroung_animation_wrap'}>
+		<div className="lanca_hero_backgroung_animation_wrap">
 			<UnicornScene
 				jsonFilePath={'/Lanca/Hero/hero.json'}
 				width="100%"
@@ -34,6 +38,7 @@ export const Hero: FC = (): ReactElement => (
 				className={'lanca_hero_backgroung_animation'}
 			/>
 		</div>
+
 		<div className="lanca_hero_heading">
 			<HeroHeading />
 			<HeroActions />

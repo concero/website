@@ -1,6 +1,7 @@
 import type { FC, ReactElement, ReactNode } from 'react'
 import { Button } from '@concero/ui-kit'
 import './ProductReachCard.pcss'
+import { useWidthScreen } from '@/hooks/useWidthScreen'
 
 type ProductReachCardProps = {
 	title: string
@@ -19,7 +20,8 @@ export const ProductReachCard: FC<ProductReachCardProps> = ({
 	ImageNode,
 	onButtonClick,
 }): ReactElement => {
-	const btnClick = (e: React.MouseEvent) => {
+	const isFullHd = useWidthScreen('fullHd', 'only')
+	const btnClick = () => {
 		if (buttonHref) {
 			window.open(buttonHref, '_blank', 'noopener,noreferrer')
 		} else if (onButtonClick) {
@@ -39,7 +41,7 @@ export const ProductReachCard: FC<ProductReachCardProps> = ({
 					)}
 				</div>
 				<div className="product_reach_card_action">
-					<Button variant="secondary_color" size="l" onClick={btnClick}>
+					<Button variant="secondary_color" size={isFullHd ? 'xl' : 'l'} onClick={btnClick}>
 						{buttonText}
 					</Button>
 				</div>

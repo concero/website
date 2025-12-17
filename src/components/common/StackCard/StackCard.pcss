@@ -30,12 +30,18 @@
 }
 
 .stack_card_title {
-	font: var(--font-body-xlarge);
 	color: var(--color-gray-600);
+	font: var(--font-body-xlarge);
+	@media (max-width: 1919px) {
+		font: var(--font-body-large);
+	}
 }
 
 .stack_card_number {
 	font: var(--font-heading-xxlarge);
+	@media (max-width: 1919px) {
+		font: var(--font-heading-xlarge);
+	}
 }
 
 .stack_card_title_dark {
@@ -52,11 +58,4 @@
 
 .stack_card_number_light {
 	color: var(--color-gray-700);
-}
-
-@media (max-width: 640px) {
-	.stack_card_number {
-		font-size: 1.5rem;
-		line-height: 1.75rem;
-	}
 }

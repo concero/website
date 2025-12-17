@@ -1,15 +1,26 @@
 .overview_action {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	width: 100%;
 	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m);
-	height: 100%;
 	gap: var(--space-xxl);
+	height: 512px;
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		height: initial;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		height: 566.5px;
+	}
+	@media (max-width: 743px) {
+		height: 332px;
+	}
 }
 
 .overview_action_content {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: var(--space-m);
 	width: 100%;
 	justify-content: center;

@@ -26,12 +26,24 @@
 	color: var(--color-gray-light-700);
 	font: var(--font-heading-xxxxlarge);
 	text-align: center;
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		font: var(--font-heading-xxxlarge);
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		font: var(--font-heading-xxxlarge);
+	}
+	@media (max-width: 743px) {
+		font: var(--font-heading-xxlarge);
+	}
 }
 
 .overview_infra_description_subtitle {
 	font: var(--font-heading-xlarge);
 	color: var(--color-gray-light-600);
 	text-align: center;
+	@media (max-width: 1919px) {
+		font: var(--font-heading-large);
+	}
 }
 
 .overview_infra_card {
@@ -46,34 +58,14 @@
 	flex: 1 1 calc(25% - var(--space-xs));
 }
 
-@media (min-width: 1025px) and (max-width: 1919px) {
-	.overview_infra_description_title {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		letter-spacing: -0.64px;
-	}
-}
-
 @media (min-width: 641px) and (max-width: 1024px) {
 	.overview_infra_card > * {
 		flex: 1 1 calc(50% - var(--space-xs) / 2);
-	}
-
-	.overview_infra_description_title {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		letter-spacing: -0.64px;
 	}
 }
 
 @media (max-width: 640px) {
 	.overview_infra_card > * {
 		flex: 1 1 100%;
-	}
-
-	.overview_infra_description_title {
-		font-size: 2rem;
-		line-height: 2.25rem;
-		letter-spacing: -0.64px;
 	}
 }

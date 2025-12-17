@@ -1,17 +1,15 @@
 import type { FC, ReactElement } from 'react'
 import { BenefitCard } from '@/components/common/BenefitCard/BenefitCard'
 import { DistributionIcon } from '@/assets/icons/distribution'
-import { OptimizeIcon } from '@/assets/icons/optimize'
 import { InfinityIcon } from '@/assets/icons/infinity'
-import { ServicingIcon } from '@/assets/icons/servicing'
 import { ReachIcon } from '@/assets/icons/reach'
-import { TrustIcon } from '@/assets/icons/trust'
 import { UserIcon } from '@/assets/icons/user'
 import { StarIcon } from '@/assets/icons/star'
 import cls from './Benefits.module.pcss'
 import { SettingsIcon } from '@/assets/icons/settings'
 import { ConsistencyIcon } from '@/assets/icons/consistency'
 import { LockIcon } from '@/assets/icons/lock'
+
 const BENEFIT_CARDS_ROWS = [
 	[
 		{

@@ -6,7 +6,20 @@
 	flex-direction: column;
 	height: 1024px;
 	width: 100%;
+	padding: 192px var(--space-xs) var(--space-xs) var(--space-xs);
 
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		padding: var(--space-xxxxxl) var(--space-l) var(--space-l) var(--space-l);
+		height: 720px;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		padding: var(--space-xxxxxl) var(--space-l) var(--space-l) var(--space-l);
+		height: 1133px;
+	}
+	@media (max-width: 743px) {
+		padding: var(--space-xxxxxl) var(--space-xs) var(--space-l) var(--space-xs);
+		height: 667px;
+	}
 	.backgroung_animation {
 		position: absolute !important;
 		top: 0;
@@ -38,14 +51,46 @@
 			flex-direction: column;
 			justify-content: center;
 			gap: var(--space-xs);
-			margin-top: 192px;
 			width: 100%;
 			text-align: center;
-			.title {
-				color: var(--color-gray-700);
+			.wrap {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--space-xs);
+				align-self: stretch;
+				.title {
+					color: var(--color-gray-700);
+					font: var(--font-heading-xxxxlarge);
+					@media (min-width: 1280px) and (max-width: 1919px) {
+						font: var(--font-heading-xxxlarge);
+					}
+					@media (min-width: 744px) and (max-width: 1279px) {
+						font: var(--font-heading-xxxlarge);
+					}
+					@media (max-width: 743px) {
+						font: var(--font-heading-xxlarge);
+					}
+				}
+				.subtitle {
+					font: var(--font-heading-xxxxlarge);
+					color: var(--color-gray-600);
+					@media (min-width: 1280px) and (max-width: 1919px) {
+						font: var(--font-heading-xxxlarge);
+					}
+					@media (min-width: 744px) and (max-width: 1279px) {
+						font: var(--font-heading-xxxlarge);
+					}
+					@media (max-width: 743px) {
+						font: var(--font-heading-xxlarge);
+					}
+				}
 			}
-			.description {
-				color: var(--color-gray-600);
+			.description_block {
+				.description_text {
+					font: var(--font-heading-large);
+					color: var(--color-gray-600);
+				}
 			}
 		}
 		.action_block {
@@ -54,8 +99,10 @@
 			justify-content: center;
 			gap: var(--space-xxs);
 			width: 436px;
-			@media screen and (width < 744px) {
+			@media (max-width: 743px) {
 				width: 100%;
+				flex-direction: column;
+				gap: var(--space-xxs);
 			}
 		}
 	}

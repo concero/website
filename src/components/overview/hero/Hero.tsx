@@ -2,12 +2,20 @@ import UnicornScene from 'unicornstudio-react'
 import { Button } from '@concero/ui-kit'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
-import { Text } from '@/components/common/Text/Text'
 import cls from './Hero.module.pcss'
 
 export const Hero = (): JSX.Element => {
-	const isDesktop = useWidthScreen('desktop', 'down')
+	const isDesktop = useWidthScreen('desktop', 'only')
+	const isTablet = useWidthScreen('tablet', 'only')
 	const isMobile = useWidthScreen('mobile', 'only')
+	let heightImage = 1024
+	if (isDesktop) {
+		heightImage = 720
+	} else if (isTablet) {
+		heightImage = 1133
+	} else if (isMobile) {
+		heightImage = 667
+	}
 	const { dispatch } = useModalContext()
 	const handleStartBuilding = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
@@ -17,27 +25,26 @@ export const Hero = (): JSX.Element => {
 			<UnicornScene
 				jsonFilePath={'/Overview/Hero/motherboard.json'}
 				width="100%"
-				height="1024px"
+				height={heightImage}
 				scale={0.8}
 				className={cls.backgroung_animation}
 			/>
 			<div className={cls.heading}>
 				<div className={cls.title_block}>
-					<Text
-						variant={isMobile ? 'heading_xxlarge' : isDesktop ? 'heading_xxxlarge' : 'heading_xxxxlarge'}
-						className={cls.title}
-					>
-						Motherboard
-					</Text>
-					<Text variant={isMobile ? 'heading_medium' : 'heading_large'} className={cls.description}>
-						Open Interoperability Framework
-					</Text>
+					<div className={cls.wrap}>
+						<span className={cls.title}>Motherboard</span>
+						<span className={cls.subtitle}>Open Interoperability Framework</span>
+					</div>
+
+					<div className={cls.description_block}>
+						<span className={cls.description_text}>Make infrastructure work for you</span>
+					</div>
 				</div>
 				<div className={cls.action_block}>
-					<Button variant="primary" size="xl" onClick={handleStartBuilding} isFull>
+					<Button variant="primary" size={isDesktop ? 'l' : 'xl'} onClick={handleStartBuilding} isFull>
 						Connect
 					</Button>
-					<Button variant="secondary" size="xl" isFull>
+					<Button variant="secondary" size={isDesktop ? 'l' : 'xl'} isFull>
 						Contact Us
 					</Button>
 				</div>

@@ -6,13 +6,16 @@
 	gap: var(--space-xl);
 	width: 100%;
 
+	@media (max-width: 743px) {
+		padding: var(--space-xl) var(--space-m);
+	}
 	& .cards {
 		display: flex;
 		align-items: flex-start;
 		gap: var(--space-xl);
 		width: 100%;
 
-		@media (max-width: 640px) {
+		@media (max-width: 743px) {
 			flex-wrap: wrap;
 			row-gap: var(--space-l);
 			column-gap: var(--space-m);
