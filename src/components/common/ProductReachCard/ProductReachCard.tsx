@@ -1,4 +1,4 @@
-import type { FC, ReactElement, ReactNode } from 'react'
+import type { FC, ReactElement } from 'react'
 import { Button } from '@concero/ui-kit'
 import './ProductReachCard.pcss'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
@@ -6,7 +6,7 @@ import { useWidthScreen } from '@/hooks/useWidthScreen'
 type ProductReachCardProps = {
 	title: string
 	description?: string
-	ImageNode?: ReactNode
+	ImageNode?: () => JSX.Element
 	buttonText: string
 	buttonHref?: string
 	onButtonClick?: () => void
@@ -46,7 +46,7 @@ export const ProductReachCard: FC<ProductReachCardProps> = ({
 					</Button>
 				</div>
 			</div>
-			<div className="product_reach_card_visual">{ImageNode}</div>
+			<div className="product_reach_card_visual">{ImageNode?.()}</div>
 		</div>
 	)
 }

@@ -6,16 +6,19 @@ import './Build.pcss'
 const INFRA_CARDS = [
 	{
 		title: 'Become a liquidity provider',
+		subtitle: 'Provide liquidity to pools and earn yield from protocol activity',
 		buttonText: 'Provide Liquidity',
 		buttonLink: links.liquidity,
 	},
 	{
 		title: 'Become a rebalancer',
+		subtitle: 'Rebalance liquidity between pools and earn fees for efficiency',
 		buttonText: 'Rebalancer Docs',
 		buttonLink: links.documentation,
 	},
 	{
 		title: 'Bridge Liquidity',
+		subtitle: 'Move liquidity seamlessly between chains using Lanca',
 		buttonText: 'Open App',
 		buttonLink: links.swap,
 	},
@@ -29,8 +32,14 @@ export const Build: FC = (): ReactElement => (
 			</div>
 		</div>
 		<div className="lanca_build_card">
-			{INFRA_CARDS.map(({ title, buttonText, buttonLink }) => (
-				<InfraCard key={title} title={title} buttonText={buttonText} buttonLink={buttonLink} />
+			{INFRA_CARDS.map(({ title, buttonText, buttonLink, subtitle }) => (
+				<InfraCard
+					key={title}
+					title={title}
+					buttonText={buttonText}
+					buttonLink={buttonLink}
+					subtitle={subtitle}
+				/>
 			))}
 		</div>
 	</div>

@@ -28,20 +28,36 @@ const HeroActions = () => {
 	)
 }
 
-export const Hero: FC = (): ReactElement => (
-	<section className="lanca_hero">
-		<div className="lanca_hero_backgroung_animation_wrap">
-			<UnicornScene
-				jsonFilePath={'/Lanca/Hero/hero.json'}
-				width="100%"
-				scale={1}
-				className={'lanca_hero_backgroung_animation'}
-			/>
-		</div>
+export const Hero: FC = (): ReactElement => {
+	const isDesktop = useWidthScreen('desktop', 'only')
+	const isTablet = useWidthScreen('tablet', 'only')
+	const isMobile = useWidthScreen('mobile', 'only')
+	let heightImage = 670
+	if (isDesktop) {
+		heightImage = 398
+	} else if (isTablet) {
+		heightImage = 795
+	} else if (isMobile) {
+		heightImage = 251
+	}
+	console.log({ heightImage })
 
-		<div className="lanca_hero_heading">
-			<HeroHeading />
-			<HeroActions />
-		</div>
-	</section>
-)
+	return (
+		<section className="lanca_hero">
+			<div className="lanca_hero_backgroung_animation_wrap">
+				<UnicornScene
+					jsonFilePath={'/Lanca/Hero/hero.json'}
+					width="100%"
+					scale={1}
+					height={heightImage}
+					className={'lanca_hero_backgroung_animation'}
+				/>
+			</div>
+
+			<div className="lanca_hero_heading">
+				<HeroHeading />
+				<HeroActions />
+			</div>
+		</section>
+	)
+}

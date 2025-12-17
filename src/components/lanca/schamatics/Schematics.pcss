@@ -1,10 +1,25 @@
 .lanca_schematics {
 	display: flex;
+	min-width: 1280px;
+	max-width: 1920px;
+	padding: var(--space-xxxxxxl) var(--space-xs) var(--space-xs) var(--space-xs);
 	flex-direction: column;
 	align-items: center;
-	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m) var(--space-m);
-	width: 100%;
-	gap: var(--space-xxxl);
+	gap: var(--space-xxl);
+	align-self: stretch;
+	background: var(--color-gray-25);
+
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		width: 100%;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		min-width: initial;
+		max-width: 100%;
+	}
+	@media (max-width: 743px) {
+		min-width: initial;
+		max-width: 100%;
+	}
 }
 
 .lanca_schematics_description {
@@ -18,21 +33,16 @@
 
 .lanca_schematics_title {
 	color: var(--color-gray-light-700);
-	font-family: var(--font-heading-large-family);
-	font-size: 4rem;
-	font-weight: 500;
-	line-height: 4.25rem;
-	letter-spacing: -1.28px;
-	text-align: center;
-}
-
-.lanca_schematics_subtitle {
-	font-family: var(--font-heading-large-family);
-	font-size: 1.125rem;
-	font-weight: 400;
-	line-height: 1.375rem;
-	color: var(--color-gray-light-600);
-	text-align: center;
+	font: var(--font-heading-xxxxlarge);
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		font: var(--font-heading-xxxlarge);
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		font: var(--font-heading-xxxlarge);
+	}
+	@media (max-width: 743px) {
+		font: var(--font-heading-xxlarge);
+	}
 }
 
 .lanca_schematics_visual_wrapper {
@@ -107,28 +117,4 @@
 	padding: 0 var(--space-l);
 	gap: var(--space-xl);
 	width: 100%;
-}
-
-@media (min-width: 641px) and (max-width: 1919px) {
-	.lanca_schematics_title {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		letter-spacing: -0.64px;
-	}
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
-	.lanca_schematics_title {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		letter-spacing: -0.64px;
-	}
-}
-
-@media (max-width: 640px) {
-	.lanca_schematics_title {
-		font-size: 2rem;
-		line-height: 2.25rem;
-		letter-spacing: -0.64px;
-	}
 }

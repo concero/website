@@ -1,7 +1,7 @@
 import type { FC, ReactElement } from 'react'
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { IconButton, Tag } from '@concero/ui-kit'
+import { IconButton } from '@concero/ui-kit'
 import { OpenTrail } from '@/assets/icons/openTrail'
 import { CloseTrail } from '@/assets/icons/closeTrail'
 import './FAQItem.pcss'

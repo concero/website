@@ -9,6 +9,11 @@
 	align-items: center;
 	gap: var(--space-xxl);
 	align-self: stretch;
+	@media (max-width: 1279px) {
+		width: 100%;
+		max-width: 100%;
+		min-width: initial;
+	}
 }
 
 .lanca_reach_title {
@@ -37,6 +42,13 @@
 	align-items: flex-start;
 	gap: var(--space-xs);
 	width: 100%;
+	@media (max-width: 1279px) {
+		flex-direction: column;
+		gap: var(--space-xs);
+		& > * {
+			width: 100%;
+		}
+	}
 }
 .lanca_reach_backgroung_animation {
 	display: flex;

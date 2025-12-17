@@ -2,8 +2,8 @@ import type { FC, ReactElement } from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { SchematicStep } from '@/components/common/SchematicStep/SchematicStep'
-import { useIsTablet, useIsMobile } from '@/hooks/useMediaQuery'
 import './Schematics.pcss'
+import { useWidthScreen } from '@/hooks/useWidthScreen'
 
 type Step = { step: number; title: string; description: string }
 
@@ -44,8 +44,8 @@ export const Schematics: FC = (): ReactElement => {
 	const [progress, setProgress] = useState(0)
 	const [isOverflowing, setOverflowing] = useState(false)
 
-	const isTablet = useIsTablet()
-	const isMobile = useIsMobile()
+	const isTablet = useWidthScreen('tablet', 'only')
+	const isMobile = useWidthScreen('mobile', 'only')
 	const isShortMode = isMobile || isTablet
 
 	const intervalId = useRef<number | null>(null)
@@ -110,7 +110,7 @@ export const Schematics: FC = (): ReactElement => {
 		setOverflowing(el.scrollLeft + el.clientWidth < el.scrollWidth)
 	}, [])
 
-	const imgBasePath = isShortMode ? '/Schematics/Lanca/Mobile' : '/Schematics/Lanca/Desktop'
+	const imgBasePath = isShortMode ? '/Lanca/Schematics/Mobile' : '/Lanca/Schematics/Desktop'
 
 	return (
 		<div className="lanca_schematics">
