@@ -48,7 +48,7 @@ export const Hero = (): JSX.Element => {
 				</div>
 				<div className={cls.action_block}>
 					<Button variant="primary" size={isTablet ? 'l' : 'xl'} onClick={handleStartBuilding} isFull>
-						Start Building
+						{isMobile ? 'Connect' : 'Start Building'}
 					</Button>
 					<Button variant="secondary" size={isTablet ? 'l' : 'xl'} isFull>
 						Contact Us
