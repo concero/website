@@ -122,7 +122,7 @@ export const Schematics: FC = (): ReactElement => {
 					<AnimatePresence mode="wait">
 						<motion.img
 							key={`step-image-${stepIndex}`}
-							src={`${imgBasePath}/Step${STEPS[stepIndex].step}.svg`}
+							src={`${imgBasePath}/Step${STEPS[stepIndex].step}.png`}
 							alt={`Step ${STEPS[stepIndex].step}: ${STEPS[stepIndex].title}`}
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}

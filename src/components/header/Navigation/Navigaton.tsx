@@ -61,8 +61,20 @@ export const Navigation: FC = () => {
 					subtitle: 'Cross-chain liquidity protocol',
 					icon: <LiqudityProtocolIcon />,
 				},
-				{ title: 'Depo', link: links.depo, subtitle: 'Deposit/Withdrawal protocol', icon: <DepoIcon /> },
-				{ title: 'Distro', link: links.distro, subtitle: 'Token distribution protocol', icon: <DistroIcon /> },
+				{
+					title: 'Depo',
+					link: links.depo,
+					subtitle: 'Deposit/Withdrawal protocol',
+					icon: <DepoIcon />,
+					disabled: true,
+				},
+				{
+					title: 'Distro',
+					link: links.distro,
+					subtitle: 'Token distribution protocol',
+					icon: <DistroIcon />,
+					disabled: true,
+				},
 			],
 		},
 		{
