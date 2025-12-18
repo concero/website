@@ -20,8 +20,11 @@ export const Hero = (): JSX.Element => {
 		heightImage = 667
 	}
 	const { dispatch } = useModalContext()
-	const handleStartBuilding = () => {
+	const onContactUs = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
+	}
+	const onStartBuild = () => {
+		window.open('https://docs.concero.io/', '_blank', 'noopener,noreferrer')
 	}
 	return (
 		<section className={cls.hero}>
@@ -47,10 +50,10 @@ export const Hero = (): JSX.Element => {
 					</Text>
 				</div>
 				<div className={cls.action_block}>
-					<Button variant="primary" size={isTablet ? 'l' : 'xl'} onClick={handleStartBuilding} isFull>
+					<Button variant="primary" size={isTablet ? 'l' : 'xl'} onClick={onStartBuild} isFull>
 						{isMobile ? 'Connect' : 'Start Building'}
 					</Button>
-					<Button variant="secondary" size={isTablet ? 'l' : 'xl'} isFull>
+					<Button variant="secondary" size={isTablet ? 'l' : 'xl'} onClick={onContactUs} isFull>
 						Contact Us
 					</Button>
 				</div>

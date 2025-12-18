@@ -57,7 +57,7 @@ export const Navigation: FC = () => {
 			dropdownItems: [
 				{
 					title: 'Lanca',
-					link: links.swap,
+					link: links.lanca,
 					subtitle: 'Cross-chain liquidity protocol',
 					icon: <LiqudityProtocolIcon />,
 				},

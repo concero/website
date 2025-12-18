@@ -6,8 +6,7 @@ import { useWidthScreen } from '@/hooks/useWidthScreen'
 export const Action: FC = (): ReactElement => {
 	const isHdDesktop = useWidthScreen('desktop', 'down')
 	const onStartBuild = () => {
-		console.log('start build')
-		window.open('https://example.com', '_blank', 'noopener,noreferrer')
+		window.open('https://docs.concero.io/', '_blank', 'noopener,noreferrer')
 	}
 	return (
 		<div className="lanca_action">

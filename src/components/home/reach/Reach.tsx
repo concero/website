@@ -130,7 +130,7 @@ const DataCards = (): ReactElement => (
 		<DataCard title="Total Reachable Wallets" number="150M+" isAccent />
 		<DataCard title="Chains" number="500+" />
 		<DataCard title="Supported VMs" number="1" />
-		<DataCard title="AVG. deployment time" number="20 min" />
+		<DataCard title="Avg. deployment time" number="20 min" />
 	</div>
 )
 

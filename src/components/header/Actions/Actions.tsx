@@ -4,12 +4,11 @@ import { useIsMobile, useIsTablet } from '@/hooks/useMediaQuery'
 import { MenuIcon } from '@/assets/icons/menu'
 import { CloseIcon } from '@/assets/icons/close'
 import { Burger } from '../Burger/Burger'
-import { useModalContext } from '@/reducer/modal/modalContext'
 import './Actions.pcss'
 
 export const Actions = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const { dispatch } = useModalContext()
+	// const { dispatch } = useModalContext()
 	const isMobile = useIsMobile()
 	const isTablet = useIsTablet()
 
@@ -20,10 +19,12 @@ export const Actions = () => {
 		if (!showBurger) setIsOpen(false)
 	}, [showBurger])
 
-	const handleContactClick = useCallback(() => {
-		dispatch({ type: 'OPEN_CONTACT' })
-	}, [dispatch])
-
+	// const handleContactClick = useCallback(() => {
+	// 	dispatch({ type: 'OPEN_CONTACT' })
+	// }, [dispatch])
+	const onStartBuild = () => {
+		window.open('https://docs.concero.io/', '_blank', 'noopener,noreferrer')
+	}
 	const toggleMenu = useCallback(() => setIsOpen(prev => !prev), [])
 
 	return (
@@ -31,7 +32,7 @@ export const Actions = () => {
 			<div className="actions_container">
 				<div className="actions_buttons">
 					{!isOpen && (
-						<Button size={buttonSize} variant="primary" onClick={handleContactClick}>
+						<Button size={buttonSize} variant="primary" onClick={onStartBuild}>
 							Start Building
 						</Button>
 					)}
