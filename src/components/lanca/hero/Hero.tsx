@@ -17,13 +17,15 @@ const HeroHeading = () => (
 const HeroActions = () => {
 	const isTablet = useWidthScreen('tablet', 'only')
 	return (
-		<div className="lanca_hero_actions">
-			<Button variant="primary" size={isTablet ? 'l' : 'xl'}>
-				Start Building
-			</Button>
-			<Button variant="secondary" size={isTablet ? 'l' : 'xl'}>
-				Contact Us
-			</Button>
+		<div className="lanca_hero_actions_wrap">
+			<div className="lanca_hero_actions">
+				<Button variant="primary" size={isTablet ? 'l' : 'xl'} isFull>
+					Start Building
+				</Button>
+				<Button variant="secondary" size={isTablet ? 'l' : 'xl'} isFull>
+					Contact Us
+				</Button>
+			</div>
 		</div>
 	)
 }
@@ -44,19 +46,21 @@ export const Hero: FC = (): ReactElement => {
 
 	return (
 		<section className="lanca_hero">
-			<div className="lanca_hero_backgroung_animation_wrap">
-				<UnicornScene
-					jsonFilePath={'/Lanca/Hero/hero.json'}
-					width="100%"
-					scale={1}
-					height={heightImage}
-					className={'lanca_hero_backgroung_animation'}
-				/>
-			</div>
+			<div className="lanca_hero_content">
+				<div className="lanca_hero_backgroung_animation_wrap">
+					<UnicornScene
+						jsonFilePath={'/Lanca/Hero/hero.json'}
+						width="100%"
+						scale={1}
+						height={heightImage}
+						className={'lanca_hero_backgroung_animation'}
+					/>
+				</div>
 
-			<div className="lanca_hero_heading">
-				<HeroHeading />
-				<HeroActions />
+				<div className="lanca_hero_heading">
+					<HeroHeading />
+					<HeroActions />
+				</div>
 			</div>
 		</section>
 	)

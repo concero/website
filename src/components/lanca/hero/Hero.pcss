@@ -1,15 +1,16 @@
 .lanca_hero {
-	display: flex;
 	padding: var(--space-xxxl) var(--space-xs) var(--space-xs) var(--space-xs);
-	margin-top: var(--header-height);
-	flex-direction: column;
-	align-items: flex-start;
-	gap: var(--space-l);
-	flex: 1 0 0;
-	align-self: stretch;
-	border-radius: var(--space-xl);
-	background: var(--color-gray-50);
-
+	.lanca_hero_content {
+		padding: var(--space-xs);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-l);
+		align-self: stretch;
+		flex: 1 0 0;
+		background: var(--color-gray-50);
+		border-radius: var(--space-xl);
+	}
 	.lanca_hero_backgroung_animation_wrap {
 		width: 100%;
 		height: 670px;
@@ -34,6 +35,7 @@
 .lanca_hero_heading {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	gap: var(--space-m);
 	align-self: stretch;
@@ -86,16 +88,32 @@
 			color: var(--color-gray-600);
 		}
 	}
-}
-
-.lanca_hero_actions {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-self: stretch;
-	width: 100%;
-	gap: var(--space-xs);
-	padding: 0 var(--space-m) var(--space-m) var(--space-m);
+	.lanca_hero_actions_wrap {
+		display: flex;
+		justify-content: center;
+		max-width: 100%;
+		.lanca_hero_actions {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: stretch;
+			gap: var(--space-xs);
+			width: 440px;
+			max-width: 100%;
+			padding: 0 var(--space-m) var(--space-m) var(--space-m);
+			@media (min-width: 1280px) and (max-width: 1919px) {
+				width: 436px;
+			}
+			@media (min-width: 744px) and (max-width: 1279px) {
+				width: 502px;
+			}
+			@media (max-width: 743px) {
+			}
+			@media (width < 744px) {
+				flex-direction: column;
+			}
+		}
+	}
 }
 
 .lanca_hero_backgroung_animation {
