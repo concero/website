@@ -2,10 +2,19 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	max-width: 748px;
+	max-width: 912px;
 	margin: 0 auto;
 	width: 100%;
 	gap: var(--space-m);
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		max-width: 748px;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		max-width: 502px;
+	}
+	@media (max-width: 743px) {
+		max-width: 343px;
+	}
 }
 
 .faq_divider {

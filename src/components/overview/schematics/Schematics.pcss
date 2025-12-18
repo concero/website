@@ -50,11 +50,23 @@
 
 .overview_schematics_image_container {
 	width: 100%;
+
 	display: flex;
 	justify-content: center;
 	position: relative;
 	border-radius: var(--space-xl);
 	background: var(--color-gray-50);
+
+	min-height: 846px;
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		min-height: 562px;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		min-height: 515px;
+	}
+	@media (max-width: 743px) {
+		min-height: 254px;
+	}
 }
 
 .overview_schematics_image {
@@ -72,10 +84,11 @@
 
 .overview_schematics_cards_wrapper {
 	width: 100%;
-	overflow-x: auto;
+	overflow-x: hidden;
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
+	padding: 0 var(--space-l);
 }
 
 .overview_schematics_cards_wrapper::-webkit-scrollbar {
@@ -93,6 +106,7 @@
 	background: linear-gradient(90deg, rgba(252, 252, 253, 0) 0%, var(--color-gray-25, #fcfcfd) 100%);
 	transition: opacity 0.3s ease;
 	opacity: 1;
+	z-index: 1;
 }
 
 .overview_overflow_shadow::before {
@@ -106,13 +120,13 @@
 	background: linear-gradient(-90deg, rgba(252, 252, 253, 0) 0%, var(--color-gray-25, #fcfcfd) 100%);
 	transition: opacity 0.3s ease;
 	opacity: 1;
+	z-index: 1;
 }
 
 .overview_schematics_cards {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	padding: 0 var(--space-l);
 	gap: var(--space-xl);
 	width: 100%;
 }

@@ -67,12 +67,10 @@ export const Schematics: FC = (): ReactElement => {
 			setStepIndex(index)
 			setProgress(0)
 			startTime.current = Date.now()
-
 			intervalId.current = window.setInterval(() => {
 				const elapsed = Date.now() - startTime.current
 				setProgress(Math.min((elapsed / STEP_DURATION) * 100, 100))
 			}, UPDATE_INTERVAL)
-
 			timeoutId.current = window.setTimeout(() => {
 				clearTimers()
 				setProgress(100)
@@ -81,7 +79,27 @@ export const Schematics: FC = (): ReactElement => {
 		},
 		[clearTimers],
 	)
+	useEffect(() => {
+		if (!isShortMode || !cardsRef.current) return
 
+		const card = cardsRef.current.children[0] as HTMLElement | null
+		if (!card) return
+
+		const cardWidth = card.getBoundingClientRect().width
+		const gapPX = stepIndex > 0 ? 32 : 0
+		const translateX = (-cardWidth - gapPX) * stepIndex
+
+		cardsRef.current.style.transform = `translateX(${translateX}px)`
+		cardsRef.current.style.transition = 'transform 0.4s ease'
+	}, [stepIndex, isShortMode])
+	useEffect(() => {
+		return () => {
+			if (cardsRef.current) {
+				cardsRef.current.style.transform = ''
+				cardsRef.current.style.transition = ''
+			}
+		}
+	}, [])
 	const checkOverflow = useCallback(() => {
 		if (cardsRef.current) {
 			setOverflowing(cardsRef.current.scrollWidth > cardsRef.current.clientWidth)
