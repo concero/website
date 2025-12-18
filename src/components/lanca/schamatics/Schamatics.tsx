@@ -90,6 +90,20 @@ export const Schematics: FC = (): ReactElement => {
 			setOverflowing(cardsRef.current.scrollWidth > cardsRef.current.clientWidth)
 		}
 	}, [])
+	
+	useEffect(() => {
+		if (!isShortMode || !cardsRef.current) return
+
+		const card = cardsRef.current.children[0] as HTMLElement | null
+		if (!card) return
+
+		const cardWidth = card.getBoundingClientRect().width
+		const gapPX = stepIndex > 0 ? 32 : 0
+		const translateX = (-cardWidth - gapPX) * stepIndex
+
+		cardsRef.current.style.transform = `translateX(${translateX}px)`
+		cardsRef.current.style.transition = 'transform 0.4s ease'
+	}, [stepIndex, isShortMode])
 
 	useEffect(() => {
 		startAnimation(0)
