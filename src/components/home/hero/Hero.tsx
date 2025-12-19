@@ -29,9 +29,10 @@ export const Hero = (): JSX.Element => {
 	return (
 		<section className={cls.hero}>
 			<UnicornScene
+				key={`Unicorn ${isDesktop} ${isMobile} ${isTablet}`}
 				jsonFilePath={'/Hero/hero.json'}
 				width="100%"
-				height={heightImage}
+				height="100%"
 				scale={0.8}
 				className={cls.backgroung_animation}
 			/>
