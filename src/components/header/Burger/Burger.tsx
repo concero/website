@@ -80,12 +80,20 @@ const burgerSections: BurgerSection[] = [
 				href: links.depo,
 				subtitle: 'Deposit/Withdrawal protocol',
 				icon: <DepoIcon />,
+				disabled: true,
+				showTag: true,
+				tagText: 'Soon',
+				tagVariant: 'neutral',
 			},
 			{
 				title: 'Distro',
 				href: links.distro,
 				subtitle: 'Token distribution protocol',
 				icon: <DistroIcon />,
+				disabled: true,
+				showTag: true,
+				tagText: 'Soon',
+				tagVariant: 'neutral',
 			},
 		],
 	},
@@ -128,9 +136,6 @@ export const Burger = () => {
 								{section.title && <span className="burger_section_title">{section.title}</span>}
 								<div className="burger_section_items">
 									{section.items.map(item => {
-										if (item.disabled) {
-											console.log(`Burger item disabled: ${item.title}`)
-										}
 										return (
 											<BurgerSectionItem
 												key={item.title}

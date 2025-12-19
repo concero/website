@@ -67,6 +67,7 @@ export const Navigation: FC = () => {
 					subtitle: 'Deposit/Withdrawal protocol',
 					icon: <DepoIcon />,
 					disabled: true,
+					tag: { text: 'Soon', variant: 'neutral' },
 				},
 				{
 					title: 'Distro',
@@ -74,6 +75,7 @@ export const Navigation: FC = () => {
 					subtitle: 'Token distribution protocol',
 					icon: <DistroIcon />,
 					disabled: true,
+					tag: { text: 'Soon', variant: 'neutral' },
 				},
 			],
 		},

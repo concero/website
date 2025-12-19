@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Tag, TTagVariant } from '@concero/ui-kit'
+import { IconButton, Tag, TTagVariant } from '@concero/ui-kit'
 import './BurgerItem.pcss'
 
 type BurgerSectionItemProps = {
