@@ -1,8 +1,22 @@
 .lanca_hero {
 	padding: var(--space-xxxl) var(--space-xs) var(--space-xs) var(--space-xs);
+	aspect-ratio: 1920 / 1024;
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		padding: var(--space-xxxl) var(--space-xs) var(--space-xs) var(--space-xs);
+		aspect-ratio: 1280 / 720;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		padding: 56px var(--space-xs) var(--space-xs) var(--space-xs);
+		aspect-ratio: 744 / 1133;
+	}
+	@media (max-width: 743px) {
+		padding: 56px var(--space-xs) var(--space-xs) var(--space-xs);
+		aspect-ratio: 375 / 667;
+	}
 	.lanca_hero_content {
 		padding: var(--space-xs);
 		display: flex;
+		height: 100%;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: var(--space-l);
@@ -13,7 +27,7 @@
 	}
 	.lanca_hero_backgroung_animation_wrap {
 		width: 100%;
-		height: 670px;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		margin-top: auto;
@@ -21,13 +35,17 @@
 		border-radius: var(--border-radius-large);
 		overflow: auto;
 		@media (min-width: 1280px) and (max-width: 1919px) {
-			height: 398px;
+			/* height: 398px; */
 		}
 		@media (min-width: 744px) and (max-width: 1279px) {
-			height: 795px;
+			/* height: 795px; */
 		}
 		@media (max-width: 743px) {
-			height: 251px;
+			/* height: 251px; */
+		}
+
+		& > * > * {
+			border-radius: var(--border-radius-large);
 		}
 	}
 }

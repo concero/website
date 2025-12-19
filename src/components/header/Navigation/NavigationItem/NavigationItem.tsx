@@ -53,9 +53,16 @@ export const NavigationItem: FC<NavigationItemProps> = ({
 						</div>
 					</div>
 				)
-			case 1:
+			case 1: {
+				const isExternal = link && !link.startsWith('/') && !link.startsWith(window.location.origin)
 				return (
-					<a href={link} className="nav_item" target="_blank" rel="noopener noreferrer" aria-label={title}>
+					<a
+						href={link}
+						className="nav_item"
+						target={isExternal ? '_blank' : undefined}
+						rel={isExternal ? 'noopener noreferrer' : undefined}
+						aria-label={title}
+					>
 						<div className="nav_item_content">
 							<span className="nav_item_title">{title}</span>
 							{showDropdown && (
@@ -66,6 +73,7 @@ export const NavigationItem: FC<NavigationItemProps> = ({
 						</div>
 					</a>
 				)
+			}
 			case 2:
 			default:
 				return (

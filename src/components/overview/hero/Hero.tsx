@@ -6,16 +6,16 @@ import cls from './Hero.module.pcss'
 
 export const Hero = (): JSX.Element => {
 	const isDesktop = useWidthScreen('desktop', 'only')
-	const isTablet = useWidthScreen('tablet', 'only')
-	const isMobile = useWidthScreen('mobile', 'only')
-	let heightImage = 1024
-	if (isDesktop) {
-		heightImage = 720
-	} else if (isTablet) {
-		heightImage = 1133
-	} else if (isMobile) {
-		heightImage = 667
-	}
+	// const isTablet = useWidthScreen('tablet', 'only')
+	// const isMobile = useWidthScreen('mobile', 'only')
+	// let heightImage = 1024
+	// if (isDesktop) {
+	// 	heightImage = 720
+	// } else if (isTablet) {
+	// 	heightImage = 1133
+	// } else if (isMobile) {
+	// 	heightImage = 667
+	// }
 	const { dispatch } = useModalContext()
 	const handleStartBuilding = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
@@ -25,7 +25,7 @@ export const Hero = (): JSX.Element => {
 			<UnicornScene
 				jsonFilePath={'/Overview/Hero/motherboard.json'}
 				width="100%"
-				height={heightImage}
+				height="100%"
 				scale={0.8}
 				className={cls.backgroung_animation}
 			/>

@@ -9,7 +9,7 @@ import { Footer } from './components/footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 import { links } from './configuration/links'
 import { OverviewPage } from './pages/Overview'
-import { DepoPage } from './pages/Depo'
+// import { DepoPage } from './pages/Depo'
 import '@concero/ui-kit/styles/concero/index.css'
 import './styles/App.css'
 
@@ -36,7 +36,7 @@ function App() {
 				<Route path={links.home} element={<HomePage />} />
 				<Route path={links.overview} element={<OverviewPage />} />
 				<Route path={links.lanca} element={<LancaPage />} />
-				<Route path={links.depo} element={<DepoPage />} />
+				{/* <Route path={links.depo} element={<DepoPage />} /> */}
 			</Routes>
 			<Footer />
 		</AppProviders>

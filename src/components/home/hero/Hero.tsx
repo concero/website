@@ -11,14 +11,14 @@ export const Hero = (): JSX.Element => {
 	const isDesktop = useWidthScreen('desktop', 'only')
 	const isTablet = useWidthScreen('tablet', 'only')
 	const isMobile = useWidthScreen('mobile', 'only')
-	let heightImage = 1024
-	if (isDesktop) {
-		heightImage = 720
-	} else if (isTablet) {
-		heightImage = 1133
-	} else if (isMobile) {
-		heightImage = 667
-	}
+	// let heightImage = 1024
+	// if (isDesktop) {
+	// 	heightImage = 720
+	// } else if (isTablet) {
+	// 	heightImage = 1133
+	// } else if (isMobile) {
+	// 	heightImage = 667
+	// }
 	const { dispatch } = useModalContext()
 	const onContactUs = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
