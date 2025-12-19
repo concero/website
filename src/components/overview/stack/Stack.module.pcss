@@ -109,6 +109,16 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				min-height: 613px;
+				@media (min-width: 1280px) and (max-width: 1919px) {
+					min-height: 406px;
+				}
+				@media (min-width: 744px) and (max-width: 1279px) {
+					min-height: 470.743px;
+				}
+				@media (max-width: 743px) {
+					min-height: 232.138px;
+				}
 			}
 			& .overview_stack_image {
 				max-width: 100%;
