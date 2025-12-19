@@ -1,7 +1,12 @@
 import './Logo.pcss'
 
-export const Logo = () => (
-	<div className="logo_container">
-		<img src="/Header/Concero.svg" alt="Concero" />
-	</div>
-)
+export const Logo = () => {
+	const handleClick = () => {
+		window.location.href = '/'
+	}
+	return (
+		<div className="logo_container" onClick={handleClick}>
+			<img src="/Header/Concero.svg" alt="Concero" />
+		</div>
+	)
+}
