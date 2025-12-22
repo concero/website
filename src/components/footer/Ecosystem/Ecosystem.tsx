@@ -16,8 +16,8 @@ const ecosystem_sections = [
 		title: 'Products',
 		links: [
 			{ href: links.lanca, label: 'Lanca' },
-			{ href: links.depo, label: 'Depo' },
-			{ href: links.distro, label: 'Distro' },
+			// { href: links.depo, label: 'Depo' },
+			// { href: links.distro, label: 'Distro' },
 		],
 	},
 	{
