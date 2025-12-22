@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { IconButton, Tag, TTagVariant } from '@concero/ui-kit'
+import { Tag, TTagVariant } from '@concero/ui-kit'
 import './BurgerItem.pcss'
 
 type BurgerSectionItemProps = {
@@ -45,9 +45,14 @@ export const BurgerSectionItem = ({
 			</div>
 		)
 	}
-
+	const isExternal = href && !href.startsWith('/') && !href.startsWith(window.location.origin)
 	return (
-		<a href={href} target="_blank" rel="noopener noreferrer" className="burger_item_link">
+		<a
+			href={href}
+			target={isExternal ? '_blank' : undefined}
+			rel={isExternal ? 'noopener noreferrer' : undefined}
+			className="burger_item_link"
+		>
 			<div className="burger_item">
 				<div className="burger_item_icon_container">
 					<div className="burger_icon_wrapper">{icon}</div>

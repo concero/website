@@ -71,7 +71,7 @@ const burgerSections: BurgerSection[] = [
 		items: [
 			{
 				title: 'Lanca',
-				href: links.swap,
+				href: links.lanca,
 				subtitle: 'Cross-chain liquidity protocol',
 				icon: <LiqudityProtocolIcon />,
 			},

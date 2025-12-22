@@ -31,18 +31,17 @@ const HeroActions = () => {
 }
 
 export const Hero: FC = (): ReactElement => {
-	const isDesktop = useWidthScreen('desktop', 'only')
-	const isTablet = useWidthScreen('tablet', 'only')
-	const isMobile = useWidthScreen('mobile', 'only')
-	let heightImage = 670
-	if (isDesktop) {
-		heightImage = 398
-	} else if (isTablet) {
-		heightImage = 795
-	} else if (isMobile) {
-		heightImage = 251
-	}
-	console.log({ heightImage })
+	// const isDesktop = useWidthScreen('desktop', 'only')
+	// const isTablet = useWidthScreen('tablet', 'only')
+	// const isMobile = useWidthScreen('mobile', 'only')
+	// let heightImage = 670
+	// if (isDesktop) {
+	// 	heightImage = 398
+	// } else if (isTablet) {
+	// 	heightImage = 795
+	// } else if (isMobile) {
+	// 	heightImage = 251
+	// }
 
 	return (
 		<section className="lanca_hero">
@@ -52,7 +51,7 @@ export const Hero: FC = (): ReactElement => {
 						jsonFilePath={'/Lanca/Hero/hero.json'}
 						width="100%"
 						scale={1}
-						height={heightImage}
+						height={'100%'}
 						className={'lanca_hero_backgroung_animation'}
 					/>
 				</div>
