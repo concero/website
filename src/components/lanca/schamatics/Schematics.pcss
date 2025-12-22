@@ -60,26 +60,20 @@
 	border-radius: var(--space-xl);
 	background: var(--color-gray-50);
 
-	/* min-height: 749.6px; */
-	aspect-ratio: 1499 / 749.6; /* = 2.0 */
+	min-height: 749.6px;
+	aspect-ratio: 1920 / 759; /* = 2.0 */
 	@media (min-width: 1280px) and (max-width: 1919px) {
 		aspect-ratio: 1280 / 504; /* ≈ 2.54 */
-	}
-	@media (min-width: 744px) and (max-width: 1279px) {
-		aspect-ratio: 768 / 288.2; /* ≈ 2.665 */
-	}
-	@media (max-width: 743px) {
-		aspect-ratio: 375 / 142; /* ≈ 2.641 */
-	}
-	/* @media (min-width: 1280px) and (max-width: 1919px) {
 		min-height: 504px;
 	}
 	@media (min-width: 744px) and (max-width: 1279px) {
-		min-height: 288.2px;
+		aspect-ratio: 744 / 288; /* ≈ 2.665 */
+		min-height: 288px;
 	}
 	@media (max-width: 743px) {
+		aspect-ratio: 375 / 142; /* ≈ 2.641 */
 		min-height: 142px;
-	} */
+	}
 }
 
 .lanca_schematics_image {
