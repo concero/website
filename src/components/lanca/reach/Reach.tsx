@@ -36,7 +36,7 @@ const PROTOCOLS = [
 	},
 	{
 		title: 'Protocols',
-		description: 'Enable cross-chain value transfer for your users.',
+		description: 'Enable cross-chain value transfer for your users',
 		buttonText: 'Integration Docs',
 		buttonHref: links.documentation,
 		ImageNode: () => {
@@ -64,7 +64,7 @@ const PROTOCOLS = [
 	},
 	{
 		title: 'Asset issuers',
-		description: 'Bridge across thousands of chains in seconds.',
+		description: 'Bridge across thousands of chains in seconds',
 		buttonText: 'Lanca App',
 		buttonHref: links.swap,
 		ImageNode: () => {

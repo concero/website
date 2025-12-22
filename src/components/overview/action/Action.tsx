@@ -10,10 +10,10 @@ export const Action: FC = (): ReactElement => {
 			<div className="overview_action_content">
 				<span className="overview_action_title">Build your cross-chain protocol today</span>
 				<div className="overview_action_actions">
-					<Button variant="primary" size={isHdDesktop ? 'l' : 'xl'}>
+					<Button variant="primary" size={isHdDesktop ? 'l' : 'xl'} isFull>
 						Start Building
 					</Button>
-					<Button variant="secondary" size={isHdDesktop ? 'l' : 'xl'}>
+					<Button variant="secondary" size={isHdDesktop ? 'l' : 'xl'} isFull>
 						Contact Us
 					</Button>
 				</div>
