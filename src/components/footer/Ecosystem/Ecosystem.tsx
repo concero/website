@@ -44,7 +44,12 @@ export const Ecosystem: FC = (): JSX.Element => {
 			dispatch({ type: 'OPEN_BRAND_ASSETS' })
 		} else {
 			const isExternal = href && !href.startsWith('/') && !href.startsWith(window.location.origin)
-			window.open(href, isExternal ? '_blank' : undefined, isExternal ? 'noopener noreferrer' : undefined)
+
+			if (isExternal) {
+				window.open(href, '_blank', 'noopener,noreferrer')
+			} else {
+				window.location.href = href
+			}
 		}
 	}
 
