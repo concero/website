@@ -15,7 +15,7 @@ const ecosystem_sections = [
 	{
 		title: 'Products',
 		links: [
-			{ href: links.swap, label: 'Lanca' },
+			{ href: links.lanca, label: 'Lanca' },
 			{ href: links.depo, label: 'Depo' },
 			{ href: links.distro, label: 'Distro' },
 		],
@@ -43,7 +43,8 @@ export const Ecosystem: FC = (): JSX.Element => {
 		if (href === 'brand-assets') {
 			dispatch({ type: 'OPEN_BRAND_ASSETS' })
 		} else {
-			window.open(href, '_blank', 'noopener,noreferrer')
+			const isExternal = href && !href.startsWith('/') && !href.startsWith(window.location.origin)
+			window.open(href, isExternal ? '_blank' : undefined, isExternal ? 'noopener noreferrer' : undefined)
 		}
 	}
 

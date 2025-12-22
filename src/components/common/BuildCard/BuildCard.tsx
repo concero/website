@@ -22,7 +22,8 @@ export const BuildCard = ({
 	isColumn,
 }: BuildCardProps): ReactElement => {
 	const handleClick = () => {
-		window.open(url, '_blank', 'noopener,noreferrer')
+		const isExternal = url && !url.startsWith('/') && !url.startsWith(window.location.origin)
+		window.open(url, isExternal ? '_blank' : undefined, isExternal ? 'noopener noreferrer' : undefined)
 	}
 
 	return (
