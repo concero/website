@@ -33,7 +33,7 @@ export const Hero = (): JSX.Element => {
 				jsonFilePath={'/Hero/hero.json'}
 				width="100%"
 				height="100%"
-				scale={0.8}
+				scale={1}
 				className={cls.backgroung_animation}
 			/>
 			<div className={cls.heading}>

@@ -3,6 +3,7 @@ import { Button } from '@concero/ui-kit'
 import './Hero.pcss'
 import UnicornScene from 'unicornstudio-react'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
+import { ResizeRerender } from '@/components/common/ResizeRerender/ResizeRerender'
 
 const HeroHeading = () => (
 	<div className="lanca_hero_description">
@@ -47,13 +48,15 @@ export const Hero: FC = (): ReactElement => {
 		<section className="lanca_hero">
 			<div className="lanca_hero_content">
 				<div className="lanca_hero_backgroung_animation_wrap">
-					<UnicornScene
-						jsonFilePath={'/Lanca/Hero/hero.json'}
-						width="100%"
-						scale={1}
-						height={'100%'}
-						className={'lanca_hero_backgroung_animation'}
-					/>
+					<ResizeRerender>
+						<UnicornScene
+							jsonFilePath={'/Lanca/Hero/hero.json'}
+							width="100%"
+							scale={1}
+							// height={'100%'}
+							className={'lanca_hero_backgroung_animation'}
+						/>
+					</ResizeRerender>
 				</div>
 
 				<div className="lanca_hero_heading">

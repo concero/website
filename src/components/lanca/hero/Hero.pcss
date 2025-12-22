@@ -34,6 +34,7 @@
 		align-items: center;
 		border-radius: var(--border-radius-large);
 		overflow: auto;
+
 		@media (min-width: 1280px) and (max-width: 1919px) {
 			/* height: 398px; */
 		}
@@ -142,4 +143,9 @@
 	/* min-height: 500px; */
 	width: 100% !important;
 	border-radius: var(--space-xl);
+	& > * {
+		width: 100% !important;
+		border-radius: var(--space-l);
+		overflow: auto;
+	}
 }
