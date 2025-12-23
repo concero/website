@@ -65,16 +65,16 @@ const STACK_CARDS: readonly StackCardData[][] = [
 		{ title: 'Security', number: 'Medium', isDark: false },
 	],
 	[
-		{ title: 'Setup', number: 'Deliverability', isDark: true },
-		{ title: 'Speed', number: '10sec', isDark: false },
-		{ title: 'Cost', number: '$0.01', isDark: false },
-		{ title: 'Security', number: 'Medium', isDark: false },
-	],
-	[
 		{ title: 'Setup', number: 'Sovereignty', isDark: true },
 		{ title: 'Speed', number: '10sec', isDark: false },
 		{ title: 'Cost', number: '$0.01', isDark: false },
 		{ title: 'Security', number: 'High', isDark: false },
+	],
+	[
+		{ title: 'Setup', number: 'Deliverability', isDark: true },
+		{ title: 'Speed', number: '10sec', isDark: false },
+		{ title: 'Cost', number: '$0.01', isDark: false },
+		{ title: 'Security', number: 'Medium', isDark: false },
 	],
 ]
 
