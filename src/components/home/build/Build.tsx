@@ -16,7 +16,7 @@ export const Build: FC = (): ReactElement => {
 					isInverse={isTabletOrless}
 					title="Take your project cross-chain"
 					bullets={['Reach millions of users', 'Unlock new revenue streams', 'Own your distribution']}
-					url={links.overview}
+					url={links.documentation}
 					buttonText="Docs"
 					ImageNode={<UnicornScene jsonFilePath={'/Build/take_your_project_cross-chain.json'} scale={1} />}
 				/>
@@ -38,7 +38,7 @@ export const Build: FC = (): ReactElement => {
 					isInverse={isTabletOrless}
 					title="Connect to motherboard"
 					bullets={['Provide infrastructure', 'Focus on your specialty', 'Compete on merit']}
-					url={links.overview}
+					url={links.documentation}
 					buttonText="Docs"
 					ImageNode={<UnicornScene jsonFilePath={'/Build/connect_motherboard.json'} scale={1} />}
 				/>

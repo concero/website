@@ -31,29 +31,34 @@ const INFRA_CARDS = [
 	},
 ] as const
 
-export const Infra: FC = (): ReactElement => (
-	<div className="overview_infra">
-		<div className="overview_infra_description">
-			<div className="overview_infra_description_heading">
-				<span className="overview_infra_description_title">Provide Infrastructure</span>
-				<span className="overview_infra_description_subtitle">
-					Permissinolessly deploy your own module and connect to Motherboard
-				</span>
+export const Infra: FC = (): ReactElement => {
+	const handleDocumentation = () => {
+		window.open(links.documentation, '_blank', undefined)
+	}
+	return (
+		<div className="overview_infra">
+			<div className="overview_infra_description">
+				<div className="overview_infra_description_heading">
+					<span className="overview_infra_description_title">Provide Infrastructure</span>
+					<span className="overview_infra_description_subtitle">
+						Permissinolessly deploy your own module and connect to Motherboard
+					</span>
+				</div>
+				<Button variant="primary" size="xl" onClick={handleDocumentation}>
+					Integrate
+				</Button>
 			</div>
-			<Button variant="primary" size="xl">
-				Integrate
-			</Button>
+			<div className="overview_infra_card">
+				{INFRA_CARDS.map(({ title, subtitle, buttonText, buttonHref }) => (
+					<InfraCard
+						key={title}
+						title={title}
+						subtitle={subtitle}
+						buttonText={buttonText}
+						buttonLink={buttonHref}
+					/>
+				))}
+			</div>
 		</div>
-		<div className="overview_infra_card">
-			{INFRA_CARDS.map(({ title, subtitle, buttonText, buttonHref }) => (
-				<InfraCard
-					key={title}
-					title={title}
-					subtitle={subtitle}
-					buttonText={buttonText}
-					buttonLink={buttonHref}
-				/>
-			))}
-		</div>
-	</div>
-)
+	)
+}

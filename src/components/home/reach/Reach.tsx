@@ -20,6 +20,9 @@ const ProtocolCards = (): ReactElement => {
 	} else if (isMobile) {
 		heightImage = 343
 	}
+	const handleAboutLanca = () => {
+		window.open(links.lanca, '_self', 'noopener,noreferrer')
+	}
 	return (
 		<div className="home_reach_protocols">
 			<ReachCard
@@ -28,7 +31,7 @@ const ProtocolCards = (): ReactElement => {
 				subtitle="Move your liquidity seamlessly between any chains you need"
 				tags={['Chains', 'Protocols', 'Asset issuers']}
 				ActionNode={
-					<Button variant="secondary_color" size="xl">
+					<Button variant="secondary_color" size="xl" onClick={handleAboutLanca}>
 						About Lanca
 					</Button>
 				}

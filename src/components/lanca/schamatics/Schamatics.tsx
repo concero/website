@@ -90,7 +90,7 @@ export const Schematics: FC = (): ReactElement => {
 			setOverflowing(cardsRef.current.scrollWidth > cardsRef.current.clientWidth)
 		}
 	}, [])
-	
+
 	useEffect(() => {
 		if (!isShortMode || !cardsRef.current) return
 
