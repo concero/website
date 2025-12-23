@@ -25,13 +25,13 @@ const socials = [
 	},
 	{
 		icon: <GithubIcon />,
-		name: 'medium',
-		link: links.medium,
+		name: 'github',
+		link: links.github,
 	},
 	{
 		icon: <LinkedinIcon />,
-		name: 'medium',
-		link: links.medium,
+		name: 'linkedin',
+		link: links.linkedin,
 	},
 ] as const
 

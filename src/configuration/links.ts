@@ -12,7 +12,7 @@ export const links = {
 	rewards: 'https://app.concero.io/rewards',
 	scan: 'https://scan.concero.io/',
 	github: 'https://github.com/concero',
-	linkedin: 'https://www.linkedin.com/company/concero-io/posts/?feedView=all',
+	linkedin: 'https://www.linkedin.com/company/concero-io/',
 	overview: '/overview',
 	lanca: '/lanca',
 	depo: '/depo',

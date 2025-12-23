@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import './SocialIcon.pcss'
 
-export type Social = 'twitter' | 'discord' | 'medium'
+export type Social = 'twitter' | 'discord' | 'medium' | 'linkedin' | 'github'
 
 type SocialWidgetProps = {
 	icon: ReactNode
