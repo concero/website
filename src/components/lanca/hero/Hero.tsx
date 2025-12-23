@@ -4,6 +4,8 @@ import './Hero.pcss'
 import UnicornScene from 'unicornstudio-react'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
 import { ResizeRerender } from '@/components/common/ResizeRerender/ResizeRerender'
+import { links } from '@/configuration/links'
+import { useModalContext } from '@/reducer/modal/modalContext'
 
 const HeroHeading = () => (
 	<div className="lanca_hero_description">
@@ -17,13 +19,20 @@ const HeroHeading = () => (
 
 const HeroActions = () => {
 	const isTablet = useWidthScreen('tablet', 'only')
+	const { dispatch } = useModalContext()
+	const handleStartBuilding = () => {
+		dispatch({ type: 'OPEN_CONTACT' })
+	}
+	const handleDocumentation = () => {
+		window.open(links.documentation, '_blank', undefined)
+	}
 	return (
 		<div className="lanca_hero_actions_wrap">
 			<div className="lanca_hero_actions">
-				<Button variant="primary" size={isTablet ? 'l' : 'xl'} isFull>
+				<Button variant="primary" size={isTablet ? 'l' : 'xl'} isFull onClick={handleDocumentation}>
 					Start Building
 				</Button>
-				<Button variant="secondary" size={isTablet ? 'l' : 'xl'} isFull>
+				<Button variant="secondary" size={isTablet ? 'l' : 'xl'} isFull onClick={handleStartBuilding}>
 					Contact Us
 				</Button>
 			</div>

@@ -2,11 +2,16 @@ import type { FC, ReactElement } from 'react'
 import { Button } from '@concero/ui-kit'
 import './Action.pcss'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
+import { useModalContext } from '@/reducer/modal/modalContext'
 
 export const Action: FC = (): ReactElement => {
 	const isHdDesktop = useWidthScreen('desktop', 'down')
 	const onStartBuild = () => {
 		window.open('https://docs.concero.io/', '_blank', 'noopener,noreferrer')
+	}
+	const { dispatch } = useModalContext()
+	const handleStartBuilding = () => {
+		dispatch({ type: 'OPEN_CONTACT' })
 	}
 	return (
 		<div className="lanca_action">
@@ -16,7 +21,7 @@ export const Action: FC = (): ReactElement => {
 					<Button variant="primary" size={isHdDesktop ? 'l' : 'xl'} onClick={onStartBuild} isFull>
 						Start Building
 					</Button>
-					<Button variant="secondary" size={isHdDesktop ? 'l' : 'xl'} isFull>
+					<Button variant="secondary" size={isHdDesktop ? 'l' : 'xl'} isFull onClick={handleStartBuilding}>
 						Contact Us
 					</Button>
 				</div>

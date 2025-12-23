@@ -43,7 +43,7 @@ const PROTOCOLS = [
 			const isDesktop = useWidthScreen('desktop', 'only')
 			const isTablet = useWidthScreen('tablet', 'only')
 			const isMobile = useWidthScreen('mobile', 'only')
-			let heightImage =383.3
+			let heightImage = 383.3
 			if (isDesktop) {
 				heightImage = 250
 			} else if (isTablet) {
@@ -63,7 +63,7 @@ const PROTOCOLS = [
 		},
 	},
 	{
-		title: 'Asset issuers',
+		title: 'Asset holders',
 		description: 'Bridge across thousands of chains in seconds',
 		buttonText: 'Lanca App',
 		buttonHref: links.swap,
