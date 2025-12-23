@@ -24,9 +24,9 @@ export const CodeBlock: FC<CodeBlockProps> = ({ currentIndex }) => {
 			case 3:
 				return <Compliance />
 			case 4:
-				return <Deliverability />
-			case 5:
 				return <Sovereignty />
+			case 5:
+				return <Deliverability />
 			default:
 				return null
 		}

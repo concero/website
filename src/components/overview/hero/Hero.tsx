@@ -3,6 +3,7 @@ import { Button } from '@concero/ui-kit'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
 import cls from './Hero.module.pcss'
+import { links } from '@/configuration/links'
 
 export const Hero = (): JSX.Element => {
 	const isDesktop = useWidthScreen('desktop', 'only')
@@ -19,6 +20,9 @@ export const Hero = (): JSX.Element => {
 	const { dispatch } = useModalContext()
 	const handleStartBuilding = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
+	}
+	const handleDocumentation = () => {
+		window.open(links.documentation, '_blank', undefined)
 	}
 	return (
 		<section className={cls.hero}>
@@ -41,10 +45,10 @@ export const Hero = (): JSX.Element => {
 					</div>
 				</div>
 				<div className={cls.action_block}>
-					<Button variant="primary" size={isDesktop ? 'l' : 'xl'} onClick={handleStartBuilding} isFull>
+					<Button variant="primary" size={isDesktop ? 'l' : 'xl'} isFull onClick={handleDocumentation}>
 						Connect
 					</Button>
-					<Button variant="secondary" size={isDesktop ? 'l' : 'xl'} isFull>
+					<Button variant="secondary" size={isDesktop ? 'l' : 'xl'} isFull onClick={handleStartBuilding}>
 						Contact Us
 					</Button>
 				</div>

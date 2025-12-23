@@ -6,6 +6,7 @@ import { Button } from '@concero/ui-kit'
 import UnicornScene from 'unicornstudio-react'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
 import { Text } from '@/components/common/Text/Text'
+import { links } from '@/configuration/links'
 
 const ProtocolCards = (): ReactElement => {
 	const isDesktop = useWidthScreen('desktop', 'only')
@@ -96,6 +97,9 @@ const MotherboardCard = () => {
 	} else if (isMobile) {
 		heightImage = 343
 	}
+	const handleDocumentation = () => {
+		window.open(links.overview, '_self', undefined)
+	}
 	return (
 		<div className="home_reach_motherboard">
 			<div className="home_reach_motherboard_header">
@@ -110,7 +114,7 @@ const MotherboardCard = () => {
 						</span>
 					</div>
 				</div>
-				<Button variant="secondary_color" size="xl">
+				<Button variant="secondary_color" size="xl" onClick={handleDocumentation}>
 					Learn More
 				</Button>
 			</div>
