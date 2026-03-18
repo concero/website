@@ -60,7 +60,7 @@ export const Hero = (): JSX.Element => {
 				</VStack>
 			</VStack>
 			<div className={cls.img_wrap}>
-				<img src="/Hero/hero.webp" alt="" />
+				<img src="/Hero/Hero.webp" alt="" />
 			</div>
 		</section>
 	)
