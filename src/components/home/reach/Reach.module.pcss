@@ -1,0 +1,36 @@
+.home_reach {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding: 108px 268px;
+	height: 100%;
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		padding: 63px 188px 65px 188px;
+	}
+	@media (min-width: 744px) and (max-width: 1279px) {
+		padding: 64px 32px;
+	}
+	@media (max-width: 743px) {
+		flex-direction: column;
+		padding: 32px 16px;
+	}
+
+	.reach_number {
+		color: var(--color-accent-500);
+	}
+	.reach_description {
+		color: var(--color-gray-600);
+	}
+}
+
+/* 
+@media (min-width: 1280px) and (max-width: 1919px) {
+	height: 368px;
+}
+@media (min-width: 744px) and (max-width: 1279px) {
+	height: 712px;
+}
+@media (max-width: 743px) {
+	height: 712px;
+}
+*/

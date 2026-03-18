@@ -33,7 +33,7 @@ export const Actions = () => {
 				<div className="actions_buttons">
 					{!isOpen && (
 						<Button size={buttonSize} variant="primary" onClick={onStartBuild}>
-							Start Building
+							Get Started
 						</Button>
 					)}
 					{showBurger && (

@@ -1,161 +1,41 @@
 import type { ReactElement } from 'react'
-import { ReachCard } from '@/components/common/ReachCard/ReachCard'
-import { DataCard } from '@/components/common/DataCard/DataCard'
-import './Reach.pcss'
-import { Button } from '@concero/ui-kit'
-import UnicornScene from 'unicornstudio-react'
-import { useWidthScreen } from '@/hooks/useWidthScreen'
+import { HStack, VStack } from '@/components/common/Stack'
 import { Text } from '@/components/common/Text/Text'
-import { links } from '@/configuration/links'
 
-const ProtocolCards = (): ReactElement => {
-	const isDesktop = useWidthScreen('desktop', 'only')
-	const isTablet = useWidthScreen('tablet', 'only')
-	const isMobile = useWidthScreen('mobile', 'only')
-	let heightImage = 613
-	if (isDesktop) {
-		heightImage = 400
-	} else if (isTablet) {
-		heightImage = 712
-	} else if (isMobile) {
-		heightImage = 343
-	}
-	const handleAboutLanca = () => {
-		window.open(links.lanca, '_self', 'noopener,noreferrer')
-	}
-	return (
-		<div className="home_reach_protocols">
-			<ReachCard
-				metaTitle="Cross-chain liquidity protocol"
-				title="Lanca"
-				subtitle="Move your liquidity seamlessly between any chains you need"
-				tags={['Chains', 'Protocols', 'Asset issuers']}
-				ActionNode={
-					<Button variant="secondary_color" size="xl" onClick={handleAboutLanca}>
-						About Lanca
-					</Button>
-				}
-				ImageNode={
-					<UnicornScene
-						jsonFilePath={'/Reach/lanca.json'}
-						height={heightImage}
-						scale={1}
-						className="home_reach_animation_background"
-					/>
-				}
-			/>
-			<ReachCard
-				metaTitle="Deposit/Withdrawal protocol"
-				title="Depo"
-				subtitle="Enable cross-chain deposits/withdrawals and unlock extra yield"
-				tags={['Prediction Markets', 'Margin Venues', 'Liquidity Apps']}
-				ActionNode={
-					<Button variant="secondary_color" size="xl" isDisabled>
-						About Depo
-					</Button>
-				}
-				isSoon
-				ImageNode={
-					<UnicornScene
-						jsonFilePath={'/Reach/depo.json'}
-						height={heightImage}
-						scale={1}
-						className="home_reach_animation_background"
-					/>
-				}
-			/>
-			<ReachCard
-				metaTitle="Asset distribution protocol"
-				title="Distro"
-				subtitle="Distribute your asset across thousands of chains"
-				tags={['RWA', 'Stablecoins', 'Tokens']}
-				ActionNode={
-					<Button variant="secondary_color" size="xl" isDisabled>
-						About Distro
-					</Button>
-				}
-				isSoon
-				ImageNode={
-					<UnicornScene
-						jsonFilePath={'/Reach/distro.json'}
-						height={heightImage}
-						scale={1}
-						className="home_reach_animation_background"
-					/>
-				}
-			/>
-		</div>
-	)
-}
-
-const MotherboardCard = () => {
-	const isDesktop = useWidthScreen('desktop', 'only')
-	const isTablet = useWidthScreen('tablet', 'only')
-	const isMobile = useWidthScreen('mobile', 'only')
-	let heightImage = 581
-	if (isDesktop) {
-		heightImage = 368
-	} else if (isTablet) {
-		heightImage = 712
-	} else if (isMobile) {
-		heightImage = 343
-	}
-	const handleDocumentation = () => {
-		window.open(links.overview, '_self', undefined)
-	}
-	return (
-		<div className="home_reach_motherboard">
-			<div className="home_reach_motherboard_header">
-				<div className="home_reach_motherboard_heading">
-					<Text variant="body_large" className="home_reach_motherboard_header_meta_title">
-						Open Interoperability Framework
-					</Text>
-					<div className="home_reach_motherboard_header_description_wrap">
-						<span className="home_reach_motherboard_header_description_wrap_title">Motherboard</span>
-						<span className="home_reach_motherboard_header_description_wrap_subtitle">
-							Build any cross-chain protocol with full autonomy
-						</span>
-					</div>
-				</div>
-				<Button variant="secondary_color" size="xl" onClick={handleDocumentation}>
-					Learn More
-				</Button>
-			</div>
-
-			<UnicornScene
-				jsonFilePath={'/Reach/motherboard.json'}
-				height={heightImage}
-				scale={1}
-				className="home_reach_animation_background"
-			/>
-		</div>
-	)
-}
-
-const DataCards = (): ReactElement => (
-	<div className="home_reach_data">
-		<DataCard title="Total Reachable Wallets" number="150M+" isAccent />
-		<DataCard title="Chains" number="500+" />
-		<DataCard title="Supported VMs" number="1" />
-		<DataCard title="Avg. deployment time" number="20 min" />
-	</div>
-)
-
-const ReachOptions = (): ReactElement => {
-	return (
-		<div className="home_reach_options">
-			<ProtocolCards />
-			<MotherboardCard />
-			<DataCards />
-		</div>
-	)
-}
+import cls from './Reach.module.pcss'
+import { useWidthScreen } from '@/hooks/useWidthScreen'
 
 export const Reach = (): ReactElement => {
+	const isMobile = useWidthScreen('mobile', 'only')
+	const Stack = isMobile ? VStack : HStack
 	return (
-		<section className="home_reach">
-			<span className="home_reach_title">Reach millions of users</span>
-			<ReachOptions />
+		<section className={cls.home_reach}>
+			<Stack gap={'32px'} max>
+				<VStack gap="space_0_5" align="center" max>
+					<Text variant={isMobile ? 'heading_xxxlarge' : 'heading_xxxxlarge'} className={cls.reach_number}>
+						$950B
+					</Text>
+					<Text variant="body_large" className={cls.reach_description}>
+						Total Reachable onchain Value
+					</Text>
+				</VStack>
+				<VStack gap="space_0_5" align="center" max>
+					<Text variant={isMobile ? 'heading_xxxlarge' : 'heading_xxxxlarge'} className={cls.reach_number}>
+						250M
+					</Text>
+					<Text variant="body_large" className={cls.reach_description}>
+						Total Reachable onchain Wallets
+					</Text>
+				</VStack>
+				<VStack gap="space_0_5" align="center" max>
+					<Text variant={isMobile ? 'heading_xxxlarge' : 'heading_xxxxlarge'} className={cls.reach_number}>
+						100+
+					</Text>
+					<Text variant="body_large" className={cls.reach_description}>
+						Fiat currencies supported for on-ramping
+					</Text>
+				</VStack>
+			</Stack>
 		</section>
 	)
 }

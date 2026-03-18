@@ -1,24 +1,16 @@
 import UnicornScene from 'unicornstudio-react'
-import cls from './Hero.module.pcss'
 import { Button } from '@concero/ui-kit'
 import { useModalContext } from '@/reducer/modal/modalContext'
 import { useWidthScreen } from '@/hooks/useWidthScreen'
 import { Text } from '@/components/common/Text/Text'
-import { Partners } from './Partners/Partners'
+import { HStack, VStack } from '@/components/common/Stack'
+import cls from './Hero.module.pcss'
 
 export const Hero = (): JSX.Element => {
 	const isDesktopOrLess = useWidthScreen('desktop', 'down')
 	const isDesktop = useWidthScreen('desktop', 'only')
 	const isTablet = useWidthScreen('tablet', 'only')
 	const isMobile = useWidthScreen('mobile', 'only')
-	// let heightImage = 1024
-	// if (isDesktop) {
-	// 	heightImage = 720
-	// } else if (isTablet) {
-	// 	heightImage = 1133
-	// } else if (isMobile) {
-	// 	heightImage = 667
-	// }
 	const { dispatch } = useModalContext()
 	const onContactUs = () => {
 		dispatch({ type: 'OPEN_CONTACT' })
@@ -32,34 +24,44 @@ export const Hero = (): JSX.Element => {
 				key={`Unicorn ${isDesktop} ${isMobile} ${isTablet}`}
 				jsonFilePath={'/Hero/hero.json'}
 				width="100%"
-				height="100%"
+				height="auto"
 				scale={1}
 				className={cls.backgroung_animation}
 			/>
-			<div className={cls.heading}>
-				<div className={cls.title_block}>
-					<Text
-						variant={
-							isMobile ? 'heading_xxlarge' : isDesktopOrLess ? 'heading_xxxlarge' : 'heading_xxxxlarge'
-						}
-						className={cls.title}
-					>
-						DeFi’s largest distribution rails
-					</Text>
-					<Text variant={isMobile ? 'heading_medium' : 'heading_large'} className={cls.description}>
-						Maximise your on-chain Total Attainable Market
-					</Text>
-				</div>
-				<div className={cls.action_block}>
-					<Button variant="primary" size={isTablet ? 'l' : 'xl'} onClick={onStartBuild} isFull>
-						{isMobile ? 'Connect' : 'Start Building'}
-					</Button>
-					<Button variant="secondary" size={isTablet ? 'l' : 'xl'} onClick={onContactUs} isFull>
-						Contact Us
-					</Button>
-				</div>
+
+			<VStack align="center" max>
+				<VStack gap="16px" align="center" justify="center" className={cls.heading} max>
+					<VStack gap="space_0_5" align="center" className={cls.title_block}>
+						<Text
+							variant={
+								isMobile
+									? 'heading_xxlarge'
+									: isDesktopOrLess
+										? 'heading_xxxlarge'
+										: 'heading_xxxxlarge'
+							}
+							className={cls.title}
+						>
+							The Stripe for Appchains
+						</Text>
+						<Text variant={isMobile ? 'heading_medium' : 'heading_large'} className={cls.description}>
+							The easiest way for appchains to onboard users and accept funds from any chain. One
+							integration, 99% market reach, zero friction for your users and a new revenue primitive.
+						</Text>
+					</VStack>
+					<HStack gap="space_0_5" justify="center" className={cls.action_block}>
+						<Button variant="primary" size={'m'} onClick={onStartBuild}>
+							Get Started
+						</Button>
+						<Button variant="secondary" size={'m'} onClick={onContactUs}>
+							Talk to Founder
+						</Button>
+					</HStack>
+				</VStack>
+			</VStack>
+			<div className={cls.img_wrap}>
+				<img src="/Hero/hero.webp" alt="" />
 			</div>
-			<Partners className={cls.partners} />
 		</section>
 	)
 }
