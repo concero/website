@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-property-unit-allowed-list */
 /* stylelint-disable selector-class-pattern */
 
 .hero {
@@ -9,21 +10,18 @@
 	align-self: stretch;
 	/* height: 1024px; */
 	width: 100%;
-	padding: var(--space-xxxxxxl) 268px var(--space-xxxxl) 268px;
+	padding: var(--space-xxxxxxl) 32px var(--space-xxxxl) 32px;
 	gap: var(--space-xl);
 	/* aspect-ratio: 1920 / 1024; */
 	@media (min-width: 1280px) and (max-width: 1919px) {
-		padding: var(--space-xxxxxxl) 188px var(--space-xxxxl) 188px;
-		/* aspect-ratio: 1280 / 720; */
+		padding: var(--space-xxxxxxl) 32px var(--space-xxxxl) 32px;
 	}
 	@media (min-width: 744px) and (max-width: 1279px) {
-		/* aspect-ratio: 744 / 1133; */
-		padding: 96px 16px 32px 32px;
+		padding: 96px 32px 32px 32px;
 		align-items: flex-start;
 		height: auto;
 	}
 	@media (max-width: 743px) {
-		/* aspect-ratio: 375 / 667; */
 		padding: 96px 16px 32px 16px;
 		align-items: flex-start;
 		height: auto;
@@ -47,39 +45,48 @@
 			pointer-events: none;
 		}
 	}
-	.heading {
-		z-index: 1;
-		width: 100%;
-		/* @media (min-width: 1280px) and (max-width: 1919px) {
-		} */
+
+	.heading_wrap {
+		width: 50%;
 		@media (min-width: 744px) and (max-width: 1279px) {
-			width: 502px;
+			width: 100%;
 		}
 		@media (max-width: 743px) {
 			width: 100%;
 		}
-
-		.title_block {
+		.heading {
+			z-index: 1;
 			width: 100%;
-			text-align: center;
-			.title {
-				color: var(--color-gray-700);
-			}
-			.description {
-				color: var(--color-gray-600);
-			}
-		}
-		.action_block {
-			width: 676px;
-			@media (min-width: 1280px) and (max-width: 1919px) {
-				width: 436px;
-			}
+
 			@media (min-width: 744px) and (max-width: 1279px) {
-				width: 412px;
+				width: calc(((100% + 64px) * 0.75) - 56px);
 			}
 			@media (max-width: 743px) {
 				width: 100%;
-				gap: var(--space-xxs);
+			}
+			.title_block {
+				width: 100%;
+				text-align: center;
+				.title {
+					color: var(--color-gray-700);
+					letter-spacing: -0.64px;
+				}
+				.description {
+					color: var(--color-gray-600);
+				}
+			}
+			.action_block {
+				width: 676px;
+				@media (min-width: 1280px) and (max-width: 1919px) {
+					width: 436px;
+				}
+				@media (min-width: 744px) and (max-width: 1279px) {
+					width: 412px;
+				}
+				@media (max-width: 743px) {
+					width: 100%;
+					gap: var(--space-xxs);
+				}
 			}
 		}
 	}
