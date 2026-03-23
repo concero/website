@@ -1,6 +1,7 @@
 .home_action {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	padding: calc(var(--space-xxxxxl) + var(--space-xl)) var(--space-m);
 	height: 100%;
@@ -14,14 +15,20 @@
 	align-items: center;
 	gap: var(--space-m);
 	width: 100%;
+	max-width: 592px;
+
+	@media (min-width: 744px) and (max-width: 1279px) {
+		max-width: 502px;
+	}
+	
 }
 
 .home_action_title {
-	font: var(--font-heading-xxxxlarge);
+	font: var(--font-heading-xxxlarge);
 	text-align: center;
 	color: var(--color-gray-light-700);
 	@media (max-width: 1919px) {
-		font: var(--font-heading-xxxlarge);
+		font: var(--font-heading-xxlarge);
 	}
 	@media (max-width: 743px) {
 		font: var(--font-heading-xxlarge);
@@ -29,22 +36,14 @@
 }
 
 .home_action_actions {
-	width: 676px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: var(--space-xxs);
 	flex: 1 0 0;
 	max-width: 100%;
-	@media screen and (width < 1280px) and (width > 744px) {
-		width: 502px;
-	}
-	@media screen and (width < 744px) {
-		width: 502px;
-	}
-	@media screen and (width < 375px) {
-		flex-wrap: wrap;
-	}
+
 }
 
 .home_action_button {

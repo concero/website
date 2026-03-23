@@ -12,12 +12,12 @@ export const Action: FC = (): ReactElement => {
 	return (
 		<div className="home_action">
 			<div className="home_action_content">
-				<span className="home_action_title">Scale with Concero today</span>
+				<span className="home_action_title">Stop solving plumbing Start building your product</span>
 				<div className="home_action_actions">
-					<Button variant="primary" size="xl" isFull onClick={onStartBuild}>
-						Stop solving plumbing Start building your product
+					<Button variant="primary" size="l" isFull onClick={onStartBuild}>
+						Start Building
 					</Button>
-					<Button variant="secondary" size="xl" isFull onClick={onContactUs}>
+					<Button variant="secondary" size="l" isFull onClick={onContactUs}>
 						Talk to Founder
 					</Button>
 				</div>
