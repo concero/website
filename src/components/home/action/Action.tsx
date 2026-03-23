@@ -15,10 +15,10 @@ export const Action: FC = (): ReactElement => {
 				<span className="home_action_title">Scale with Concero today</span>
 				<div className="home_action_actions">
 					<Button variant="primary" size="xl" isFull onClick={onStartBuild}>
-						Start Building
+						Stop solving plumbing Start building your product
 					</Button>
 					<Button variant="secondary" size="xl" isFull onClick={onContactUs}>
-						Contact Us
+						Talk to Founder
 					</Button>
 				</div>
 			</div>

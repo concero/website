@@ -5,35 +5,35 @@ import './Ecosystem.pcss'
 
 const ecosystem_sections = [
 	{
-		title: 'Motherboard',
+		title: 'Resources',
 		links: [
-			{ href: links.overview, label: 'Overview' },
-			{ href: links.scan, label: 'Scan' },
 			{ href: links.documentation, label: 'Documentation' },
-		],
-	},
-	{
-		title: 'Products',
-		links: [
-			{ href: links.lanca, label: 'Lanca' },
-			// { href: links.depo, label: 'Depo' },
-			// { href: links.distro, label: 'Distro' },
+			{ href: links.scan, label: 'Scan' },
+			{ href: links.blog, label: 'Blog' },
 		],
 	},
 	{
 		title: 'Community',
 		links: [
 			{ href: links.rewards, label: 'Rewards Portal' },
-			{ href: links.discord, label: 'Developer Community' },
+			// { href: links.lanca, label: 'Lanca' },
+			// { href: links.depo, label: 'Depo' },
+			// { href: links.distro, label: 'Distro' },
 		],
 	},
 	{
-		title: 'Resources',
+		title: 'Brand',
 		links: [
-			{ href: links.blog, label: 'Blog' },
+			// { href: links.discord, label: 'Developer Community' }
 			{ href: 'brand-assets', label: 'Brand Assets' },
 		],
 	},
+	// {
+	// 	title: 'Resources',
+	// 	links: [
+	// 		{ href: links.blog, label: 'Blog' },
+	// 	],
+	// },
 ] as const
 
 export const Ecosystem: FC = (): JSX.Element => {
