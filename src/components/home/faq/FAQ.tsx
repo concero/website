@@ -9,7 +9,7 @@ const FAQ_DATA = [
 	},
 	{
 		question: 'Where does the revenue go?',
-		answer: 'All generated yield belongs to you and your application. What you decide to do with it is completely up to you. Concero retains a small share of the yield that is generated as the only fee. Our incentives are fully aligned with yours, if there is no yield - there is no fee.',
+		answer: 'All generated yield belongs to you and your application. What you decide to do with it is completely up to you.',
 	},
 	{
 		question: 'Is it EVM only?',
