@@ -13,7 +13,7 @@ export const Reach = (): ReactElement => {
 			<Stack gap={'32px'} max>
 				<VStack gap="space_0_5" align="center" max>
 					<Text variant={isMobile ? 'heading_xxxlarge' : 'heading_xxxxlarge'} className={cls.reach_number}>
-						$950B
+						$15B
 					</Text>
 					<Text variant="body_large" className={cls.reach_description}>
 						Total Reachable onchain Value
@@ -21,7 +21,7 @@ export const Reach = (): ReactElement => {
 				</VStack>
 				<VStack gap="space_0_5" align="center" max>
 					<Text variant={isMobile ? 'heading_xxxlarge' : 'heading_xxxxlarge'} className={cls.reach_number}>
-						250M
+						4M
 					</Text>
 					<Text variant="body_large" className={cls.reach_description}>
 						Total Reachable onchain Wallets
