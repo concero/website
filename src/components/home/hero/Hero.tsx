@@ -40,7 +40,7 @@ export const Hero = (): JSX.Element => {
 							}
 							className={cls.title}
 						>
-							The Stripe for Appchains
+							Payments Infrastructure for Appchains
 						</Text>
 						<Text variant={'body_large'} className={cls.description}>
 							The easiest way for appchains to onboard users and accept funds from any chain. One
